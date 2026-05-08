@@ -1,3 +1,5 @@
+import { siteConfig } from "./lib/site";
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-stone-50 text-stone-900">
@@ -19,7 +21,9 @@ export default function HomePage() {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="#"
+              href={siteConfig.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-stone-700"
             >
               Book an Appointment

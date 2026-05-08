@@ -1,3 +1,5 @@
+import { siteConfig } from "../lib/site";
+
 export default function Header() {
   return (
     <header className="border-b border-stone-200 bg-stone-50">
@@ -24,11 +26,14 @@ export default function Header() {
           </a>
 
           <a
-            href="#"
+            href={siteConfig.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-stone-900 px-4 py-2 text-white transition hover:bg-stone-700"
           >
             Book
           </a>
+
         </nav>
       </div>
     </header>
