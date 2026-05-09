@@ -11,6 +11,10 @@ const footerLinks = [
     href: "/pricing",
   },
   {
+    label: "Booking",
+    href: "/booking",
+  },
+  {
     label: "About Elony",
     href: "/about",
   },

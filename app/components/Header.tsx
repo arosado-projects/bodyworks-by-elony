@@ -11,6 +11,10 @@ const navItems = [
     href: "/pricing",
   },
   {
+    label: "Booking",
+    href: "/booking",
+  },
+  {
     label: "About",
     href: "/about",
   },
