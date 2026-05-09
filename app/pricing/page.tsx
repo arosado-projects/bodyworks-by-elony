@@ -82,18 +82,18 @@ const enhancements = [
 export default function PricingPage() {
   return (
     <main>
-      <section className="bg-stone-50">
+      <section className="bg-[#faf7f2]">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="max-w-3xl">
-            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-stone-500">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
               Pricing
             </p>
 
-            <h1 className="mb-6 text-4xl font-light leading-tight text-stone-950 sm:text-5xl">
+            <h1 className="mb-6 text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
               Massage pricing that is simple and transparent.
             </h1>
 
-            <p className="text-lg leading-8 text-stone-600">
+            <p className="text-lg leading-8 text-[#6b625c]">
               Bodyworks By Elony offers personalized massage sessions with clear
               pricing and no membership fees. First-time appointments require
               prepayment when booking.
@@ -102,45 +102,47 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#fffdfc]">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 max-w-2xl">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-stone-500">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
               Therapeutic Massage
             </p>
 
-            <h2 className="text-3xl font-light text-stone-950">
+            <h2 className="text-3xl font-light text-[#292524]">
               Standard massage sessions
             </h2>
           </div>
 
-          <div className="overflow-hidden rounded-3xl border border-stone-200 bg-stone-50">
-            <div className="grid grid-cols-3 border-b border-stone-200 bg-stone-100 px-6 py-4 text-sm font-medium uppercase tracking-[0.14em] text-stone-500">
-              <span>Duration</span>
-              <span>Single Session</span>
-              <span>4 Pack</span>
-            </div>
-
-            {massagePricing.map((item) => (
-              <div
-                key={item.duration}
-                className="grid grid-cols-3 border-b border-stone-200 px-6 py-5 last:border-b-0"
-              >
-                <span className="font-medium text-stone-900">
-                  {item.duration}
-                </span>
-                <span className="text-stone-700">{item.singleSession}</span>
-                <span className="text-stone-700">{item.fourPack}</span>
+          <div className="overflow-x-auto rounded-3xl border border-[#eadfda] bg-[#faf7f2]">
+            <div className="min-w-[640px]">
+              <div className="grid grid-cols-3 border-b border-[#eadfda] bg-[#f7e8e8] px-6 py-4 text-sm font-medium uppercase tracking-[0.14em] text-[#8f3f50]">
+                <span>Duration</span>
+                <span>Single Session</span>
+                <span>4 Pack</span>
               </div>
-            ))}
+
+              {massagePricing.map((item) => (
+                <div
+                  key={item.duration}
+                  className="grid grid-cols-3 border-b border-[#eadfda] px-6 py-5 last:border-b-0"
+                >
+                  <span className="font-medium text-[#292524]">
+                    {item.duration}
+                  </span>
+                  <span className="text-[#6b625c]">{item.singleSession}</span>
+                  <span className="text-[#6b625c]">{item.fourPack}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-6 rounded-3xl bg-stone-100 p-6">
-            <h3 className="mb-3 text-lg font-medium text-stone-900">
+          <div className="mt-6 rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6">
+            <h3 className="mb-3 text-lg font-medium text-[#292524]">
               Package notes
             </h3>
 
-            <p className="leading-7 text-stone-600">
+            <p className="leading-7 text-[#6b625c]">
               Four-packs are available for therapeutic massage sessions only.
               Packages expire three months after first use, are shareable, and
               all package sales are final.
@@ -149,32 +151,32 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-stone-50">
+      <section className="bg-[#faf7f2]">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-20 lg:grid-cols-2">
-          <article className="rounded-3xl border border-stone-200 bg-white p-6 md:p-8">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-stone-500">
+          <article className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
               Prenatal Massage
             </p>
 
-            <h2 className="mb-4 text-3xl font-light text-stone-950">
+            <h2 className="mb-4 text-3xl font-light text-[#292524]">
               75 Minutes
             </h2>
 
-            <p className="mb-6 text-4xl font-light text-stone-900">$160</p>
+            <p className="mb-6 text-4xl font-light text-[#292524]">$160</p>
 
-            <p className="leading-7 text-stone-600">
+            <p className="leading-7 text-[#6b625c]">
               Supportive massage for pregnancy, offered with comfort,
               positioning, and care in mind. Prenatal massage is priced
               separately from therapeutic massage packages.
             </p>
           </article>
 
-          <article className="rounded-3xl border border-stone-200 bg-white p-6 md:p-8">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-stone-500">
+          <article className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
               Manual Lymphatic Drainage
             </p>
 
-            <h2 className="mb-4 text-3xl font-light text-stone-950">
+            <h2 className="mb-4 text-3xl font-light text-[#292524]">
               Focused MLD sessions
             </h2>
 
@@ -182,17 +184,17 @@ export default function PricingPage() {
               {mldPricing.map((item) => (
                 <div
                   key={item.duration}
-                  className="flex items-center justify-between border-b border-stone-200 pb-3 last:border-b-0"
+                  className="flex items-center justify-between border-b border-[#eadfda] pb-3 last:border-b-0"
                 >
-                  <span className="font-medium text-stone-900">
+                  <span className="font-medium text-[#292524]">
                     {item.duration}
                   </span>
-                  <span className="text-stone-700">{item.price}</span>
+                  <span className="text-[#6b625c]">{item.price}</span>
                 </div>
               ))}
             </div>
 
-            <p className="leading-7 text-stone-600">
+            <p className="leading-7 text-[#6b625c]">
               Manual lymphatic drainage may be booked as a focused session or,
               when appropriate, incorporated into a therapeutic massage as an
               add-on.
@@ -201,18 +203,18 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#fffdfc]">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 max-w-3xl">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-stone-500">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
               Add-Ons
             </p>
 
-            <h2 className="mb-4 text-3xl font-light text-stone-950">
+            <h2 className="mb-4 text-3xl font-light text-[#292524]">
               Add focused support to your massage session.
             </h2>
 
-            <p className="leading-8 text-stone-600">
+            <p className="leading-8 text-[#6b625c]">
               Select add-ons may be available at checkout. Cupping and manual
               lymphatic drainage are subject to medical review.
             </p>
@@ -222,22 +224,22 @@ export default function PricingPage() {
             {addOns.map((addOn) => (
               <article
                 key={addOn.name}
-                className="rounded-3xl border border-stone-200 bg-stone-50 p-6"
+                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6"
               >
                 <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
-                  <h3 className="text-xl font-medium text-stone-900">
+                  <h3 className="text-xl font-medium text-[#292524]">
                     {addOn.name}
                   </h3>
 
                   <div className="text-right">
-                    <p className="text-lg font-medium text-stone-900">
+                    <p className="text-lg font-medium text-[#292524]">
                       {addOn.price}
                     </p>
-                    <p className="text-sm text-stone-500">{addOn.time}</p>
+                    <p className="text-sm text-[#8f3f50]">{addOn.time}</p>
                   </div>
                 </div>
 
-                <p className="leading-7 text-stone-600">
+                <p className="leading-7 text-[#6b625c]">
                   {addOn.description}
                 </p>
               </article>
@@ -246,14 +248,14 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-stone-50">
+      <section className="bg-[#f7e8e8]">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-stone-500">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
               Complimentary Enhancements
             </p>
 
-            <h2 className="text-3xl font-light leading-tight text-stone-950">
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
               Comfort-focused enhancements may be included when appropriate.
             </h2>
           </div>
@@ -262,7 +264,7 @@ export default function PricingPage() {
             {enhancements.map((enhancement) => (
               <div
                 key={enhancement}
-                className="rounded-2xl border border-stone-200 bg-white px-5 py-4 text-stone-700"
+                className="rounded-2xl border border-[#eadfda] bg-[#fffdfc] px-5 py-4 text-[#6b625c]"
               >
                 {enhancement}
               </div>
@@ -271,45 +273,46 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-stone-100">
+      <section className="bg-[#faf7f2]">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-20 lg:grid-cols-3">
-          <article className="rounded-3xl bg-white p-6">
-            <h2 className="mb-3 text-xl font-medium text-stone-900">
+          <article className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6">
+            <h2 className="mb-3 text-xl font-medium text-[#292524]">
               Payment
             </h2>
 
-            <p className="leading-7 text-stone-600">
-              Major credit cards are accepted and preferred. Cash may be accepted for
-              returning clients — exact change required. New client appointments 
-              require prepayment when booking.
+            <p className="leading-7 text-[#6b625c]">
+              Major credit cards are accepted and preferred. Cash may be
+              accepted for returning clients, but exact payment is required
+              because change is not available. First-time appointments require
+              prepayment when booking.
             </p>
           </article>
 
-          <article className="rounded-3xl bg-white p-6">
-            <h2 className="mb-3 text-xl font-medium text-stone-900">
+          <article className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6">
+            <h2 className="mb-3 text-xl font-medium text-[#292524]">
               Arrival time
             </h2>
 
-            <p className="leading-7 text-stone-600">
+            <p className="leading-7 text-[#6b625c]">
               Please plan to arrive 10 minutes early to allow time for intake
               and undressing to your comfort level, so you can receive your full
               session time.
             </p>
           </article>
 
-          <article className="rounded-3xl bg-white p-6">
-            <h2 className="mb-3 text-xl font-medium text-stone-900">
+          <article className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6">
+            <h2 className="mb-3 text-xl font-medium text-[#292524]">
               Policies
             </h2>
 
-            <p className="leading-7 text-stone-600">
+            <p className="leading-7 text-[#6b625c]">
               Review cancellation, confirmation, tardiness, and health-related
               policies before booking.
             </p>
 
             <a
               href="/policies"
-              className="mt-4 inline-flex text-sm font-medium text-stone-900 underline decoration-stone-300 underline-offset-4 hover:decoration-stone-700"
+              className="mt-4 inline-flex text-sm font-medium text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
             >
               View policies
             </a>
@@ -317,10 +320,10 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-stone-900 text-white">
+      <section className="bg-[#292524] text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-stone-300">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#f7e8e8]">
               Ready to Book?
             </p>
 
@@ -333,7 +336,7 @@ export default function PricingPage() {
             href={siteConfig.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-medium text-stone-900 transition hover:bg-stone-200"
+            className="inline-flex rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
           >
             Book an Appointment
           </a>
