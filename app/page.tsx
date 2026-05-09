@@ -30,7 +30,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
           <div>
             <p className="mb-4 text-sm uppercase tracking-[0.2em] text-stone-500">
-              Bodyworks by Elony
+              Bodyworks By Elony
             </p>
 
             <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-stone-950 sm:text-5xl lg:text-6xl">
@@ -38,7 +38,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mb-8 max-w-2xl text-lg leading-8 text-stone-600">
-              Bodyworks by Elony offers thoughtful, client-centered massage
+              Bodyworks By Elony offers thoughtful, client-centered massage
               sessions designed to support relaxation, comfort, recovery, and a
               deeper sense of ease in your body.
             </p>

@@ -1,4 +1,4 @@
 export const siteConfig = {
-  name: "Bodyworks by Elony",
+  name: "Bodyworks By Elony",
   bookingUrl: "https://bodyworksbyelony.as.me",
 };

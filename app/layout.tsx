@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Bodyworks by Elony | Massage & Bodywork in Cedar Park, TX",
+  title: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
   description:
     "Personalized massage and bodywork sessions serving Cedar Park and the greater Austin area.",
 };

@@ -5,7 +5,7 @@ export default function Header() {
     <header className="border-b border-stone-200 bg-stone-50">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="/" className="text-lg font-medium tracking-wide text-stone-900">
-          Bodyworks by Elony
+          Bodyworks By Elony
         </a>
 
         <nav className="flex items-center gap-6 text-sm text-stone-700">
