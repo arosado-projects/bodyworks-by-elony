@@ -194,17 +194,6 @@ export default function HomePage() {
                   {siteConfig.credentials.mldCertification}.
                 </p>
               </div>
-
-              <div className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
-                <h3 className="mb-3 text-lg font-medium text-stone-900">
-                  Pediatric Massage
-                </h3>
-
-                <p className="leading-7 text-stone-600">
-                  Gentle, age-appropriate massage may be available for children
-                  with parent or guardian involvement.
-                </p>
-              </div>
             </div>
           </div>
         </div>
