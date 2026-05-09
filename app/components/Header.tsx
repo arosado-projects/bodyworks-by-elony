@@ -1,39 +1,62 @@
+import Link from "next/link";
 import { siteConfig } from "../lib/site";
+
+const navItems = [
+  {
+    label: "Services",
+    href: "/services",
+  },
+  {
+    label: "Pricing",
+    href: "/pricing",
+  },
+  {
+    label: "About",
+    href: "/about",
+  },
+  {
+    label: "FAQ",
+    href: "/faq",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];
 
 export default function Header() {
   return (
-    <header className="border-b border-stone-200 bg-stone-50">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="/" className="text-lg font-medium tracking-wide text-stone-900">
-          Bodyworks By Elony
-        </a>
+    <header className="border-b border-[#eadfda] bg-[#fffdfc]">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <Link
+          href="/"
+          className="text-lg font-medium tracking-wide text-[#292524] transition hover:text-[#8f3f50]"
+        >
+          {siteConfig.name}
+        </Link>
 
-        <nav className="flex items-center gap-6 text-sm text-stone-700">
-          <a href="/services" className="hover:text-stone-900">
-            Services
-          </a>
-
-          <a href="/pricing" className="hover:text-stone-900">
-            Pricing
-          </a>
-
-          <a href="/about" className="hover:text-stone-900">
-            About
-          </a>
-
-          <a href="/faq" className="hover:text-stone-900">
-            FAQ
-          </a>
+        <nav
+          aria-label="Main navigation"
+          className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[#6b625c]"
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="transition hover:text-[#8f3f50]"
+            >
+              {item.label}
+            </Link>
+          ))}
 
           <a
             href={siteConfig.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-stone-900 px-4 py-2 text-white transition hover:bg-stone-700"
+            className="rounded-full bg-[#8f3f50] px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
           >
             Book
           </a>
-
         </nav>
       </div>
     </header>
