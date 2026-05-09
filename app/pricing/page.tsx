@@ -114,27 +114,52 @@ export default function PricingPage() {
             </h2>
           </div>
 
-          <div className="overflow-x-auto rounded-3xl border border-[#eadfda] bg-[#faf7f2]">
-            <div className="min-w-[640px]">
-              <div className="grid grid-cols-3 border-b border-[#eadfda] bg-[#f7e8e8] px-6 py-4 text-sm font-medium uppercase tracking-[0.14em] text-[#8f3f50]">
-                <span>Duration</span>
-                <span>Single Session</span>
-                <span>4 Pack</span>
-              </div>
-
-              {massagePricing.map((item) => (
-                <div
-                  key={item.duration}
-                  className="grid grid-cols-3 border-b border-[#eadfda] px-6 py-5 last:border-b-0"
-                >
-                  <span className="font-medium text-[#292524]">
+          <div className="grid gap-4 sm:hidden">
+            {massagePricing.map((item) => (
+              <article
+                key={item.duration}
+                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-5"
+              >
+                <div className="border-b border-[#eadfda] pb-3">
+                  <h3 className="text-lg font-medium text-[#292524]">
                     {item.duration}
-                  </span>
-                  <span className="text-[#6b625c]">{item.singleSession}</span>
-                  <span className="text-[#6b625c]">{item.fourPack}</span>
+                  </h3>
                 </div>
-              ))}
+
+                <dl className="mt-4 grid gap-3">
+                  <div className="flex items-center justify-between gap-4">
+                    <dt className="text-sm text-[#6b625c]">Single Session</dt>
+                    <dd className="font-medium text-[#292524]">
+                      {item.singleSession}
+                    </dd>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-4">
+                    <dt className="text-sm text-[#6b625c]">4 Pack</dt>
+                    <dd className="font-medium text-[#292524]">{item.fourPack}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="hidden overflow-hidden rounded-3xl border border-[#eadfda] bg-[#faf7f2] sm:block">
+            <div className="grid grid-cols-3 border-b border-[#eadfda] bg-[#f7e8e8] px-6 py-4 text-sm font-medium uppercase tracking-[0.14em] text-[#8f3f50]">
+              <span>Duration</span>
+              <span>Single Session</span>
+              <span>4 Pack</span>
             </div>
+
+            {massagePricing.map((item) => (
+              <div
+                key={item.duration}
+                className="grid grid-cols-3 border-b border-[#eadfda] px-6 py-5 last:border-b-0"
+              >
+                <span className="font-medium text-[#292524]">{item.duration}</span>
+                <span className="text-[#6b625c]">{item.singleSession}</span>
+                <span className="text-[#6b625c]">{item.fourPack}</span>
+              </div>
+            ))}
           </div>
 
           <div className="mt-6 rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6">
