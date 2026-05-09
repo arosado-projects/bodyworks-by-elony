@@ -4,12 +4,7 @@ const featuredServices = [
   {
     title: "Therapeutic Massage",
     description:
-      "Personalized massage designed to support relaxation, ease of movement, and overall recovery.",
-  },
-  {
-    title: "Relaxation Massage",
-    description:
-      "Calming, restorative sessions intended to help you slow down, release tension, and feel more at ease.",
+      "Customized massage that may include relaxation-focused work, deeper therapeutic pressure, trigger point work, stretching, or other techniques based on your goals and comfort.",
   },
   {
     title: "Prenatal Massage",
@@ -17,9 +12,14 @@ const featuredServices = [
       "Supportive massage for pregnancy, offered with comfort, positioning, and care in mind.",
   },
   {
-    title: "Lymphatic Drainage Massage",
+    title: "Manual Lymphatic Drainage",
     description:
-      "Gentle, focused massage intended to support relaxation and natural lymphatic flow.",
+      "Gentle, specialized massage using light, intentional techniques. Elony is trained in the Klose/Vodder Technique and is a Certified Manual Lymphatic Drainage Therapist.",
+  },
+  {
+    title: "Pediatric Massage",
+    description:
+      "Gentle, age-appropriate massage may be available for children with appropriate parent or guardian involvement.",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
           <div>
             <p className="mb-4 text-sm uppercase tracking-[0.2em] text-stone-500">
-              Bodyworks By Elony
+              {siteConfig.name}
             </p>
 
             <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-stone-950 sm:text-5xl lg:text-6xl">
@@ -74,9 +74,9 @@ export default function HomePage() {
               </h2>
 
               <p className="leading-7 text-stone-600">
-                Whether you are seeking relaxation, tension relief, or a more
-                focused bodywork session, appointments are tailored to your
-                needs and comfort.
+                Whether you are seeking relaxation, tension relief, focused
+                manual lymphatic drainage, or a more customized bodywork
+                session, appointments are tailored to your needs and comfort.
               </p>
             </div>
           </div>
@@ -155,6 +155,57 @@ export default function HomePage() {
               Each appointment is adapted to your comfort level, needs, and the
               type of support you are looking for that day.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div>
+              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-stone-500">
+                Training & Care
+              </p>
+
+              <h2 className="text-3xl font-light leading-tight text-stone-950">
+                Licensed massage therapy with specialized training.
+              </h2>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-3">
+              <div className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
+                <h3 className="mb-3 text-lg font-medium text-stone-900">
+                  Texas Licensed
+                </h3>
+
+                <p className="leading-7 text-stone-600">
+                  TDLR Massage Therapy License #
+                  {siteConfig.credentials.tdlrLicense}.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
+                <h3 className="mb-3 text-lg font-medium text-stone-900">
+                  MLD Training
+                </h3>
+
+                <p className="leading-7 text-stone-600">
+                  {siteConfig.credentials.mldTechnique} ·{" "}
+                  {siteConfig.credentials.mldCertification}.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
+                <h3 className="mb-3 text-lg font-medium text-stone-900">
+                  Pediatric Massage
+                </h3>
+
+                <p className="leading-7 text-stone-600">
+                  Gentle, age-appropriate massage may be available for children
+                  with parent or guardian involvement.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -1,3 +1,5 @@
+import { siteConfig } from "../lib/site";
+
 export default function Footer() {
   return (
     <footer className="border-t border-stone-200 bg-stone-100">
@@ -10,6 +12,10 @@ export default function Footer() {
           <p className="max-w-xl text-sm leading-7 text-stone-600">
             Personalized massage and bodywork sessions serving Cedar Park and
             the greater Austin area.
+          </p>
+
+          <p className="text-sm text-stone-500">
+            TDLR Massage Therapy License #{siteConfig.credentials.tdlrLicense}
           </p>
 
           <p className="text-sm text-stone-500">
