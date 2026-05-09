@@ -41,6 +41,7 @@ export default function LocalBusinessJsonLd() {
         name: "Greater Austin area",
       },
     ],
+    openingHours: siteConfig.businessHours.schemaOpeningHours,
     identifier: {
       "@type": "PropertyValue",
       name: "TDLR Massage Therapy License",

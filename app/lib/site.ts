@@ -21,4 +21,46 @@ export const siteConfig = {
     landmark: "Whitestone & Lakeline",
     serviceArea: "Cedar Park and the greater Austin area",
   },
+  businessHours: {
+    note: "*End time indicates when the session ends.",
+    display: [
+        {
+        day: "Monday",
+        hours: "11:30 AM-2:00 PM / 5:00-7:30 PM*",
+        },
+        {
+        day: "Tuesday",
+        hours: "11:30 AM-2:00 PM / 5:00-7:30 PM*",
+        },
+        {
+        day: "Wednesday",
+        hours: "Closed",
+        },
+        {
+        day: "Thursday",
+        hours: "11:30 AM-2:00 PM / 5:00-7:30 PM*",
+        },
+        {
+        day: "Friday",
+        hours: "11:30 AM-4:00 PM*",
+        },
+        {
+        day: "Saturday",
+        hours: "First Saturday of the month, 8:30 AM-12:30 PM*",
+        },
+        {
+        day: "Sunday",
+        hours: "Closed",
+        },
+    ],
+    schemaOpeningHours: [
+        "Mo 11:30-14:00",
+        "Mo 17:00-19:30",
+        "Tu 11:30-14:00",
+        "Tu 17:00-19:30",
+        "Th 11:30-14:00",
+        "Th 17:00-19:30",
+        "Fr 11:30-16:00",
+    ],
+  },
 };
