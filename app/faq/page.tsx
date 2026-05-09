@@ -95,7 +95,7 @@ const policyFaqs = [
   },
   {
     question: "Where is Bodyworks By Elony located?",
-    answer: `Bodyworks By Elony is located in ${siteConfig.location.city}, ${siteConfig.location.zip}, near ${siteConfig.location.landmark}, serving Cedar Park and the greater Austin area.`,
+    answer: `Bodyworks By Elony is located in ${siteConfig.location.city}, ${siteConfig.location.zip}, near ${siteConfig.location.landmark}, serving Cedar Park, Leander, Liberty Hill, and surrounding Northwest Austin-area communities.`,
   },
 ];
 
@@ -292,29 +292,6 @@ export default function FaqPage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-[#292524] text-white">
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-2xl">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#f7e8e8]">
-              Ready to Schedule?
-            </p>
-
-            <h2 className="text-3xl font-light">
-              Book your appointment online through Acuity.
-            </h2>
-          </div>
-
-          <a
-            href={siteConfig.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
-          >
-            Book an Appointment
-          </a>
         </div>
       </section>
     </main>

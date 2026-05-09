@@ -4,7 +4,7 @@ import { siteConfig } from "./lib/site";
 export const metadata: Metadata = {
   title: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
   description:
-    "Calm, personalized massage and bodywork in Cedar Park, TX. Therapeutic massage, prenatal massage, manual lymphatic drainage, and pediatric massage available.",
+    "Calm, personalized massage and bodywork in northwest Cedar Park, TX, near Whitestone & Lakeline, Leander, and Liberty Hill.",
 };
 
 const featuredServices = [
@@ -40,9 +40,10 @@ const trustItems = [
     description: `${siteConfig.credentials.mldTechnique} · ${siteConfig.credentials.mldCertification}.`,
   },
   {
-    title: "Client-Centered Care",
+    title: "Certified Prenatal Massage",
     description:
-      "Sessions are adapted to your comfort level, goals, pressure preferences, and needs for the day.",
+      "Certified prenatal massage using supportive side-lying techniques.",
+    note: "For high-risk pregnancies, physician clearance may be requested before prenatal massage.",
   },
 ];
 
@@ -88,7 +89,7 @@ export default function HomePage() {
           <div className="rounded-[2rem] bg-[#f7e8e8] p-6 shadow-sm">
             <div className="rounded-[1.5rem] bg-[#fffdfc] p-8">
               <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#8f3f50]">
-                Serving Cedar Park & Austin
+                Northwest Cedar Park
               </p>
 
               <h2 className="mb-4 text-2xl font-light leading-snug text-[#292524]">
@@ -97,9 +98,9 @@ export default function HomePage() {
               </h2>
 
               <p className="mb-6 leading-7 text-[#6b625c]">
-                Whether you are seeking relaxation, tension relief, focused
-                manual lymphatic drainage, or a more customized massage session,
-                appointments are tailored to your needs and comfort.
+                Located near Whitestone & Lakeline, Bodyworks By Elony is
+                convenient to Cedar Park, Leander, Liberty Hill, and nearby
+                Northwest Austin-area communities.
               </p>
 
               <div className="rounded-2xl border border-[#eadfda] bg-[#faf7f2] p-5">
@@ -207,77 +208,29 @@ export default function HomePage() {
               </h2>
             </div>
 
-            <div className="grid gap-5 md:grid-cols-3">
-              {trustItems.map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
-                >
-                  <h3 className="mb-3 text-lg font-medium text-[#292524]">
-                    {item.title}
-                  </h3>
+            <div>
+              <div className="grid gap-5 md:grid-cols-3">
+                {trustItems.map((item) => (
+                  <article
+                    key={item.title}
+                    className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+                  >
+                    <h3 className="mb-3 text-lg font-medium text-[#292524]">
+                      {item.title}
+                    </h3>
 
-                  <p className="leading-7 text-[#6b625c]">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+                    <p className="leading-7 text-[#6b625c]">
+                      {item.description}
+                    </p>
 
-      <section className="bg-[#fffdfc]">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <div className="rounded-[2rem] bg-[#f7e8e8] p-6">
-            <div className="rounded-[1.5rem] bg-[#fffdfc] p-8">
-              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
-                Manual Lymphatic Drainage
-              </p>
-
-              <h2 className="mb-4 text-3xl font-light text-[#292524]">
-                Gentle, focused lymphatic work.
-              </h2>
-
-              <p className="leading-8 text-[#6b625c]">
-                Clients often seek manual lymphatic drainage for post-op support
-                when medically cleared, general swelling, and facial puffiness
-                or swelling related to allergies. Focused MLD may also be
-                incorporated into a standard massage session when appropriate.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
-              Booking
-            </p>
-
-            <h2 className="mb-4 text-3xl font-light leading-tight text-[#292524]">
-              Schedule online through Acuity.
-            </h2>
-
-            <p className="mb-8 leading-8 text-[#6b625c]">
-              Online booking lets you view current availability, choose a
-              service, and reserve your appointment securely.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <a
-                href={siteConfig.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
-              >
-                Book an Appointment
-              </a>
-
-              <a
-                href="/pricing"
-                className="rounded-full border border-[#eadfda] bg-[#faf7f2] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
-              >
-                View Pricing
-              </a>
+                    {"note" in item ? (
+                      <p className="mt-4 border-t border-[#eadfda] pt-4 text-xs leading-5 text-[#6b625c]">
+                        {item.note}
+                      </p>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>

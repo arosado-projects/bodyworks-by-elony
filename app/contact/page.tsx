@@ -4,7 +4,7 @@ import { siteConfig } from "../lib/site";
 export const metadata: Metadata = {
   title: "Contact | Bodyworks By Elony",
   description:
-    "Contact Bodyworks By Elony in Cedar Park, TX. Book online, email, call, or text with questions about massage services.",
+    "Contact Bodyworks By Elony in Cedar Park, TX. Email, call, text, view business hours, or book a massage appointment online.",
 };
 
 const contactMethods = [
@@ -26,6 +26,13 @@ const contactMethods = [
     href: siteConfig.contact.textHref,
     description: "Use for quick scheduling or service questions.",
   },
+];
+
+const visitNotes = [
+  "Scheduling is handled online through Acuity.",
+  "Please plan to arrive 10 minutes early to allow time for intake and undressing to your comfort level.",
+  "First-time appointments require prepayment when booking.",
+  "Cupping and manual lymphatic drainage are subject to medical review.",
 ];
 
 export default function ContactPage() {
@@ -50,19 +57,17 @@ export default function ContactPage() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href={siteConfig.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`mailto:${siteConfig.contact.email}`}
                 className="rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
-                Book an Appointment
+                Email Elony
               </a>
 
               <a
-                href={`mailto:${siteConfig.contact.email}`}
+                href="/booking"
                 className="rounded-full border border-[#eadfda] bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
               >
-                Email Elony
+                Booking Details
               </a>
             </div>
           </div>
@@ -125,6 +130,38 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Business Hours
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Appointment availability by day.
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <dl className="grid gap-4">
+              {siteConfig.businessHours.display.map((item) => (
+                <div
+                  key={item.day}
+                  className="grid gap-1 border-b border-[#eadfda] pb-4 last:border-b-0 last:pb-0 sm:grid-cols-[0.4fr_0.6fr]"
+                >
+                  <dt className="font-medium text-[#292524]">{item.day}</dt>
+                  <dd className="text-[#6b625c]">{item.hours}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <p className="mt-6 text-sm leading-6 text-[#6b625c]">
+              {siteConfig.businessHours.note}
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#f7e8e8]">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
@@ -139,27 +176,12 @@ export default function ContactPage() {
 
           <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
             <ul className="space-y-4 text-[#6b625c]">
-              <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d98c9b]" />
-                <span className="leading-7">
-                  Scheduling is handled online through Acuity.
-                </span>
-              </li>
-
-              <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d98c9b]" />
-                <span className="leading-7">
-                  Please plan to arrive 10 minutes early to allow time for
-                  intake and undressing to your comfort level.
-                </span>
-              </li>
-
-              <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d98c9b]" />
-                <span className="leading-7">
-                  First-time appointments require prepayment when booking.
-                </span>
-              </li>
+              {visitNotes.map((note) => (
+                <li key={note} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d98c9b]" />
+                  <span className="leading-7">{note}</span>
+                </li>
+              ))}
             </ul>
 
             <div className="mt-8 flex flex-wrap gap-4">

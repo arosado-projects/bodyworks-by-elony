@@ -71,55 +71,36 @@ export default function Footer() {
 
         <div>
           <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
-            Booking
+            Spread the Word
           </h3>
 
-          <p className="mb-4 text-sm leading-7 text-[#6b625c]">
-            View current availability and schedule online through Acuity.
-          </p>
+          <div className="grid gap-3 text-sm">
+            <a
+              href={siteConfig.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#6b625c] transition hover:text-[#8f3f50]"
+            >
+              Like us on Facebook
+            </a>
 
-          <a
-            href={siteConfig.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[#8f3f50] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
-          >
-            Book an Appointment
-          </a>
+            <a
+              href={siteConfig.social.googleReview}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#6b625c] transition hover:text-[#8f3f50]"
+            >
+              Review us on Google
+            </a>
 
-          <div className="mt-8">
-            <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
-              Spread the Word
-            </h3>
-
-            <div className="grid gap-3 text-sm">
-              <a
-                href={siteConfig.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#6b625c] transition hover:text-[#8f3f50]"
-              >
-                Like us on Facebook
-              </a>
-
-              <a
-                href={siteConfig.social.googleReview}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#6b625c] transition hover:text-[#8f3f50]"
-              >
-                Review us on Google
-              </a>
-
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#6b625c] transition hover:text-[#8f3f50]"
-              >
-                Follow us on Instagram
-              </a>
-            </div>
+            <a
+              href={siteConfig.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#6b625c] transition hover:text-[#8f3f50]"
+            >
+              Follow us on Instagram
+            </a>
           </div>
         </div>
       </div>
@@ -130,7 +111,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {siteConfig.name}
           </p>
 
-          <p>Cedar Park, TX · Serving the greater Austin area</p>
+          <p>Cedar Park, TX · Near Whitestone & Lakeline · Serving Cedar Park, Leander, Liberty Hill, and the surrounding northwest Austin area</p>
         </div>
       </div>
     </footer>

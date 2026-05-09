@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Bodyworks By Elony",
   },
   description:
-    "Calm, personalized massage and bodywork in Cedar Park, TX. Therapeutic massage, prenatal massage, manual lymphatic drainage, and pediatric massage available.",
+    "Calm, personalized massage and bodywork in northwest Cedar Park, TX, near Whitestone & Lakeline, northwest Austin, Leander, and Liberty Hill.",
   applicationName: siteConfig.name,
   alternates: {
     canonical: "/",
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
     description:
-      "Calm, personalized massage and bodywork in Cedar Park, TX. Therapeutic massage, prenatal massage, manual lymphatic drainage, and pediatric massage available.",
+      "Calm, personalized massage and bodywork in northwest Cedar Park, TX, near Whitestone & Lakeline, northwest Austin, Leander, and Liberty Hill.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
     description:
-      "Calm, personalized massage and bodywork in Cedar Park, TX. Therapeutic massage, prenatal massage, manual lymphatic drainage, and pediatric massage available.",
+      "Calm, personalized massage and bodywork in northwest Cedar Park, TX, near Whitestone & Lakeline, northwest Austin, Leander, and Liberty Hill.",
   },
   robots: {
     index: true,
