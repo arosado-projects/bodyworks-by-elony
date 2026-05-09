@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="space-y-4">
           <h2 className="text-lg font-medium text-stone-900">
-            Bodyworks by Elony
+            Bodyworks By Elony
           </h2>
 
           <p className="max-w-xl text-sm leading-7 text-stone-600">
@@ -13,7 +13,7 @@ export default function Footer() {
           </p>
 
           <p className="text-sm text-stone-500">
-            © {new Date().getFullYear()} Bodyworks by Elony
+            © {new Date().getFullYear()} Bodyworks By Elony
           </p>
         </div>
       </div>
