@@ -18,6 +18,7 @@ export default function LocalBusinessJsonLd() {
     email: siteConfig.contact.email,
     telephone: siteConfig.contact.phone,
     image: `${siteConfig.siteUrl}/images/elony-about.jpg`,
+    priceRange: "$$",
     description:
       "Bodyworks By Elony offers calm, personalized massage and bodywork in Cedar Park, Texas, including therapeutic massage, prenatal massage, manual lymphatic drainage, and pediatric massage.",
     address: {
@@ -42,6 +43,7 @@ export default function LocalBusinessJsonLd() {
       },
     ],
     openingHours: siteConfig.businessHours.schemaOpeningHours,
+    sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],
     identifier: {
       "@type": "PropertyValue",
       name: "TDLR Massage Therapy License",
@@ -76,10 +78,6 @@ export default function LocalBusinessJsonLd() {
       target: siteConfig.bookingUrl,
       name: "Book an appointment",
     },
-    sameAs: [
-        siteConfig.social.facebook,
-        siteConfig.social.instagram,
-    ],
   };
 
   return (
