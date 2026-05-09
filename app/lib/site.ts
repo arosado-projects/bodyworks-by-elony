@@ -63,4 +63,9 @@ export const siteConfig = {
         "Fr 11:30-16:00",
     ],
   },
+  social: {
+    facebook: "https://www.facebook.com/BodyworksByElony",
+    googleReview: "https://g.page/r/CVPzCKpoxoH_EAI/review",
+    instagram: "https://instagram.com/bodyworksbyelony",
+  },
 };

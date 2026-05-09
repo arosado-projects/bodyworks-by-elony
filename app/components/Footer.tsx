@@ -86,12 +86,49 @@ export default function Footer() {
           >
             Book an Appointment
           </a>
+
+          <div className="mt-8">
+            <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+              Spread the Word
+            </h3>
+
+            <div className="grid gap-3 text-sm">
+              <a
+                href={siteConfig.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#6b625c] transition hover:text-[#8f3f50]"
+              >
+                Like us on Facebook
+              </a>
+
+              <a
+                href={siteConfig.social.googleReview}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#6b625c] transition hover:text-[#8f3f50]"
+              >
+                Review us on Google
+              </a>
+
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#6b625c] transition hover:text-[#8f3f50]"
+              >
+                Follow us on Instagram
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="border-t border-[#eadfda]">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-sm text-[#6b625c] sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} {siteConfig.name}</p>
+          <p>
+            © {new Date().getFullYear()} {siteConfig.name}
+          </p>
 
           <p>Cedar Park, TX · Serving the greater Austin area</p>
         </div>

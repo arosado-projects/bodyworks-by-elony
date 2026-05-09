@@ -76,6 +76,10 @@ export default function LocalBusinessJsonLd() {
       target: siteConfig.bookingUrl,
       name: "Book an appointment",
     },
+    sameAs: [
+        siteConfig.social.facebook,
+        siteConfig.social.instagram,
+    ],
   };
 
   return (
