@@ -1,7 +1,322 @@
+import type { Metadata } from "next";
+import { siteConfig } from "../lib/site";
+
+export const metadata: Metadata = {
+  title: "FAQ | Bodyworks By Elony",
+  description:
+    "Frequently asked questions about massage appointments, draping, pressure, payment, packages, prenatal massage, manual lymphatic drainage, and pediatric massage at Bodyworks By Elony in Cedar Park, TX.",
+};
+
+const massageFaqs = [
+  {
+    question: "Why do first-time appointments require prepayment?",
+    answer:
+      "When you schedule an appointment, that time is reserved specifically for you. First-time appointments require prepayment through Acuity to help reduce same-day cancellations and no-shows.",
+  },
+  {
+    question: "Will I be covered during the massage?",
+    answer:
+      "Yes. You will be properly draped throughout the session to help keep you comfortable. Only the area being worked on is uncovered. If you prefer that a certain area remain covered, let Elony know and the work can be adjusted.",
+  },
+  {
+    question: "What areas of my body will be massaged?",
+    answer:
+      "During intake, you and Elony will discuss the areas you would like addressed. A typical full-body massage may include the back, arms, legs, feet, hands, head, neck, and shoulders. Breast and genital areas are never massaged. Glute work may be included only when appropriate and based on client comfort and session goals.",
+  },
+  {
+    question: "What should I do during the massage?",
+    answer:
+      "This is your session. Some clients prefer to talk, while others prefer quiet. You are welcome to relax, breathe, doze off, or let Elony know if anything needs to be adjusted. If she moves or positions an arm or leg, simply try to relax and let her do the work.",
+  },
+  {
+    question: "What will the massage feel like?",
+    answer:
+      "That depends on the type of work being done and your pressure preferences. Some clients prefer gentle, relaxation-focused work, while others want deeper therapeutic pressure. Elony will check in as needed, and you can ask for more or less pressure at any time.",
+  },
+  {
+    question: "How long will my session last?",
+    answer:
+      "Bodyworks By Elony schedules massage sessions so clients receive their full hands-on session time. Please plan to arrive 10 minutes early to allow time for intake and undressing to your comfort level.",
+  },
+  {
+    question: "Are there medical conditions that make massage inadvisable?",
+    answer:
+      "Yes. Please be open and honest on your intake forms and let Elony know about any changes in your health. Some conditions or techniques may require medical clearance, including certain post-op situations, high-risk pregnancy, cancer treatment, or other medical concerns.",
+  },
+];
+
+const servicesFaqs = [
+  {
+    question: "What type of massage should I book?",
+    answer:
+      "If you are unsure, therapeutic massage is usually the most flexible starting point. It can be adapted for relaxation, deeper pressure, focused areas of tension, or general recovery support. Prenatal massage and manual lymphatic drainage are more specialized services.",
+  },
+  {
+    question: "Do you offer prenatal massage?",
+    answer:
+      "Yes. Prenatal massage is available as a supportive pregnancy massage session with comfort, positioning, and care in mind.",
+  },
+  {
+    question: "Do you offer manual lymphatic drainage?",
+    answer: `Yes. Elony is trained in Manual Lymphatic Drainage using the ${siteConfig.credentials.mldTechnique} and is certified as ${siteConfig.credentials.mldCertification}. Clients often seek MLD for post-op support when medically cleared, general swelling, and facial puffiness or swelling related to allergies.`,
+  },
+  {
+    question: "Can manual lymphatic drainage be added to a regular massage?",
+    answer:
+      "Yes, when appropriate. Focused MLD may be incorporated within a standard massage session, such as using part of a 60-minute appointment for lymphatic work. There is also an MLD extension option that adds dedicated time.",
+  },
+  {
+    question: "Do you offer pediatric massage?",
+    answer:
+      "Yes. Gentle, age-appropriate massage may be available for children with parent or guardian involvement.",
+  },
+  {
+    question: "Do you offer cupping?",
+    answer:
+      "Yes. Elony is certified in cupping. Cupping may be incorporated into a massage session when appropriate and is subject to medical review.",
+  },
+];
+
+const policyFaqs = [
+  {
+    question: "What payment methods are accepted?",
+    answer:
+      "Major credit cards are accepted and preferred. Cash may be accepted for returning clients, but exact payment is required because change is not available. First-time appointments require prepayment when booking.",
+  },
+  {
+    question: "Do massage packages expire?",
+    answer:
+      "Therapeutic massage packages expire three months after first use. Packages apply to therapeutic massage only, not prenatal massage or manual lymphatic drainage.",
+  },
+  {
+    question: "Can an expired package be reactivated?",
+    answer:
+      "Yes. Expired therapeutic massage packages may be reactivated for $10 per hour of remaining session time the client wants to use. For example, reactivating one 90-minute session would be $15.",
+  },
+  {
+    question: "Where is Bodyworks By Elony located?",
+    answer: `Bodyworks By Elony is located in ${siteConfig.location.city}, ${siteConfig.location.zip}, near ${siteConfig.location.landmark}, serving Cedar Park and the greater Austin area.`,
+  },
+];
+
+const allFaqs = [...massageFaqs, ...servicesFaqs, ...policyFaqs];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: allFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
+function FaqList({
+  items,
+}: {
+  items: {
+    question: string;
+    answer: string;
+  }[];
+}) {
+  return (
+    <div className="grid gap-4">
+      {items.map((item) => (
+        <details
+          key={item.question}
+          className="group rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+        >
+          <summary className="cursor-pointer list-none text-lg font-medium text-[#292524]">
+            <span className="flex items-start justify-between gap-4">
+              <span>{item.question}</span>
+              <span className="mt-1 text-[#8f3f50] transition group-open:rotate-45">
+                +
+              </span>
+            </span>
+          </summary>
+
+          <p className="mt-4 leading-8 text-[#6b625c]">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  );
+}
+
 export default function FaqPage() {
   return (
-    <main className="mx-auto max-w-6xl px-6 py-16">
-      <h1 className="text-4xl font-light text-stone-900">FAQ</h1>
+    <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              FAQ
+            </p>
+
+            <h1 className="mb-6 text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+              Frequently asked questions.
+            </h1>
+
+            <p className="text-lg leading-8 text-[#6b625c]">
+              Practical answers about massage appointments, comfort, draping,
+              payment, packages, manual lymphatic drainage, prenatal massage,
+              and pediatric massage at Bodyworks By Elony.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Massage Appointments
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              What to expect before and during your session.
+            </h2>
+          </div>
+
+          <FaqList items={massageFaqs} />
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Services
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Choosing the right massage service.
+            </h2>
+          </div>
+
+          <FaqList items={servicesFaqs} />
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Payment & Policies
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Helpful details before booking.
+            </h2>
+          </div>
+
+          <FaqList items={policyFaqs} />
+        </div>
+      </section>
+
+      <section className="bg-[#f7e8e8]">
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Still Have Questions?
+            </p>
+
+            <h2 className="mb-4 text-3xl font-light leading-tight text-[#292524]">
+              Contact Bodyworks By Elony before booking.
+            </h2>
+
+            <p className="leading-8 text-[#6b625c]">
+              For questions about which service to choose, manual lymphatic
+              drainage, prenatal massage, pediatric massage, or appointment
+              details, reach out before scheduling.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <div className="grid gap-5">
+              <div>
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                  Email
+                </h3>
+
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                >
+                  {siteConfig.contact.email}
+                </a>
+              </div>
+
+              <div>
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                  Call
+                </h3>
+
+                <a
+                  href={siteConfig.contact.phoneHref}
+                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                >
+                  {siteConfig.contact.phone}
+                </a>
+              </div>
+
+              <div>
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                  Text
+                </h3>
+
+                <a
+                  href={siteConfig.contact.textHref}
+                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                >
+                  {siteConfig.contact.text}
+                </a>
+              </div>
+
+              <div className="pt-2">
+                <a
+                  href={siteConfig.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                >
+                  Book an Appointment
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#292524] text-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#f7e8e8]">
+              Ready to Schedule?
+            </p>
+
+            <h2 className="text-3xl font-light">
+              Book your appointment online through Acuity.
+            </h2>
+          </div>
+
+          <a
+            href={siteConfig.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+          >
+            Book an Appointment
+          </a>
+        </div>
+      </section>
     </main>
   );
 }
