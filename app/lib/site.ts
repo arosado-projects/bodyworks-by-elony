@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Bodyworks By Elony",
+  siteUrl: "https://bodyworksbyelony.com",
   bookingUrl: "https://bodyworksbyelony.as.me",
   credentials: {
     tdlrLicense: "MT137486",
