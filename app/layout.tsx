@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LocalBusinessJsonLd from "./components/LocalBusinessJsonLd";
 import { siteConfig } from "./lib/site";
 
 export const metadata: Metadata = {
@@ -45,6 +46,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <LocalBusinessJsonLd />
+
         <div className="flex min-h-screen flex-col">
           <Header />
           <div className="flex-1">{children}</div>
