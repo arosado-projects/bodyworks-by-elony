@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getBookingUrl, siteConfig } from "../lib/site";
+import { siteConfig } from "../lib/site";
 
 const footerLinks = [
   {
@@ -32,6 +32,69 @@ const footerLinks = [
   },
 ];
 
+function FacebookIcon() {
+  return (
+    <span
+      aria-hidden="true"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8] text-xs font-bold text-[#8f3f50]"
+    >
+      f
+    </span>
+  );
+}
+
+function GoogleIcon() {
+  return (
+    <span
+      aria-hidden="true"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8] text-xs font-bold text-[#8f3f50]"
+    >
+      G
+    </span>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <span
+      aria-hidden="true"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8] text-[#8f3f50]"
+    >
+      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none">
+        <rect
+          x="5"
+          y="5"
+          width="14"
+          height="14"
+          rx="4"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
+        <circle cx="16.5" cy="7.5" r="1" fill="currentColor" />
+      </svg>
+    </span>
+  );
+}
+
+const socialLinks = [
+  {
+    label: "Like us on Facebook",
+    href: siteConfig.social.facebook,
+    icon: <FacebookIcon />,
+  },
+  {
+    label: "Review us on Google",
+    href: siteConfig.social.googleReview,
+    icon: <GoogleIcon />,
+  },
+  {
+    label: "Follow us on Instagram",
+    href: siteConfig.social.instagram,
+    icon: <InstagramIcon />,
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t border-[#eadfda] bg-[#faf7f2]">
@@ -42,8 +105,8 @@ export default function Footer() {
           </h2>
 
           <p className="max-w-xl text-sm leading-7 text-[#6b625c]">
-            Personalized massage and bodywork sessions serving Cedar Park and
-            the greater Austin area.
+            Personalized massage and bodywork sessions serving northwest Cedar
+            Park, Leander, Liberty Hill, and nearby communities.
           </p>
 
           <p className="mt-4 text-sm text-[#6b625c]">
@@ -75,32 +138,18 @@ export default function Footer() {
           </h3>
 
           <div className="grid gap-3 text-sm">
-            <a
-              href={siteConfig.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#6b625c] transition hover:text-[#8f3f50]"
-            >
-              Like us on Facebook
-            </a>
-
-            <a
-              href={siteConfig.social.googleReview}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#6b625c] transition hover:text-[#8f3f50]"
-            >
-              Review us on Google
-            </a>
-
-            <a
-              href={siteConfig.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#6b625c] transition hover:text-[#8f3f50]"
-            >
-              Follow us on Instagram
-            </a>
+            {socialLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-[#6b625c] transition hover:text-[#8f3f50]"
+              >
+                {link.icon}
+                <span>{link.label}</span>
+              </a>
+            ))}
           </div>
         </div>
       </div>
@@ -111,7 +160,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {siteConfig.name}
           </p>
 
-          <p>Cedar Park, TX · Near Whitestone & Lakeline · Serving Cedar Park, Leander, Liberty Hill, and the surrounding northwest Austin area</p>
+          <p>Cedar Park, TX · Near Whitestone & Lakeline</p>
         </div>
       </div>
     </footer>

@@ -81,7 +81,7 @@ export const siteConfig = {
   social: {
     facebook: "https://www.facebook.com/Bodyworks-by-Elony-1434684686764834/",
     googleReview: "https://g.page/r/CVPzCKpoxoH_EAI/review",
-    googleReviewsRead: "https://reviews.birdeye.com/bodyworks-by-elony-170067043840482",
+    googleReviewsRead: "https://www.google.com/maps/search/?api=1&query=Bodyworks%20By%20Elony&query_place_id=ChIJFze0ATItW4YRU_MIqmjGgf8",
     instagram: "https://instagram.com/bodyworksbyelony?ref=badge",
     },
 };
