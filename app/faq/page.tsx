@@ -105,6 +105,11 @@ const policyFaqs = [
       "Yes. Expired therapeutic massage packages may be reactivated for $10 per hour of remaining session time the client wants to use. For example, reactivating one 90-minute session would be $15.",
   },
   {
+    question: "Do you accept insurance or provide superbills?",
+    answer:
+      "Bodyworks By Elony does not accept insurance, provide medical billing or insurance coding, or guarantee reimbursement. Clients should retain automated payment receipts and appointment confirmations for their own records. For packages, those two documents together serve as the client’s official record. Requests for manual account reconciliation or a formal financial summary may be subject to a $50 Summary Preparation Fee.",
+  },
+  {
     question: "Where is Bodyworks By Elony located?",
     answer: `Bodyworks By Elony is located in ${siteConfig.location.city}, ${siteConfig.location.zip}, near ${siteConfig.location.landmark}, serving Cedar Park, Leander, Liberty Hill, and surrounding Northwest Austin-area communities.`,
   },

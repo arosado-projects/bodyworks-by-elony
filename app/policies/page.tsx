@@ -52,6 +52,11 @@ const paymentPolicies = [
     description:
       "Therapeutic massage packages expire three months after first use. Expired packages may be reactivated for $10 per hour of remaining session time the client wants to use. For example, reactivating one 90-minute session would be $15. All package sales are final.",
   },
+  {
+    title: "Insurance, Records & Summary Fees",
+    description:
+      "Bodyworks By Elony does not accept insurance, provide medical billing or insurance coding, or guarantee reimbursement. Clients should retain automated payment receipts and appointment confirmations for their own records. For packages, those two documents together serve as the client’s official record. Requests for manual account reconciliation or preparation of a formal financial summary or statement are subject to a $50 Summary Preparation Fee.",
+  },
 ];
 
 const healthPolicies = [
