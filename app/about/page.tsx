@@ -138,6 +138,34 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              The Space
+            </p>
+
+            <h2 className="mb-4 text-3xl font-light leading-tight text-[#292524]">
+              A calm, private treatment room in northwest Cedar Park.
+            </h2>
+
+            <p className="leading-8 text-[#6b625c]">
+              Bodyworks By Elony offers massage and bodywork in a quiet,
+              welcoming treatment room near Whitestone & Lakeline, convenient
+              to Cedar Park, Leander, and Liberty Hill.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border border-[#eadfda] bg-[#f7e8e8] p-6 shadow-sm">
+            <img
+              src="/images/studio-room.png"
+              alt="Warm massage treatment room at Bodyworks By Elony in Cedar Park, Texas"
+              className="aspect-[4/3] w-full rounded-[1.5rem] object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 max-w-2xl">
             <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
