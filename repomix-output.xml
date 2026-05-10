@@ -1,0 +1,3336 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitignore
+AGENTS.md
+app/about/page.tsx
+app/apple-icon.png
+app/booking/page.tsx
+app/components/ExternalLinkIcon.tsx
+app/components/Footer.tsx
+app/components/Header.tsx
+app/components/LocalBusinessJsonLd.tsx
+app/contact/page.tsx
+app/faq/page.tsx
+app/globals.css
+app/icon.png
+app/layout.tsx
+app/lib/site.ts
+app/not-found.tsx
+app/page.tsx
+app/policies/page.tsx
+app/pricing/page.tsx
+app/robots.ts
+app/services/page.tsx
+app/sitemap.ts
+CLAUDE.md
+eslint.config.mjs
+next.config.ts
+package.json
+postcss.config.mjs
+public/file.svg
+public/globe.svg
+public/images/bbe-logo-rose.png
+public/images/elony-about.jpg
+public/next.svg
+public/vercel.svg
+public/window.svg
+README.md
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".gitignore">
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+</file>
+
+<file path="AGENTS.md">
+<!-- BEGIN:nextjs-agent-rules -->
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+<!-- END:nextjs-agent-rules -->
+</file>
+
+<file path="app/components/ExternalLinkIcon.tsx">
+export default function ExternalLinkIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="none"
+    >
+      <path
+        d="M7 5h8m0 0v8m0-8L6 14"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+</file>
+
+<file path="app/globals.css">
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+</file>
+
+<file path="app/not-found.tsx">
+import Link from "next/link";
+import { getBookingUrl, siteConfig } from "./lib/site";
+import ExternalLinkIcon from "./components/ExternalLinkIcon";
+
+export default function NotFound() {
+  return (
+    <main className="bg-[#faf7f2]">
+      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
+        <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+          Page Not Found
+        </p>
+
+        <h1 className="mb-6 text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+          Oops — that page isn’t here.
+        </h1>
+
+        <p className="mx-auto mb-8 max-w-2xl text-lg leading-8 text-[#6b625c]">
+          The page may have moved, or the link may have been typed incorrectly.
+          Let’s get you back to the services or booking page.
+        </p>
+
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
+          <Link
+            href="/services"
+            className="inline-flex justify-center rounded-full border border-[#eadfda] bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+          >
+            View Services
+          </Link>
+
+          <a
+            href={getBookingUrl("404_page")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+          >
+            <span>Book an Appointment</span>
+            <ExternalLinkIcon />
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="CLAUDE.md">
+@AGENTS.md
+</file>
+
+<file path="eslint.config.mjs">
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;
+</file>
+
+<file path="next.config.ts">
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
+};
+
+export default nextConfig;
+</file>
+
+<file path="package.json">
+{
+  "name": "bodyworks-by-elony",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
+</file>
+
+<file path="postcss.config.mjs">
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+
+export default config;
+</file>
+
+<file path="public/file.svg">
+<svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 13.5V5.41a1 1 0 0 0-.3-.7L9.8.29A1 1 0 0 0 9.08 0H1.5v13.5A2.5 2.5 0 0 0 4 16h8a2.5 2.5 0 0 0 2.5-2.5m-1.5 0v-7H8v-5H3v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1M9.5 5V2.12L12.38 5zM5.13 5h-.62v1.25h2.12V5zm-.62 3h7.12v1.25H4.5zm.62 3h-.62v1.25h7.12V11z" clip-rule="evenodd" fill="#666" fill-rule="evenodd"/></svg>
+</file>
+
+<file path="public/globe.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.27 14.1a6.5 6.5 0 0 0 3.67-3.45q-1.24.21-2.7.34-.31 1.83-.97 3.1M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.48-1.52a7 7 0 0 1-.96 0H7.5a4 4 0 0 1-.84-1.32q-.38-.89-.63-2.08a40 40 0 0 0 3.92 0q-.25 1.2-.63 2.08a4 4 0 0 1-.84 1.31zm2.94-4.76q1.66-.15 2.95-.43a7 7 0 0 0 0-2.58q-1.3-.27-2.95-.43a18 18 0 0 1 0 3.44m-1.27-3.54a17 17 0 0 1 0 3.64 39 39 0 0 1-4.3 0 17 17 0 0 1 0-3.64 39 39 0 0 1 4.3 0m1.1-1.17q1.45.13 2.69.34a6.5 6.5 0 0 0-3.67-3.44q.65 1.26.98 3.1M8.48 1.5l.01.02q.41.37.84 1.31.38.89.63 2.08a40 40 0 0 0-3.92 0q.25-1.2.63-2.08a4 4 0 0 1 .85-1.32 7 7 0 0 1 .96 0m-2.75.4a6.5 6.5 0 0 0-3.67 3.44 29 29 0 0 1 2.7-.34q.31-1.83.97-3.1M4.58 6.28q-1.66.16-2.95.43a7 7 0 0 0 0 2.58q1.3.27 2.95.43a18 18 0 0 1 0-3.44m.17 4.71q-1.45-.12-2.69-.34a6.5 6.5 0 0 0 3.67 3.44q-.65-1.27-.98-3.1" fill="#666"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
+</file>
+
+<file path="public/next.svg">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80"><path fill="#000" d="M262 0h68.5v12.7h-27.2v66.6h-13.6V12.7H262V0ZM149 0v12.7H94v20.4h44.3v12.6H94v21h55v12.6H80.5V0h68.7zm34.3 0h-17.8l63.8 79.4h17.9l-32-39.7 32-39.6h-17.9l-23 28.6-23-28.6zm18.3 56.7-9-11-27.1 33.7h17.8l18.3-22.7z"/><path fill="#000" d="M81 79.3 17 0H0v79.3h13.6V17l50.2 62.3H81Zm252.6-.4c-1 0-1.8-.4-2.5-1s-1.1-1.6-1.1-2.6.3-1.8 1-2.5 1.6-1 2.6-1 1.8.3 2.5 1a3.4 3.4 0 0 1 .6 4.3 3.7 3.7 0 0 1-3 1.8zm23.2-33.5h6v23.3c0 2.1-.4 4-1.3 5.5a9.1 9.1 0 0 1-3.8 3.5c-1.6.8-3.5 1.3-5.7 1.3-2 0-3.7-.4-5.3-1s-2.8-1.8-3.7-3.2c-.9-1.3-1.4-3-1.4-5h6c.1.8.3 1.6.7 2.2s1 1.2 1.6 1.5c.7.4 1.5.5 2.4.5 1 0 1.8-.2 2.4-.6a4 4 0 0 0 1.6-1.8c.3-.8.5-1.8.5-3V45.5zm30.9 9.1a4.4 4.4 0 0 0-2-3.3 7.5 7.5 0 0 0-4.3-1.1c-1.3 0-2.4.2-3.3.5-.9.4-1.6 1-2 1.6a3.5 3.5 0 0 0-.3 4c.3.5.7.9 1.3 1.2l1.8 1 2 .5 3.2.8c1.3.3 2.5.7 3.7 1.2a13 13 0 0 1 3.2 1.8 8.1 8.1 0 0 1 3 6.5c0 2-.5 3.7-1.5 5.1a10 10 0 0 1-4.4 3.5c-1.8.8-4.1 1.2-6.8 1.2-2.6 0-4.9-.4-6.8-1.2-2-.8-3.4-2-4.5-3.5a10 10 0 0 1-1.7-5.6h6a5 5 0 0 0 3.5 4.6c1 .4 2.2.6 3.4.6 1.3 0 2.5-.2 3.5-.6 1-.4 1.8-1 2.4-1.7a4 4 0 0 0 .8-2.4c0-.9-.2-1.6-.7-2.2a11 11 0 0 0-2.1-1.4l-3.2-1-3.8-1c-2.8-.7-5-1.7-6.6-3.2a7.2 7.2 0 0 1-2.4-5.7 8 8 0 0 1 1.7-5 10 10 0 0 1 4.3-3.5c2-.8 4-1.2 6.4-1.2 2.3 0 4.4.4 6.2 1.2 1.8.8 3.2 2 4.3 3.4 1 1.4 1.5 3 1.5 5h-5.8z"/></svg>
+</file>
+
+<file path="public/vercel.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
+</file>
+
+<file path="public/window.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
+</file>
+
+<file path="README.md">
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</file>
+
+<file path="tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": ["node_modules"]
+}
+</file>
+
+<file path="app/robots.ts">
+import type { MetadataRoute } from "next";
+import { getBookingUrl, siteConfig } from "./lib/site";
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
+    sitemap: `${siteConfig.siteUrl}/sitemap.xml`,
+  };
+}
+</file>
+
+<file path="app/sitemap.ts">
+import type { MetadataRoute } from "next";
+import { getBookingUrl, siteConfig } from "./lib/site";
+
+const routes = [
+  {
+    path: "",
+    priority: 1,
+  },
+  {
+    path: "/services",
+    priority: 0.9,
+  },
+  {
+    path: "/pricing",
+    priority: 0.85,
+  },
+  {
+    path: "/booking",
+    priority: 0.8,
+  },
+  {
+    path: "/about",
+    priority: 0.75,
+  },
+  {
+    path: "/contact",
+    priority: 0.7,
+  },
+  {
+    path: "/faq",
+    priority: 0.65,
+  },
+  {
+    path: "/policies",
+    priority: 0.6,
+  },
+];
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
+
+  return routes.map((route) => ({
+    url: `${siteConfig.siteUrl}${route.path}`,
+    lastModified,
+    changeFrequency: "monthly",
+    priority: route.priority,
+  }));
+}
+</file>
+
+<file path="app/booking/page.tsx">
+import type { Metadata } from "next";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
+
+export const metadata: Metadata = {
+  title: "Book an Appointment | Bodyworks By Elony",
+  description:
+    "Book a massage appointment with Bodyworks By Elony in Cedar Park, TX. Online scheduling is handled through Acuity.",
+};
+
+const bookingSteps = [
+  {
+    title: "Choose your service",
+    description:
+      "Select therapeutic massage, prenatal massage, manual lymphatic drainage, or another available appointment option.",
+  },
+  {
+    title: "Pick a time",
+    description:
+      "View current availability and choose the appointment time that works best for your schedule.",
+  },
+  {
+    title: "Complete intake details",
+    description:
+      "Acuity will collect the information needed to prepare for your session and confirm your appointment.",
+  },
+];
+
+const reminders = [
+  "First-time appointments require prepayment when booking.",
+  "Please plan to arrive 10 minutes early for intake and undressing to your comfort level.",
+  "Cupping and manual lymphatic drainage add-ons are subject to medical review.",
+  "If you are unsure what to book, therapeutic massage is usually the most flexible starting point.",
+];
+
+export default function BookingPage() {
+  return (
+    <main>
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
+          <div>
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Booking
+            </p>
+
+            <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+              Book a massage appointment online.
+            </h1>
+
+            <p className="mb-8 text-lg leading-8 text-[#6b625c]">
+              Scheduling is handled through Acuity, where you can view current
+              availability, choose a service, select any available add-ons, and
+              reserve your appointment securely.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <a
+                href={getBookingUrl("booking_hero")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+              >
+                <span>Continue to Online Booking</span>
+                <ExternalLinkIcon />
+              </a>
+
+              <a
+                href="/services"
+                className="rounded-full border border-[#eadfda] bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+              >
+                View Services
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] bg-[#f7e8e8] p-6 shadow-sm">
+            <div className="rounded-[1.5rem] bg-[#fffdfc] p-8">
+              <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#8f3f50]">
+                Before You Book
+              </p>
+
+              <h2 className="mb-4 text-2xl font-light leading-snug text-[#292524]">
+                Not sure which massage is right for you?
+              </h2>
+
+              <p className="mb-6 leading-7 text-[#6b625c]">
+                Therapeutic massage is the most flexible option for many
+                clients. Prenatal massage and manual lymphatic drainage are more
+                specialized services.
+              </p>
+
+              <a
+                href="/pricing"
+                className="text-sm font-medium text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+              >
+                Review pricing before booking
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mb-10 max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              How Booking Works
+            </p>
+
+            <h2 className="text-3xl font-light text-[#292524]">
+              A simple online scheduling process.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {bookingSteps.map((step, index) => (
+              <article
+                key={step.title}
+                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6"
+              >
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#f7e8e8] text-sm font-medium text-[#8f3f50]">
+                  {index + 1}
+                </div>
+
+                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                  {step.title}
+                </h3>
+
+                <p className="leading-7 text-[#6b625c]">
+                  {step.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Helpful Reminders
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              A few details before your appointment.
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <ul className="space-y-4 text-[#6b625c]">
+              {reminders.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d98c9b]" />
+                  <span className="leading-7">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="/policies"
+                className="rounded-full border border-[#eadfda] bg-[#faf7f2] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+              >
+                View Policies
+              </a>
+
+              <a
+                href="/contact"
+                className="rounded-full border border-[#eadfda] bg-[#faf7f2] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7e8e8]">
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Location
+            </p>
+
+            <h2 className="mb-4 text-3xl font-light leading-tight text-[#292524]">
+              Massage appointments in Cedar Park, Texas.
+            </h2>
+
+            <p className="leading-8 text-[#6b625c]">
+              Bodyworks By Elony is located in {siteConfig.location.city},{" "}
+              {siteConfig.location.zip}, near {siteConfig.location.landmark},
+              serving Cedar Park and the greater Austin area.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <h3 className="mb-3 text-xl font-medium text-[#292524]">
+              Questions before booking?
+            </h3>
+
+            <p className="mb-6 leading-7 text-[#6b625c]">
+              For service questions, scheduling questions, or help choosing the
+              best appointment type, contact Bodyworks By Elony before booking.
+            </p>
+
+            <div className="grid gap-3 text-[#292524]">
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+              >
+                {siteConfig.contact.email}
+              </a>
+
+              <a
+                href={siteConfig.contact.phoneHref}
+                className="underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+              >
+                Call {siteConfig.contact.phone}
+              </a>
+
+              <a
+                href={siteConfig.contact.textHref}
+                className="underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+              >
+                Text {siteConfig.contact.text}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#292524] text-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#f7e8e8]">
+              Ready to Schedule?
+            </p>
+
+            <h2 className="text-3xl font-light">
+              Continue to Acuity to view availability.
+            </h2>
+          </div>
+
+          <a
+            href={getBookingUrl("booking_final_cta")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+          >
+            <span>Continue to Online Booking</span>
+            <ExternalLinkIcon />
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="app/about/page.tsx">
+import type { Metadata } from "next";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
+
+export const metadata: Metadata = {
+  title: "About Elony | Bodyworks By Elony",
+  description:
+    "Meet Elony, licensed massage therapist and owner of Bodyworks By Elony in Cedar Park, TX. Personalized therapeutic massage, prenatal massage, manual lymphatic drainage, and bodywork.",
+};
+
+const credentials = [
+  {
+    title: "Licensed Massage Therapist",
+    description: `Texas Department of Licensing and Regulation Massage Therapy License #${siteConfig.credentials.tdlrLicense}.`,
+  },
+  {
+    title: "Practicing Since 2013",
+    description:
+      "Elony has been practicing massage therapy since 2013, bringing years of hands-on experience to her client-centered work.",
+  },
+  {
+    title: "Manual Lymphatic Drainage",
+    description: `${siteConfig.credentials.mldTechnique} · ${siteConfig.credentials.mldCertification}.`,
+  },
+  {
+    title: "Additional Training",
+    description:
+      "Elony is also certified in prenatal massage and cupping, with sessions adapted to each client’s comfort and goals.",
+  },
+];
+
+const clientFit = [
+  "Working adults seeking relief from everyday tension and stress",
+  "Clients who prefer calm, attentive, personalized massage",
+  "Prenatal clients looking for supportive, carefully positioned bodywork",
+  "Clients seeking focused manual lymphatic drainage when appropriate",
+  "Families asking about gentle pediatric massage with parent or guardian involvement",
+];
+
+export default function AboutPage() {
+  return (
+    <main>
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-28">
+          <div className="rounded-[2rem] bg-[#f7e8e8] p-6 shadow-sm">
+            <figure className="overflow-hidden rounded-[1.5rem] bg-[#fffdfc]">
+              <img
+                src="/images/elony-about.jpg"
+                alt="Elony, licensed massage therapist and owner of Bodyworks By Elony"
+                className="aspect-[4/5] w-full object-cover object-top"
+              />
+
+              <figcaption className="px-5 py-4 text-sm text-[#6b625c]">
+                Photo by Stephanie Copner
+              </figcaption>
+            </figure>
+          </div>
+
+          <div>
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              About Elony
+            </p>
+
+            <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+              Licensed massage therapist and owner of Bodyworks By Elony.
+            </h1>
+
+            <p className="mb-6 text-lg leading-8 text-[#6b625c]">
+              Elony offers calm, personalized massage and bodywork for clients
+              in Cedar Park and the greater Austin area. Her work is grounded in
+              clear communication, thoughtful intake, and sessions adapted to
+              each client’s comfort, pressure preferences, and goals.
+            </p>
+
+            <p className="leading-8 text-[#6b625c]">
+              Born and raised in El Paso, Texas, Elony now calls the Austin area
+              home with her family. Her interest in massage grew from a lasting
+              curiosity about how the body works and how supportive bodywork can
+              help people feel more comfortable, relaxed, and at ease.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href={getBookingUrl("about_hero")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+              >
+                <span>Book an Appointment</span>
+                <ExternalLinkIcon />
+              </a>
+
+              <a
+                href="/services"
+                className="rounded-full border border-[#eadfda] bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+              >
+                View Services
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Her Approach
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Massage that feels grounded, respectful, and specific to you.
+            </h2>
+          </div>
+
+          <div className="space-y-6 text-[#6b625c]">
+            <p className="leading-8">
+              Elony’s sessions are designed to feel collaborative. Whether you
+              are booking therapeutic massage, prenatal massage, manual
+              lymphatic drainage, or pediatric massage, the work begins with a
+              conversation about what you need that day.
+            </p>
+
+            <p className="leading-8">
+              Pressure, pacing, positioning, and focus areas can be adjusted
+              throughout the appointment. The goal is not a one-size-fits-all
+              massage, but a session that supports your comfort, your schedule,
+              and your body.
+            </p>
+
+            <p className="leading-8">
+              Many clients come to Bodyworks By Elony from Cedar Park and nearby
+              communities looking for a calm, reliable place to reset from work,
+              family life, stress, and everyday tension.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mb-10 max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Training & Credentials
+            </p>
+
+            <h2 className="text-3xl font-light text-[#292524]">
+              Professional training with specialized massage certifications.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {credentials.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+              >
+                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                  {item.title}
+                </h3>
+
+                <p className="leading-7 text-[#6b625c]">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-3xl border border-[#eadfda] bg-[#f7e8e8] p-6 md:p-8">
+            <h3 className="mb-3 text-xl font-medium text-[#292524]">
+              Massage education
+            </h3>
+
+            <p className="leading-8 text-[#6b625c]">
+              Elony is a graduate of the Southern California Health Institute,
+              where she trained as a Certified Massage Therapist before building
+              her practice around therapeutic, client-centered bodywork.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Client Fit
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              A good fit for clients who want attentive, personalized massage.
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6 md:p-8">
+            <ul className="space-y-4 text-[#6b625c]">
+              {clientFit.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d98c9b]" />
+                  <span className="leading-7">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7e8e8]">
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Location & Contact
+            </p>
+
+            <h2 className="mb-4 text-3xl font-light leading-tight text-[#292524]">
+              Serving Cedar Park and the greater Austin area.
+            </h2>
+
+            <p className="leading-8 text-[#6b625c]">
+              Bodyworks By Elony is located in {siteConfig.location.city},{" "}
+              {siteConfig.location.zip}, near {siteConfig.location.landmark}.
+              Online booking is available through Acuity.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <div className="grid gap-5">
+              <div>
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                  Email
+                </h3>
+
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                >
+                  {siteConfig.contact.email}
+                </a>
+              </div>
+
+              <div>
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                  Call
+                </h3>
+
+                <a
+                  href={siteConfig.contact.phoneHref}
+                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                >
+                  {siteConfig.contact.phone}
+                </a>
+              </div>
+
+              <div>
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                  Text
+                </h3>
+
+                <a
+                  href={siteConfig.contact.textHref}
+                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                >
+                  {siteConfig.contact.text}
+                </a>
+              </div>
+
+              <div className="pt-2">
+                <a
+                  href={getBookingUrl("about_contact_card")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                >
+                  <span>Book an Appointment</span>
+                  <ExternalLinkIcon />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="app/contact/page.tsx">
+import type { Metadata } from "next";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
+
+export const metadata: Metadata = {
+  title: "Contact | Bodyworks By Elony",
+  description:
+    "Contact Bodyworks By Elony in Cedar Park, TX. Email, call, text, view business hours, or book a massage appointment online.",
+};
+
+const contactMethods = [
+  {
+    label: "Email",
+    value: siteConfig.contact.email,
+    href: `mailto:${siteConfig.contact.email}`,
+    description: "Best for general questions before booking.",
+  },
+  {
+    label: "Call",
+    value: siteConfig.contact.phone,
+    href: siteConfig.contact.phoneHref,
+    description: "Use for appointment or service questions.",
+  },
+  {
+    label: "Text",
+    value: siteConfig.contact.text,
+    href: siteConfig.contact.textHref,
+    description: "Use for quick scheduling or service questions.",
+  },
+];
+
+const visitNotes = [
+  "Scheduling is handled online through Acuity.",
+  "Please plan to arrive 10 minutes early to allow time for intake and undressing to your comfort level.",
+  "First-time appointments require prepayment when booking.",
+  "Cupping and manual lymphatic drainage are subject to medical review.",
+];
+
+export default function ContactPage() {
+  return (
+    <main>
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-28">
+          <div>
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Contact
+            </p>
+
+            <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+              Questions before booking?
+            </h1>
+
+            <p className="mb-8 text-lg leading-8 text-[#6b625c]">
+              Contact Bodyworks By Elony with questions about services,
+              scheduling, manual lymphatic drainage, prenatal massage, pediatric
+              massage, or which appointment type may be the best fit.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+              >
+                Email Elony
+              </a>
+
+              <a
+                href="/booking"
+                className="rounded-full border border-[#eadfda] bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+              >
+                Booking Details
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] bg-[#f7e8e8] p-6 shadow-sm">
+            <div className="rounded-[1.5rem] bg-[#fffdfc] p-8">
+              <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#8f3f50]">
+                Location
+              </p>
+
+              <h2 className="mb-4 text-2xl font-light leading-snug text-[#292524]">
+                Located in Cedar Park, Texas.
+              </h2>
+
+              <p className="leading-7 text-[#6b625c]">
+                Bodyworks By Elony is located in {siteConfig.location.city},{" "}
+                {siteConfig.location.zip}, near {siteConfig.location.landmark},
+                serving Cedar Park and the greater Austin area.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mb-10 max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Contact Options
+            </p>
+
+            <h2 className="text-3xl font-light text-[#292524]">
+              Choose the contact method that works best for you.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {contactMethods.map((method) => (
+              <article
+                key={method.label}
+                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6"
+              >
+                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                  {method.label}
+                </h3>
+
+                <a
+                  href={method.href}
+                  className="mb-4 block text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                >
+                  {method.value}
+                </a>
+
+                <p className="leading-7 text-[#6b625c]">
+                  {method.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Business Hours
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Appointment availability by day.
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <dl className="grid gap-4">
+              {siteConfig.businessHours.display.map((item) => (
+                <div
+                  key={item.day}
+                  className="grid gap-1 border-b border-[#eadfda] pb-4 last:border-b-0 last:pb-0 sm:grid-cols-[0.4fr_0.6fr]"
+                >
+                  <dt className="font-medium text-[#292524]">{item.day}</dt>
+                  <dd className="text-[#6b625c]">{item.hours}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <p className="mt-6 text-sm leading-6 text-[#6b625c]">
+              {siteConfig.businessHours.note}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7e8e8]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Before You Visit
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              A few helpful appointment notes.
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <ul className="space-y-4 text-[#6b625c]">
+              {visitNotes.map((note) => (
+                <li key={note} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d98c9b]" />
+                  <span className="leading-7">{note}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="/booking"
+                className="rounded-full border border-[#eadfda] bg-[#faf7f2] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+              >
+                Booking Details
+              </a>
+
+              <a
+                href="/policies"
+                className="rounded-full border border-[#eadfda] bg-[#faf7f2] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+              >
+                View Policies
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#292524] text-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#f7e8e8]">
+              Ready to Schedule?
+            </p>
+
+            <h2 className="text-3xl font-light">
+              Book your appointment online through Acuity.
+            </h2>
+          </div>
+
+          <a
+            href={getBookingUrl("contact_final_cta")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+          >
+            <span>Book an Appointment</span>
+            <ExternalLinkIcon />
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="app/policies/page.tsx">
+import type { Metadata } from "next";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
+
+export const metadata: Metadata = {
+  title: "Policies | Bodyworks By Elony",
+  description:
+    "Review booking, cancellation, payment, package, health, privacy, and SMS policies for Bodyworks By Elony in Cedar Park, TX.",
+};
+
+const appointmentPolicies = [
+  {
+    title: "Confirmation",
+    description:
+      "A confirmation text or email is sent 48 hours before all sessions. Please respond to confirm your appointment. If confirmation is not received by 9:00 PM the day before your appointment, the appointment may be treated as canceled and charged according to the cancellation policy.",
+  },
+  {
+    title: "Cancellation",
+    description:
+      "A 24-hour notice is required to cancel or reschedule an appointment. Appointments canceled with less than 24 hours notice may be charged in full, with payment due before the next appointment.",
+  },
+  {
+    title: "2-Hour Sessions",
+    description:
+      "Two-hour sessions require 48 hours notice for cancellation or rescheduling.",
+  },
+  {
+    title: "Late Arrivals",
+    description:
+      "Appointment times are scheduled as reserved and cannot be extended to accommodate late arrivals. Please arrive on time so you can receive your full session.",
+  },
+];
+
+const paymentPolicies = [
+  {
+    title: "First-Time Appointments",
+    description:
+      "First-time appointments require prepayment when booking through Acuity.",
+  },
+  {
+    title: "Payment",
+    description:
+      "Major credit cards are accepted and preferred. Cash may be accepted for returning clients, but exact payment is required because change is not available.",
+  },
+  {
+    title: "Massage Packages",
+    description:
+      "Four-packs are available for therapeutic massage sessions only. Packages do not apply to prenatal massage or manual lymphatic drainage.",
+  },
+  {
+    title: "Package Expiration & Reactivation",
+    description:
+      "Therapeutic massage packages expire three months after first use. Expired packages may be reactivated for $10 per hour of remaining session time the client wants to use. For example, reactivating one 90-minute session would be $15. All package sales are final.",
+  },
+  {
+    title: "Insurance, Records & Summary Fees",
+    description:
+      "Bodyworks By Elony does not accept insurance, provide medical billing or insurance coding, or guarantee reimbursement. Clients should retain automated payment receipts and appointment confirmations for their own records. For packages, those two documents together serve as the client’s official record. Requests for manual account reconciliation or preparation of a formal financial summary or statement are subject to a $50 Summary Preparation Fee.",
+  },
+];
+
+const healthPolicies = [
+  {
+    title: "Sickness",
+    description:
+      "Massage services are not appropriate care for infectious or contagious illness. Please cancel as soon as you feel symptomatic. If symptoms arise within the cancellation window, the cancellation fee may be waived.",
+  },
+  {
+    title: "Health Intake",
+    description:
+      "Please complete intake forms honestly and share any relevant health updates before your session. Some conditions or techniques may require medical clearance.",
+  },
+  {
+    title: "Cupping & Manual Lymphatic Drainage",
+    description:
+      "Cupping and manual lymphatic drainage are subject to medical review and may not be appropriate for every client or situation.",
+  },
+  {
+    title: "Prenatal & Pediatric Massage",
+    description:
+      "Prenatal massage is offered with comfort, positioning, and care in mind. Pediatric massage may be available for children with parent or guardian involvement.",
+  },
+];
+
+const professionalPolicies = [
+  {
+    title: "Draping",
+    description:
+      "Clients are properly draped throughout the session. Only the area being worked on is uncovered. Breast and genital areas are never massaged.",
+  },
+  {
+    title: "Comfort & Communication",
+    description:
+      "You may ask for more or less pressure, request adjustments, or ask to stop work on any area at any time.",
+  },
+  {
+    title: "Professional Boundaries",
+    description:
+      "Bodyworks By Elony provides professional massage therapy services only. Inappropriate behavior or requests will end the session immediately and may result in refusal of future appointments.",
+  },
+];
+
+function PolicyGrid({
+  items,
+}: {
+  items: {
+    title: string;
+    description: string;
+  }[];
+}) {
+  return (
+    <div className="grid gap-5 md:grid-cols-2">
+      {items.map((item) => (
+        <article
+          key={item.title}
+          className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+        >
+          <h3 className="mb-3 text-xl font-medium text-[#292524]">
+            {item.title}
+          </h3>
+
+          <p className="leading-7 text-[#6b625c]">{item.description}</p>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+export default function PoliciesPage() {
+  return (
+    <main>
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Policies
+            </p>
+
+            <h1 className="mb-6 text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+              Appointment policies and client information.
+            </h1>
+
+            <p className="text-lg leading-8 text-[#6b625c]">
+              Please review these policies before booking so your appointment
+              can feel clear, respectful, and easy from start to finish.
+            </p>
+
+            <p className="mt-6 text-sm text-[#6b625c]">
+              Last updated: {siteConfig.lastUpdated.policies}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Appointments
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Confirmation, cancellation, and arrival policies.
+            </h2>
+          </div>
+
+          <PolicyGrid items={appointmentPolicies} />
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Payment & Packages
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Payment, prepayment, and package details.
+            </h2>
+          </div>
+
+          <PolicyGrid items={paymentPolicies} />
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Health & Safety
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Health information helps keep sessions appropriate and safe.
+            </h2>
+          </div>
+
+          <PolicyGrid items={healthPolicies} />
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Session Boundaries
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Professional, respectful massage therapy.
+            </h2>
+          </div>
+
+          <PolicyGrid items={professionalPolicies} />
+        </div>
+      </section>
+
+      <section className="bg-[#f7e8e8]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Privacy Policy & SMS Terms
+            </p>
+
+            <h2 className="mb-6 text-3xl font-light text-[#292524]">
+              How appointment information and text messaging are used.
+            </h2>
+
+            <div className="grid gap-8 text-[#6b625c] lg:grid-cols-2">
+              <div>
+                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                  Privacy
+                </h3>
+
+                <p className="leading-8">
+                  Bodyworks By Elony collects client information such as name,
+                  phone number, and email address solely for scheduling,
+                  managing, and communicating about massage therapy
+                  appointments.
+                </p>
+
+                <p className="mt-4 leading-8">
+                  Mobile information will not be shared with third parties or
+                  affiliates for marketing or promotional purposes. Text
+                  messaging originator opt-in data and consent will not be
+                  shared with any third parties.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                  SMS Terms
+                </h3>
+
+                <p className="leading-8">
+                  By providing your phone number and opting in through the
+                  booking site, you agree to receive automated appointment
+                  confirmations, reminders, and scheduling updates. SMS is an
+                  unencrypted form of communication, and message frequency may
+                  vary based on appointment activity. Message and data rates may
+                  apply.
+                </p>
+
+                <p className="mt-4 leading-8">
+                  To opt out, text STOP. For help, reply HELP or contact{" "}
+                  <a
+                    href={`mailto:${siteConfig.contact.email}`}
+                    className="text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                  >
+                    {siteConfig.contact.email}
+                  </a>
+                  .
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#292524] text-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#f7e8e8]">
+              Ready to Schedule?
+            </p>
+
+            <h2 className="text-3xl font-light">
+              Book your appointment online through Acuity.
+            </h2>
+          </div>
+
+          <a
+            href={getBookingUrl("policies_final_cta")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+          >
+            <span>Book an Appointment</span>
+            <ExternalLinkIcon />
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="app/components/LocalBusinessJsonLd.tsx">
+import { getBookingUrl, siteConfig } from "../lib/site";
+
+const services = [
+  "Therapeutic Massage",
+  "Prenatal Massage",
+  "Manual Lymphatic Drainage",
+  "Pediatric Massage",
+  "Cupping",
+];
+
+export default function LocalBusinessJsonLd() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "@id": `${siteConfig.siteUrl}/#business`,
+    name: siteConfig.name,
+    url: siteConfig.siteUrl,
+    email: siteConfig.contact.email,
+    telephone: siteConfig.contact.phone,
+    image: `${siteConfig.siteUrl}/images/elony-about.jpg`,
+    priceRange: "$$",
+    description:
+      "Bodyworks By Elony offers calm, personalized massage and bodywork in Cedar Park, Texas, including therapeutic massage, prenatal massage, manual lymphatic drainage, and pediatric massage.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Cedar Park",
+      addressRegion: "TX",
+      postalCode: siteConfig.location.zip,
+      addressCountry: "US",
+    },
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Cedar Park",
+      },
+      {
+        "@type": "City",
+        name: "Austin",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Greater Austin area",
+      },
+    ],
+    openingHours: siteConfig.businessHours.schemaOpeningHours,
+    sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],
+    identifier: {
+      "@type": "PropertyValue",
+      name: "TDLR Massage Therapy License",
+      value: siteConfig.credentials.tdlrLicense,
+    },
+    knowsAbout: [
+      "Therapeutic massage",
+      "Prenatal massage",
+      "Manual lymphatic drainage",
+      siteConfig.credentials.mldTechnique,
+      siteConfig.credentials.mldCertification,
+      "Pediatric massage",
+      "Cupping",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Massage and bodywork services",
+      itemListElement: services.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: service,
+          areaServed: siteConfig.location.serviceArea,
+          provider: {
+            "@id": `${siteConfig.siteUrl}/#business`,
+          },
+        },
+      })),
+    },
+    potentialAction: {
+      "@type": "ReserveAction",
+      target: getBookingUrl("local_business_schema"),
+      name: "Book an appointment",
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+</file>
+
+<file path="app/faq/page.tsx">
+import type { Metadata } from "next";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
+
+export const metadata: Metadata = {
+  title: "FAQ | Bodyworks By Elony",
+  description:
+    "Frequently asked questions about massage appointments, draping, pressure, payment, packages, prenatal massage, manual lymphatic drainage, and pediatric massage at Bodyworks By Elony in Cedar Park, TX.",
+};
+
+const massageFaqs = [
+  {
+    question: "Why do first-time appointments require prepayment?",
+    answer:
+      "When you schedule, that time is dedicated specifically to your care. First-time appointments require prepayment through our secure booking platform to confirm your session and protect your reserved time. This helps us maintain a consistent schedule so we can continue providing focused, one-on-one attention to every client.",
+  },
+  {
+    question: "What happens if I need to change a prepaid appointment?",
+    answer:
+      "If you need to reschedule a prepaid appointment, please give the required cancellation notice so the payment can be applied to a future appointment. Appointments changed or canceled inside the cancellation window may be charged according to the cancellation policy. If you prepaid and need help with a scheduling issue, contact Bodyworks By Elony before your appointment time.",
+  },
+  {
+    question: "Will I be covered during the massage?",
+    answer:
+      "Yes. You will be properly draped throughout the session to help keep you comfortable. Only the area being worked on is uncovered. If you prefer that a certain area remain covered, let Elony know and the work can be adjusted.",
+  },
+  {
+    question: "What areas of my body will be massaged?",
+    answer:
+      "During intake, you and Elony will discuss the areas you would like addressed. A typical full-body massage may include the back, arms, legs, feet, hands, head, neck, and shoulders. Breast and genital areas are never massaged. Glute work may be included only when appropriate and based on client comfort and session goals.",
+  },
+  {
+    question: "What should I do during the massage?",
+    answer:
+      "This is your session. Some clients prefer to talk, while others prefer quiet. You are welcome to relax, breathe, doze off, or let Elony know if anything needs to be adjusted. If she moves or positions an arm or leg, simply try to relax and let her do the work.",
+  },
+  {
+    question: "What will the massage feel like?",
+    answer:
+      "That depends on the type of work being done and your pressure preferences. Some clients prefer gentle, relaxation-focused work, while others want deeper therapeutic pressure. Elony will check in as needed, and you can ask for more or less pressure at any time.",
+  },
+  {
+    question: "How long will my session last?",
+    answer:
+      "Bodyworks By Elony schedules massage sessions so clients receive their full hands-on session time. Please plan to arrive 10 minutes early to allow time for intake and undressing to your comfort level.",
+  },
+  {
+    question: "Are there medical conditions that make massage inadvisable?",
+    answer:
+      "Yes. Please be open and honest on your intake forms and let Elony know about any changes in your health. Some conditions or techniques may require medical clearance, including certain post-op situations, high-risk pregnancy, cancer treatment, or other medical concerns.",
+  },
+];
+
+const servicesFaqs = [
+  {
+    question: "What type of massage should I book?",
+    answer:
+      "If you are unsure, therapeutic massage is usually the most flexible starting point. It can be adapted for relaxation, deeper pressure, focused areas of tension, or general recovery support. Prenatal massage and manual lymphatic drainage are more specialized services.",
+  },
+  {
+    question: "Do you offer prenatal massage?",
+    answer:
+      "Yes. Prenatal massage is available as a supportive pregnancy massage session with comfort, positioning, and care in mind.",
+  },
+  {
+    question: "Do you offer manual lymphatic drainage?",
+    answer: `Yes. Elony is trained in Manual Lymphatic Drainage using the ${siteConfig.credentials.mldTechnique} and is certified as ${siteConfig.credentials.mldCertification}. Clients often seek MLD for post-op support when medically cleared, general swelling, and facial puffiness or swelling related to allergies.`,
+  },
+  {
+    question: "Can manual lymphatic drainage be added to a regular massage?",
+    answer:
+      "Yes, when appropriate. Focused MLD may be incorporated within a standard massage session, such as using part of a 60-minute appointment for lymphatic work. There is also an MLD extension option that adds dedicated time.",
+  },
+  {
+    question: "Do you offer pediatric massage?",
+    answer:
+      "Yes. Gentle, age-appropriate massage may be available for children with parent or guardian involvement.",
+  },
+  {
+    question: "Do you offer cupping?",
+    answer:
+      "Yes. Elony is certified in cupping. Cupping may be incorporated into a massage session when appropriate and is subject to medical review.",
+  },
+];
+
+const policyFaqs = [
+  {
+    question: "What payment methods are accepted?",
+    answer:
+      "Major credit cards are accepted and preferred. Cash may be accepted for returning clients, but exact payment is required because change is not available. First-time appointments require prepayment when booking.",
+  },
+  {
+    question: "Are prepaid appointments refundable?",
+    answer:
+      "Prepaid appointments are intended to reserve your scheduled appointment time. If you need to reschedule, please give the required cancellation notice so the payment can be applied to a future appointment. Late cancellations and no-shows may forfeit the prepaid amount according to the cancellation policy.",
+  },
+  {
+    question: "Do massage packages expire?",
+    answer:
+      "Therapeutic massage packages expire three months after first use. Packages apply to therapeutic massage only, not prenatal massage or manual lymphatic drainage.",
+  },
+  {
+    question: "Can an expired package be reactivated?",
+    answer:
+      "Yes. Expired therapeutic massage packages may be reactivated for $10 per hour of remaining session time the client wants to use. For example, reactivating one 90-minute session would be $15.",
+  },
+  {
+    question: "Do you accept insurance or provide superbills?",
+    answer:
+      "Bodyworks By Elony does not accept insurance, provide medical billing or insurance coding, or guarantee reimbursement. Clients should retain automated payment receipts and appointment confirmations for their own records. For packages, those two documents together serve as the client’s official record. Requests for manual account reconciliation or a formal financial summary may be subject to a $50 Summary Preparation Fee.",
+  },
+  {
+    question: "Where is Bodyworks By Elony located?",
+    answer: `Bodyworks By Elony is located in ${siteConfig.location.city}, ${siteConfig.location.zip}, near ${siteConfig.location.landmark}, serving Cedar Park, Leander, Liberty Hill, and surrounding Northwest Austin-area communities.`,
+  },
+];
+
+const allFaqs = [...massageFaqs, ...servicesFaqs, ...policyFaqs];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: allFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
+function FaqList({
+  items,
+}: {
+  items: {
+    question: string;
+    answer: string;
+  }[];
+}) {
+  return (
+    <div className="grid gap-4">
+      {items.map((item) => (
+        <details
+          key={item.question}
+          className="group rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 transition-colors [&[open]]:border-[#d98c9b] [&[open]]:bg-[#faf7f2]"
+        >
+          <summary className="cursor-pointer list-none text-lg font-medium text-[#292524]">
+            <span className="flex items-start justify-between gap-4">
+              <span>{item.question}</span>
+              <span className="mt-1 text-[#8f3f50] transition group-open:rotate-45">
+                +
+              </span>
+            </span>
+          </summary>
+
+          <p className="mt-4 leading-8 text-[#6b625c]">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  );
+}
+
+export default function FaqPage() {
+  return (
+    <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              FAQ
+            </p>
+
+            <h1 className="mb-6 text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+              Frequently asked questions.
+            </h1>
+
+            <p className="text-lg leading-8 text-[#6b625c]">
+              Practical answers about massage appointments, comfort, draping,
+              payment, packages, manual lymphatic drainage, prenatal massage,
+              and pediatric massage at Bodyworks By Elony.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Massage Appointments
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              What to expect before and during your session.
+            </h2>
+          </div>
+
+          <FaqList items={massageFaqs} />
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Services
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Choosing the right massage service.
+            </h2>
+          </div>
+
+          <FaqList items={servicesFaqs} />
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Payment & Policies
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Helpful details before booking.
+            </h2>
+          </div>
+
+          <FaqList items={policyFaqs} />
+        </div>
+      </section>
+
+      <section className="bg-[#f7e8e8]">
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Still Have Questions?
+            </p>
+
+            <h2 className="mb-4 text-3xl font-light leading-tight text-[#292524]">
+              Contact Bodyworks By Elony before booking.
+            </h2>
+
+            <p className="leading-8 text-[#6b625c]">
+              For questions about which service to choose, manual lymphatic
+              drainage, prenatal massage, pediatric massage, or appointment
+              details, reach out before scheduling.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <div className="grid gap-5">
+              <div>
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                  Email
+                </h3>
+
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                >
+                  {siteConfig.contact.email}
+                </a>
+              </div>
+
+              <div>
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                  Call
+                </h3>
+
+                <a
+                  href={siteConfig.contact.phoneHref}
+                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                >
+                  {siteConfig.contact.phone}
+                </a>
+              </div>
+
+              <div>
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                  Text
+                </h3>
+
+                <a
+                  href={siteConfig.contact.textHref}
+                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                >
+                  {siteConfig.contact.text}
+                </a>
+              </div>
+
+              <div className="pt-2">
+                <a
+                  href={getBookingUrl("faq_contact_card")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                >
+                  <span>Book an Appointment</span>
+                  <ExternalLinkIcon />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="app/services/page.tsx">
+import type { Metadata } from "next";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
+
+export const metadata: Metadata = {
+  title: "Massage Services | Bodyworks By Elony",
+  description:
+    "Explore therapeutic massage, prenatal massage, manual lymphatic drainage, pediatric massage, and massage enhancements at Bodyworks By Elony in Cedar Park, TX.",
+};
+
+const services = [
+  {
+    title: "Therapeutic Massage",
+    eyebrow: "Customized massage sessions",
+    description:
+      "A personalized massage session tailored to your goals, comfort level, and areas that may need focused attention. Therapeutic massage may include relaxation-focused work, deeper pressure, trigger point work, stretching, or other bodywork techniques based on what is appropriate for your session.",
+    goodFor: [
+      "General tension",
+      "Relaxation and recovery",
+      "Focused bodywork",
+      "Clients who want a customized massage session",
+    ],
+  },
+  {
+    title: "Prenatal Massage",
+    eyebrow: "Supportive pregnancy massage",
+    description:
+      "Supportive massage for pregnancy, offered with comfort, positioning, and care in mind. Sessions are designed to help you feel more settled, supported, and at ease in your body.",
+    goodFor: [
+      "Pregnancy comfort",
+      "Gentle supportive work",
+      "Relaxation",
+      "Clients seeking careful positioning and a slower pace",
+    ],
+  },
+  {
+    title: "Manual Lymphatic Drainage",
+    eyebrow: `${siteConfig.credentials.mldTechnique} · ${siteConfig.credentials.mldCertification}`,
+    description:
+      "Manual lymphatic drainage is a gentle, specialized massage technique using light, intentional movements. Elony is trained in the Klose/Vodder Technique and is a Certified Manual Lymphatic Drainage Therapist. Clients often seek MLD for post-op support when medically cleared, general swelling, and facial puffiness or swelling related to allergies. Focused MLD may also be incorporated into a standard massage session, such as using part of a 60-minute appointment for lymphatic work.",
+    goodFor: [
+      "Post-op support with medical clearance",
+      "General swelling",
+      "Facial puffiness or allergy-related swelling",
+      "Focused MLD within a longer massage session",
+    ],
+  },
+  {
+    title: "Massage Enhancements",
+    eyebrow: "Optional session support",
+    description:
+      "Enhancements may be included when appropriate to support the goals of your session. Options may include aromatherapy, cupping, gua sha, warm towels, table warmer, Hypervolt, or other supportive techniques.",
+    goodFor: [
+      "Added comfort",
+      "Session customization",
+      "Focused areas of tension",
+      "Clients who want extra support during their massage",
+    ],
+  },
+];
+
+const alsoAvailable = [
+  {
+    title: "Pediatric Massage",
+    description:
+      "Gentle, age-appropriate massage may be available for children with parent or guardian involvement.",
+  },
+];
+
+export default function ServicesPage() {
+  return (
+    <main>
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Services
+            </p>
+
+            <h1 className="mb-6 text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+              Massage and bodywork services in Cedar Park, Texas.
+            </h1>
+
+            <p className="text-lg leading-8 text-[#6b625c]">
+              Bodyworks By Elony offers calm, personalized massage sessions
+              designed around your needs, preferences, and comfort level.
+              Whether you are seeking a therapeutic session, prenatal support,
+              manual lymphatic drainage, or simple relaxation, each appointment
+              begins with thoughtful intake and clear communication.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="grid gap-6">
+            {services.map((service) => (
+              <article
+                key={service.title}
+                className="grid gap-8 rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6 md:grid-cols-[1fr_0.8fr] md:p-8"
+              >
+                <div>
+                  <p className="mb-3 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                    {service.eyebrow}
+                  </p>
+
+                  <h2 className="mb-4 text-2xl font-light text-[#292524]">
+                    {service.title}
+                  </h2>
+
+                  <p className="leading-8 text-[#6b625c]">
+                    {service.description}
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-[#eadfda] bg-[#fffdfc] p-5">
+                  <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                    Many clients seek this for
+                  </h3>
+
+                  <ul className="space-y-3 text-[#6b625c]">
+                    {service.goodFor.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d98c9b]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mb-10 max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Also Available
+            </p>
+
+            <h2 className="text-3xl font-light text-[#292524]">
+              Additional massage options for specific client needs.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {alsoAvailable.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+              >
+                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                  {item.title}
+                </h3>
+
+                <p className="leading-7 text-[#6b625c]">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7e8e8]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Choosing a Service
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Not sure which massage to book?
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <p className="mb-6 leading-8 text-[#6b625c]">
+              If you are unsure, therapeutic massage is usually the most
+              flexible starting point. Prenatal massage and manual lymphatic
+              drainage are more specialized options. Your session can be
+              adjusted based on your intake conversation, preferences, and
+              comfort level.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <a
+                href={getBookingUrl("services_choosing_cta")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+              >
+                <span>Book an Appointment</span>
+                <ExternalLinkIcon />
+              </a>
+
+              <a
+                href="/pricing"
+                className="rounded-full border border-[#eadfda] bg-[#faf7f2] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+              >
+                View Pricing
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6 md:p-8">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Training & Credentials
+            </p>
+
+            <h2 className="mb-4 text-3xl font-light text-[#292524]">
+              Licensed massage therapy with specialized MLD training.
+            </h2>
+
+            <div className="grid gap-6 text-[#6b625c] md:grid-cols-2">
+              <p className="leading-8">
+                Elony is licensed by the Texas Department of Licensing and
+                Regulation. TDLR Massage Therapy License #
+                {siteConfig.credentials.tdlrLicense}.
+              </p>
+
+              <p className="leading-8">
+                Manual Lymphatic Drainage training:{" "}
+                {siteConfig.credentials.mldTechnique},{" "}
+                {siteConfig.credentials.mldCertification}.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="app/components/Header.tsx">
+import Image from "next/image";
+import Link from "next/link";
+import ExternalLinkIcon from "./ExternalLinkIcon";
+import { getBookingUrl, siteConfig } from "../lib/site";
+
+const navItems = [
+  {
+    label: "Services",
+    href: "/services",
+  },
+  {
+    label: "Pricing",
+    href: "/pricing",
+  },
+  {
+    label: "Booking",
+    href: "/booking",
+  },
+  {
+    label: "About",
+    href: "/about",
+  },
+  {
+    label: "FAQ",
+    href: "/faq",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];
+
+export default function Header() {
+  return (
+    <header className="border-b border-[#eadfda] bg-[#fffdfc]">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <Link
+          href="/"
+          className="flex items-center gap-3 text-lg font-medium tracking-wide text-[#292524] transition hover:text-[#8f3f50]"
+        >
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8]">
+            <Image
+              src="/images/bbe-logo-rose.png"
+              alt=""
+              width={32}
+              height={42}
+              className="h-9 w-auto"
+              priority
+            />
+          </span>
+
+          <span>{siteConfig.name}</span>
+        </Link>
+
+        <nav
+          aria-label="Main navigation"
+          className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[#6b625c]"
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="transition hover:text-[#8f3f50]"
+            >
+              {item.label}
+            </Link>
+          ))}
+
+          <a
+            href={getBookingUrl("header_book")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
+          >
+            <span>Book</span>
+            <ExternalLinkIcon />
+          </a>
+        </nav>
+      </div>
+    </header>
+  );
+}
+</file>
+
+<file path="app/pricing/page.tsx">
+import type { Metadata } from "next";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
+
+export const metadata: Metadata = {
+  title: "Massage Pricing | Bodyworks By Elony",
+  description:
+    "View therapeutic massage pricing, prenatal massage pricing, manual lymphatic drainage pricing, packages, and add-ons at Bodyworks By Elony in Cedar Park, TX.",
+};
+
+const massagePricing = [
+  {
+    duration: "1 Hour",
+    singleSession: "$100",
+    fourPack: "$360",
+  },
+  {
+    duration: "1.5 Hours",
+    singleSession: "$150",
+    fourPack: "$540",
+  },
+  {
+    duration: "2 Hours",
+    singleSession: "$200",
+    fourPack: "$720",
+  },
+];
+
+const mldPricing = [
+  {
+    duration: "30 Minutes",
+    price: "$75",
+  },
+  {
+    duration: "1 Hour",
+    price: "$150",
+  },
+  {
+    duration: "1.5 Hours",
+    price: "$225",
+  },
+];
+
+const addOns = [
+  {
+    name: "Complimentary Cupping",
+    price: "$0",
+    time: "+0 minutes",
+    description: "Integrated into your scheduled massage time when appropriate.",
+  },
+  {
+    name: "Manual Lymphatic Drainage — Integrated",
+    price: "$25",
+    time: "+0 minutes",
+    description:
+      "Focused lymphatic work incorporated within your current massage session time.",
+  },
+  {
+    name: "Manual Lymphatic Drainage — Extension",
+    price: "$75",
+    time: "+30 minutes",
+    description:
+      "Adds a dedicated half-hour of manual lymphatic drainage to your appointment.",
+  },
+  {
+    name: "30-Minute Time Extension",
+    price: "$50",
+    time: "+30 minutes",
+    description:
+      "Extra hands-on time for additional focus during a therapeutic massage session.",
+  },
+];
+
+const enhancements = [
+  "Aromatherapy",
+  "Gua Sha",
+  "Orbital Buffing",
+  "Hypervolt",
+  "Table Warmer",
+  "Hot Towels",
+];
+
+export default function PricingPage() {
+  return (
+    <main>
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Pricing
+            </p>
+
+            <h1 className="mb-6 text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+              Massage pricing that is simple and transparent.
+            </h1>
+
+            <p className="text-lg leading-8 text-[#6b625c]">
+              Bodyworks By Elony offers personalized massage sessions with clear
+              pricing and no membership fees. First-time appointments require
+              prepayment when booking.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mb-10 max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Therapeutic Massage
+            </p>
+
+            <h2 className="text-3xl font-light text-[#292524]">
+              Standard massage sessions
+            </h2>
+          </div>
+
+          <div className="grid gap-4 sm:hidden">
+            {massagePricing.map((item) => (
+              <article
+                key={item.duration}
+                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-5"
+              >
+                <div className="border-b border-[#eadfda] pb-3">
+                  <h3 className="text-lg font-medium text-[#292524]">
+                    {item.duration}
+                  </h3>
+                </div>
+
+                <dl className="mt-4 grid gap-3">
+                  <div className="flex items-center justify-between gap-4">
+                    <dt className="text-sm text-[#6b625c]">Single Session</dt>
+                    <dd className="font-medium text-[#292524]">
+                      {item.singleSession}
+                    </dd>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-4">
+                    <dt className="text-sm text-[#6b625c]">4 Pack</dt>
+                    <dd className="font-medium text-[#292524]">{item.fourPack}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="hidden overflow-hidden rounded-3xl border border-[#eadfda] bg-[#faf7f2] sm:block">
+            <div className="grid grid-cols-3 border-b border-[#eadfda] bg-[#f7e8e8] px-6 py-4 text-sm font-medium uppercase tracking-[0.14em] text-[#8f3f50]">
+              <span>Duration</span>
+              <span>Single Session</span>
+              <span>4 Pack</span>
+            </div>
+
+            {massagePricing.map((item) => (
+              <div
+                key={item.duration}
+                className="grid grid-cols-3 border-b border-[#eadfda] px-6 py-5 last:border-b-0"
+              >
+                <span className="font-medium text-[#292524]">{item.duration}</span>
+                <span className="text-[#6b625c]">{item.singleSession}</span>
+                <span className="text-[#6b625c]">{item.fourPack}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6">
+            <h3 className="mb-3 text-lg font-medium text-[#292524]">
+              Package notes
+            </h3>
+
+            <p className="leading-7 text-[#6b625c]">
+              Four-packs are available for therapeutic massage sessions only. Packages
+              expire three months after first use, are shareable, and all package sales are
+              final. Expired packages may be reactivated for $10 per hour of remaining
+              session time the client wants to use.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-20 lg:grid-cols-2">
+          <article className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Prenatal Massage
+            </p>
+
+            <h2 className="mb-4 text-3xl font-light text-[#292524]">
+              75 Minutes
+            </h2>
+
+            <p className="mb-6 text-4xl font-light text-[#292524]">$160</p>
+
+            <p className="leading-7 text-[#6b625c]">
+              Supportive massage for pregnancy, offered with comfort,
+              positioning, and care in mind. Prenatal massage is priced
+              separately from therapeutic massage packages.
+            </p>
+          </article>
+
+          <article className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Manual Lymphatic Drainage
+            </p>
+
+            <h2 className="mb-4 text-3xl font-light text-[#292524]">
+              Focused MLD sessions
+            </h2>
+
+            <div className="mb-6 space-y-4">
+              {mldPricing.map((item) => (
+                <div
+                  key={item.duration}
+                  className="flex items-center justify-between border-b border-[#eadfda] pb-3 last:border-b-0"
+                >
+                  <span className="font-medium text-[#292524]">
+                    {item.duration}
+                  </span>
+                  <span className="text-[#6b625c]">{item.price}</span>
+                </div>
+              ))}
+            </div>
+
+            <p className="leading-7 text-[#6b625c]">
+              Manual lymphatic drainage may be booked as a focused session or,
+              when appropriate, incorporated into a therapeutic massage as an
+              add-on.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mb-10 max-w-3xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Add-Ons
+            </p>
+
+            <h2 className="mb-4 text-3xl font-light text-[#292524]">
+              Add focused support to your massage session.
+            </h2>
+
+            <p className="leading-8 text-[#6b625c]">
+              Select add-ons may be available at checkout. Cupping and manual
+              lymphatic drainage are subject to medical review.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {addOns.map((addOn) => (
+              <article
+                key={addOn.name}
+                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6"
+              >
+                <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+                  <h3 className="text-xl font-medium text-[#292524]">
+                    {addOn.name}
+                  </h3>
+
+                  <div className="text-right">
+                    <p className="text-lg font-medium text-[#292524]">
+                      {addOn.price}
+                    </p>
+                    <p className="text-sm text-[#8f3f50]">{addOn.time}</p>
+                  </div>
+                </div>
+
+                <p className="leading-7 text-[#6b625c]">
+                  {addOn.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7e8e8]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Complimentary Enhancements
+            </p>
+
+            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+              Comfort-focused enhancements may be included when appropriate.
+            </h2>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {enhancements.map((enhancement) => (
+              <div
+                key={enhancement}
+                className="rounded-2xl border border-[#eadfda] bg-[#fffdfc] px-5 py-4 text-[#6b625c]"
+              >
+                {enhancement}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-20 lg:grid-cols-3">
+          <article className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6">
+            <h2 className="mb-3 text-xl font-medium text-[#292524]">
+              Payment
+            </h2>
+
+            <p className="leading-7 text-[#6b625c]">
+              Major credit cards are accepted and preferred. Cash may be
+              accepted for returning clients, but exact payment is required
+              because change is not available. First-time appointments require
+              prepayment when booking.
+            </p>
+          </article>
+
+          <article className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6">
+            <h2 className="mb-3 text-xl font-medium text-[#292524]">
+              Arrival time
+            </h2>
+
+            <p className="leading-7 text-[#6b625c]">
+              Please plan to arrive 10 minutes early to allow time for intake
+              and undressing to your comfort level, so you can receive your full
+              session time.
+            </p>
+          </article>
+
+          <article className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6">
+            <h2 className="mb-3 text-xl font-medium text-[#292524]">
+              Policies
+            </h2>
+
+            <p className="leading-7 text-[#6b625c]">
+              Review cancellation, confirmation, tardiness, and health-related
+              policies before booking.
+            </p>
+
+            <a
+              href="/policies"
+              className="mt-4 inline-flex text-sm font-medium text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+            >
+              View policies
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section className="bg-[#292524] text-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#f7e8e8]">
+              Ready to Book?
+            </p>
+
+            <h2 className="text-3xl font-light">
+              View availability and schedule online through Acuity.
+            </h2>
+          </div>
+
+          <a
+            href={getBookingUrl("pricing_final_cta")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+          >
+            <span>Book an Appointment</span>
+            <ExternalLinkIcon />
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="app/layout.tsx">
+import type { Metadata } from "next";
+import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import LocalBusinessJsonLd from "./components/LocalBusinessJsonLd";
+import { getBookingUrl, siteConfig } from "./lib/site";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.siteUrl),
+  title: {
+    default: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
+    template: "%s | Bodyworks By Elony",
+  },
+  description:
+    "Calm, personalized massage and bodywork in northwest Cedar Park, TX, near Whitestone & Lakeline, northwest Austin, Leander, and Liberty Hill.",
+  applicationName: siteConfig.name,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.siteUrl,
+    siteName: siteConfig.name,
+    title: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
+    description:
+      "Calm, personalized massage and bodywork in northwest Cedar Park, TX, near Whitestone & Lakeline, northwest Austin, Leander, and Liberty Hill.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
+    description:
+      "Calm, personalized massage and bodywork in northwest Cedar Park, TX, near Whitestone & Lakeline, northwest Austin, Leander, and Liberty Hill.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className="antialiased">
+        <LocalBusinessJsonLd />
+
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </div>
+      </body>
+    </html>
+  );
+}
+</file>
+
+<file path="app/components/Footer.tsx">
+import Link from "next/link";
+import { siteConfig } from "../lib/site";
+
+const footerLinks = [
+  {
+    label: "Services",
+    href: "/services",
+  },
+  {
+    label: "Pricing",
+    href: "/pricing",
+  },
+  {
+    label: "Booking",
+    href: "/booking",
+  },
+  {
+    label: "About Elony",
+    href: "/about",
+  },
+  {
+    label: "FAQ",
+    href: "/faq",
+  },
+  {
+    label: "Policies",
+    href: "/policies",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];
+
+function FacebookIcon() {
+  return (
+    <span
+      aria-hidden="true"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8] text-xs font-bold text-[#8f3f50]"
+    >
+      f
+    </span>
+  );
+}
+
+function GoogleIcon() {
+  return (
+    <span
+      aria-hidden="true"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8] text-xs font-bold text-[#8f3f50]"
+    >
+      G
+    </span>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <span
+      aria-hidden="true"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8] text-[#8f3f50]"
+    >
+      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none">
+        <rect
+          x="5"
+          y="5"
+          width="14"
+          height="14"
+          rx="4"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
+        <circle cx="16.5" cy="7.5" r="1" fill="currentColor" />
+      </svg>
+    </span>
+  );
+}
+
+const socialLinks = [
+  {
+    label: "Like us on Facebook",
+    href: siteConfig.social.facebook,
+    icon: <FacebookIcon />,
+  },
+  {
+    label: "Review us on Google",
+    href: siteConfig.social.googleReview,
+    icon: <GoogleIcon />,
+  },
+  {
+    label: "Follow us on Instagram",
+    href: siteConfig.social.instagram,
+    icon: <InstagramIcon />,
+  },
+];
+
+export default function Footer() {
+  return (
+    <footer className="border-t border-[#eadfda] bg-[#faf7f2]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+        <div>
+          <h2 className="mb-4 text-lg font-medium text-[#292524]">
+            {siteConfig.name}
+          </h2>
+
+          <p className="max-w-xl text-sm leading-7 text-[#6b625c]">
+            Personalized massage and bodywork sessions serving northwest Cedar
+            Park, Leander, Liberty Hill, and nearby communities.
+          </p>
+
+          <p className="mt-4 text-sm text-[#6b625c]">
+            TDLR Massage Therapy License #{siteConfig.credentials.tdlrLicense}
+          </p>
+        </div>
+
+        <div>
+          <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+            Explore
+          </h3>
+
+          <nav aria-label="Footer navigation" className="grid gap-3 text-sm">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[#6b625c] transition hover:text-[#8f3f50]"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        <div>
+          <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+            Spread the Word
+          </h3>
+
+          <div className="grid gap-3 text-sm">
+            {socialLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-[#6b625c] transition hover:text-[#8f3f50]"
+              >
+                {link.icon}
+                <span>{link.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-[#eadfda]">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-sm text-[#6b625c] sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {siteConfig.name}
+          </p>
+
+          <p>Cedar Park, TX · Near Whitestone & Lakeline</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+</file>
+
+<file path="app/lib/site.ts">
+export function getBookingUrl(source: string) {
+  const url = new URL(siteConfig.bookingUrl);
+
+  url.searchParams.set("utm_source", "bodyworksbyelony.com");
+  url.searchParams.set("utm_medium", "website");
+  url.searchParams.set("utm_campaign", "booking");
+  url.searchParams.set("utm_content", source);
+
+  return url.toString();
+};
+
+export const siteConfig = {
+  name: "Bodyworks By Elony",
+  siteUrl: "https://bodyworksbyelony.com",
+  bookingUrl: "https://bodyworksbyelony.as.me",
+  lastUpdated: {
+    policies: "May 2026",
+  },
+  credentials: {
+    tdlrLicense: "MT137486",
+    mldTechnique: "Klose/Vodder Technique",
+    mldCertification: "CMLDT #KTM0325TX01",
+    practicingSince: "2013",
+  },
+  contact: {
+    email: "relax@bodyworksbyelony.com",
+    phone: "512-535-0096",
+    phoneHref: "tel:+15125350096",
+    text: "888-282-9032",
+    textHref: "sms:+18882829032",
+  },
+  location: {
+    city: "Cedar Park, TX",
+    zip: "78613",
+    landmark: "Whitestone & Lakeline",
+    serviceArea: "Cedar Park, Leander, Liberty Hill, and surrounding Northwest Austin-area communities",
+    shortServiceArea: "Cedar Park, Leander, and Liberty Hill",
+  },
+  businessHours: {
+    note: "*End time indicates when the session ends.",
+    display: [
+        {
+        day: "Monday",
+        hours: "11:30 AM-2:00 PM / 5:00-7:30 PM*",
+        },
+        {
+        day: "Tuesday",
+        hours: "11:30 AM-2:00 PM / 5:00-7:30 PM*",
+        },
+        {
+        day: "Wednesday",
+        hours: "Closed",
+        },
+        {
+        day: "Thursday",
+        hours: "11:30 AM-2:00 PM / 5:00-7:30 PM*",
+        },
+        {
+        day: "Friday",
+        hours: "11:30 AM-4:00 PM*",
+        },
+        {
+        day: "Saturday",
+        hours: "First Saturday of the month, 8:30 AM-12:30 PM*",
+        },
+        {
+        day: "Sunday",
+        hours: "Closed",
+        },
+    ],
+    schemaOpeningHours: [
+        "Mo 11:30-14:00",
+        "Mo 17:00-19:30",
+        "Tu 11:30-14:00",
+        "Tu 17:00-19:30",
+        "Th 11:30-14:00",
+        "Th 17:00-19:30",
+        "Fr 11:30-16:00",
+    ],
+  },
+  social: {
+    facebook: "https://www.facebook.com/Bodyworks-by-Elony-1434684686764834/",
+    googleReview: "https://g.page/r/CVPzCKpoxoH_EAI/review",
+    googleReviewsRead: "https://www.google.com/maps/search/?api=1&query=Bodyworks%20By%20Elony&query_place_id=ChIJFze0ATItW4YRU_MIqmjGgf8",
+    instagram: "https://instagram.com/bodyworksbyelony?ref=badge",
+    },
+};
+</file>
+
+<file path="app/page.tsx">
+import type { Metadata } from "next";
+import { getBookingUrl, siteConfig } from "./lib/site";
+import ExternalLinkIcon from "./components/ExternalLinkIcon";
+
+export const metadata: Metadata = {
+  title: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
+  description:
+    "Calm, personalized massage and bodywork in northwest Cedar Park, TX, near Whitestone & Lakeline, Leander, and Liberty Hill.",
+};
+
+const featuredServices = [
+  {
+    title: "Therapeutic Massage",
+    description:
+      "Customized massage that may include relaxation-focused work, deeper pressure, trigger point work, or other techniques based on your goals and comfort.",
+  },
+  {
+    title: "Prenatal Massage",
+    description:
+      "Supportive massage for pregnancy, offered with comfort, positioning, and care in mind.",
+  },
+  {
+    title: "Manual Lymphatic Drainage",
+    description:
+      "Gentle, specialized massage using light, intentional techniques. Elony is trained in the Klose/Vodder Technique.",
+  },
+  {
+    title: "Pediatric Massage",
+    description:
+      "Gentle, age-appropriate massage may be available for children with parent or guardian involvement.",
+  },
+];
+
+const trustItems = [
+  {
+    title: "Texas Licensed",
+    description: `TDLR Massage Therapy License #${siteConfig.credentials.tdlrLicense}.`,
+  },
+  {
+    title: "MLD Training",
+    description: `${siteConfig.credentials.mldTechnique} · ${siteConfig.credentials.mldCertification}.`,
+  },
+  {
+    title: "Certified Prenatal Massage",
+    description:
+      "Certified prenatal massage using supportive side-lying techniques.",
+    note: "For high-risk pregnancies, physician clearance may be requested before prenatal massage.",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Her space felt like a sanctuary: peaceful, welcoming, and safe.",
+    name: "Brandi D.",
+    context: "Prenatal massage client",
+  },
+  {
+    quote:
+      "Elony is incredibly professional, friendly, and intuitive.",
+    name: "James B.",
+    context: "Google review",
+  },
+  {
+    quote:
+      "She listened to what I requested and addressed what my body needed.",
+    name: "Daniella W.",
+    context: "Google review",
+  },
+];
+
+export default function HomePage() {
+  return (
+    <main>
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
+          <div>
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              {siteConfig.name}
+            </p>
+
+            <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-[#292524] sm:text-5xl lg:text-6xl">
+              Calm, personalized massage and bodywork in Cedar Park, Texas.
+            </h1>
+
+            <p className="mb-8 max-w-2xl text-lg leading-8 text-[#6b625c]">
+              Bodyworks By Elony offers thoughtful, client-centered massage
+              sessions designed to support relaxation, comfort, recovery, and a
+              deeper sense of ease in your body.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <a
+                href={getBookingUrl("home_hero")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+              >
+                <span>Book an Appointment</span>
+                <ExternalLinkIcon />
+              </a>
+
+              <a
+                href="/services"
+                className="rounded-full border border-[#eadfda] bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+              >
+                View Services
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] bg-[#f7e8e8] p-6 shadow-sm">
+            <div className="rounded-[1.5rem] bg-[#fffdfc] p-8">
+              <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#8f3f50]">
+                Northwest Cedar Park
+              </p>
+
+              <h2 className="mb-4 text-2xl font-light leading-snug text-[#292524]">
+                A grounded space for massage, recovery, and supportive
+                bodywork.
+              </h2>
+
+              <p className="mb-6 leading-7 text-[#6b625c]">
+                Located near Whitestone & Lakeline, Bodyworks By Elony is
+                convenient to Cedar Park, Leander, Liberty Hill, and nearby
+                Northwest Austin-area communities.
+              </p>
+
+              <div className="rounded-2xl border border-[#eadfda] bg-[#faf7f2] p-5">
+                <p className="mb-2 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                  Specialized Training
+                </p>
+
+                <p className="leading-7 text-[#6b625c]">
+                  Manual Lymphatic Drainage:{" "}
+                  {siteConfig.credentials.mldTechnique} ·{" "}
+                  {siteConfig.credentials.mldCertification}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mb-10 max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Services
+            </p>
+
+            <h2 className="text-3xl font-light text-[#292524] sm:text-4xl">
+              Massage and bodywork for relaxation, comfort, and recovery.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {featuredServices.map((service) => (
+              <article
+                key={service.title}
+                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6"
+              >
+                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                  {service.title}
+                </h3>
+
+                <p className="leading-7 text-[#6b625c]">
+                  {service.description}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10">
+            <a
+              href="/services"
+              className="text-sm font-medium text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+            >
+              Explore all services
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7e8e8]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-3">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              What to Expect
+            </p>
+
+            <h2 className="text-3xl font-light text-[#292524]">
+              Clear, comfortable, and client-centered.
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6">
+            <h3 className="mb-3 text-lg font-medium text-[#292524]">
+              Thoughtful intake
+            </h3>
+
+            <p className="leading-7 text-[#6b625c]">
+              Sessions begin with a conversation about your goals, preferences,
+              comfort level, and areas that may need extra attention.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6">
+            <h3 className="mb-3 text-lg font-medium text-[#292524]">
+              Personalized sessions
+            </h3>
+
+            <p className="leading-7 text-[#6b625c]">
+              Pressure, pacing, positioning, and focus areas can be adjusted so
+              the session stays aligned with what you need that day.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div>
+              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+                Training & Care
+              </p>
+
+              <h2 className="text-3xl font-light leading-tight text-[#292524]">
+                Licensed massage therapy with specialized training.
+              </h2>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-3">
+              {trustItems.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+                >
+                  <h3 className="mb-3 text-lg font-medium text-[#292524]">
+                    {item.title}
+                  </h3>
+
+                  <p className="leading-7 text-[#6b625c]">
+                    {item.description}
+                  </p>
+
+                  {item.note ? (
+                    <p className="mt-4 border-t border-[#eadfda] pt-4 text-xs leading-5 text-[#6b625c]">
+                      {item.note}
+                    </p>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mb-10 max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Kind Words from Clients
+            </p>
+
+            <h2 className="text-3xl font-light text-[#292524] sm:text-4xl">
+              Thoughtful care that clients remember.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <figure
+                key={testimonial.name}
+                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6"
+              >
+                <blockquote className="leading-8 text-[#292524]">
+                  “{testimonial.quote}”
+                </blockquote>
+
+                <figcaption className="mt-6 border-t border-[#eadfda] pt-4">
+                  <p className="font-medium text-[#292524]">
+                    {testimonial.name}
+                  </p>
+
+                  <p className="mt-1 text-sm text-[#6b625c]">
+                    {testimonial.context}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="mt-10">
+            <a
+              href={siteConfig.social.googleReviewsRead}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+            >
+              Read more reviews on Google
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#292524] text-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#f7e8e8]">
+              Ready to Schedule?
+            </p>
+
+            <h2 className="text-3xl font-light">
+              Book a massage appointment with Bodyworks By Elony.
+            </h2>
+          </div>
+
+          <a
+            href={getBookingUrl("home_final_cta")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+          >
+            <span>Book an Appointment</span>
+            <ExternalLinkIcon />
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+</files>

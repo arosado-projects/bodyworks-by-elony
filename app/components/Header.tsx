@@ -1,34 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import ExternalLinkIcon from "./ExternalLinkIcon";
-import { getBookingUrl, siteConfig } from "../lib/site";
-
-const navItems = [
-  {
-    label: "Services",
-    href: "/services",
-  },
-  {
-    label: "Pricing",
-    href: "/pricing",
-  },
-  {
-    label: "Booking",
-    href: "/booking",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "FAQ",
-    href: "/faq",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
+import HeaderNav from "./HeaderNav";
+import { siteConfig } from "../lib/site";
 
 export default function Header() {
   return (
@@ -52,30 +25,7 @@ export default function Header() {
           <span>{siteConfig.name}</span>
         </Link>
 
-        <nav
-          aria-label="Main navigation"
-          className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[#6b625c]"
-        >
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="transition hover:text-[#8f3f50]"
-            >
-              {item.label}
-            </Link>
-          ))}
-
-          <a
-            href={getBookingUrl("header_book")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
-          >
-            <span>Book</span>
-            <ExternalLinkIcon />
-          </a>
-        </nav>
+        <HeaderNav />
       </div>
     </header>
   );
