@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { siteConfig } from "../lib/site";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
 
 export const metadata: Metadata = {
   title: "FAQ | Bodyworks By Elony",
@@ -11,7 +12,12 @@ const massageFaqs = [
   {
     question: "Why do first-time appointments require prepayment?",
     answer:
-      "When you schedule an appointment, that time is reserved specifically for you. First-time appointments require prepayment through Acuity to help reduce same-day cancellations and no-shows.",
+      "When you schedule, that time is dedicated specifically to your care. First-time appointments require prepayment through our secure booking platform to confirm your session and protect your reserved time. This helps us maintain a consistent schedule so we can continue providing focused, one-on-one attention to every client.",
+  },
+  {
+    question: "What happens if I need to change a prepaid appointment?",
+    answer:
+      "If you need to reschedule a prepaid appointment, please give the required cancellation notice so the payment can be applied to a future appointment. Appointments changed or canceled inside the cancellation window may be charged according to the cancellation policy. If you prepaid and need help with a scheduling issue, contact Bodyworks By Elony before your appointment time.",
   },
   {
     question: "Will I be covered during the massage?",
@@ -84,6 +90,11 @@ const policyFaqs = [
       "Major credit cards are accepted and preferred. Cash may be accepted for returning clients, but exact payment is required because change is not available. First-time appointments require prepayment when booking.",
   },
   {
+    question: "Are prepaid appointments refundable?",
+    answer:
+      "Prepaid appointments are intended to reserve your scheduled appointment time. If you need to reschedule, please give the required cancellation notice so the payment can be applied to a future appointment. Late cancellations and no-shows may forfeit the prepaid amount according to the cancellation policy.",
+  },
+  {
     question: "Do massage packages expire?",
     answer:
       "Therapeutic massage packages expire three months after first use. Packages apply to therapeutic massage only, not prenatal massage or manual lymphatic drainage.",
@@ -127,7 +138,7 @@ function FaqList({
       {items.map((item) => (
         <details
           key={item.question}
-          className="group rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+          className="group rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 transition-colors [&[open]]:border-[#d98c9b] [&[open]]:bg-[#faf7f2]"
         >
           <summary className="cursor-pointer list-none text-lg font-medium text-[#292524]">
             <span className="flex items-start justify-between gap-4">
@@ -282,12 +293,13 @@ export default function FaqPage() {
 
               <div className="pt-2">
                 <a
-                  href={siteConfig.bookingUrl}
+                  href={getBookingUrl("faq_contact_card")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
                 >
-                  Book an Appointment
+                  <span>Book an Appointment</span>
+                  <ExternalLinkIcon />
                 </a>
               </div>
             </div>

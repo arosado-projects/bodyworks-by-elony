@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { siteConfig } from "./lib/site";
+import { getBookingUrl, siteConfig } from "./lib/site";
+import ExternalLinkIcon from "./components/ExternalLinkIcon";
 
 export const metadata: Metadata = {
   title: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
@@ -47,6 +48,27 @@ const trustItems = [
   },
 ];
 
+const testimonials = [
+  {
+    quote:
+      "Her space felt like a sanctuary: peaceful, welcoming, and safe.",
+    name: "Brandi D.",
+    context: "Prenatal massage client",
+  },
+  {
+    quote:
+      "Elony is incredibly professional, friendly, and intuitive.",
+    name: "James B.",
+    context: "Google review",
+  },
+  {
+    quote:
+      "She listened to what I requested and addressed what my body needed.",
+    name: "Daniella W.",
+    context: "Google review",
+  },
+];
+
 export default function HomePage() {
   return (
     <main>
@@ -69,12 +91,13 @@ export default function HomePage() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href={siteConfig.bookingUrl}
+                href={getBookingUrl("home_hero")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
-                Book an Appointment
+                <span>Book an Appointment</span>
+                <ExternalLinkIcon />
               </a>
 
               <a
@@ -208,30 +231,76 @@ export default function HomePage() {
               </h2>
             </div>
 
-            <div>
-              <div className="grid gap-5 md:grid-cols-3">
-                {trustItems.map((item) => (
-                  <article
-                    key={item.title}
-                    className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
-                  >
-                    <h3 className="mb-3 text-lg font-medium text-[#292524]">
-                      {item.title}
-                    </h3>
+            <div className="grid gap-5 md:grid-cols-3">
+              {trustItems.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+                >
+                  <h3 className="mb-3 text-lg font-medium text-[#292524]">
+                    {item.title}
+                  </h3>
 
-                    <p className="leading-7 text-[#6b625c]">
-                      {item.description}
+                  <p className="leading-7 text-[#6b625c]">
+                    {item.description}
+                  </p>
+
+                  {item.note ? (
+                    <p className="mt-4 border-t border-[#eadfda] pt-4 text-xs leading-5 text-[#6b625c]">
+                      {item.note}
                     </p>
-
-                    {"note" in item ? (
-                      <p className="mt-4 border-t border-[#eadfda] pt-4 text-xs leading-5 text-[#6b625c]">
-                        {item.note}
-                      </p>
-                    ) : null}
-                  </article>
-                ))}
-              </div>
+                  ) : null}
+                </article>
+              ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fffdfc]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mb-10 max-w-2xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              Kind Words from Clients
+            </p>
+
+            <h2 className="text-3xl font-light text-[#292524] sm:text-4xl">
+              Thoughtful care that clients remember.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <figure
+                key={testimonial.name}
+                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6"
+              >
+                <blockquote className="leading-8 text-[#292524]">
+                  “{testimonial.quote}”
+                </blockquote>
+
+                <figcaption className="mt-6 border-t border-[#eadfda] pt-4">
+                  <p className="font-medium text-[#292524]">
+                    {testimonial.name}
+                  </p>
+
+                  <p className="mt-1 text-sm text-[#6b625c]">
+                    {testimonial.context}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="mt-10">
+            <a
+              href={siteConfig.social.googleReviewsRead}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+            >
+              Read more reviews on Google
+            </a>
           </div>
         </div>
       </section>
@@ -249,12 +318,13 @@ export default function HomePage() {
           </div>
 
           <a
-            href={siteConfig.bookingUrl}
+            href={getBookingUrl("home_final_cta")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
           >
-            Book an Appointment
+            <span>Book an Appointment</span>
+            <ExternalLinkIcon />
           </a>
         </div>
       </section>

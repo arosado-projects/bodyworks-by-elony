@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { siteConfig } from "../lib/site";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
 
 export const metadata: Metadata = {
   title: "About Elony | Bodyworks By Elony",
@@ -80,12 +81,13 @@ export default function AboutPage() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href={siteConfig.bookingUrl}
+                href={getBookingUrl("about_hero")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
-                Book an Appointment
+                <span>Book an Appointment</span>
+                <ExternalLinkIcon />
               </a>
 
               <a
@@ -264,12 +266,13 @@ export default function AboutPage() {
 
               <div className="pt-2">
                 <a
-                  href={siteConfig.bookingUrl}
+                  href={getBookingUrl("about_contact_card")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
                 >
-                  Book an Appointment
+                  <span>Book an Appointment</span>
+                  <ExternalLinkIcon />
                 </a>
               </div>
             </div>

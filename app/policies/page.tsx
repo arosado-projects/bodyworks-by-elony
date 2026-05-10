@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { siteConfig } from "../lib/site";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
 
 export const metadata: Metadata = {
   title: "Policies | Bodyworks By Elony",
@@ -137,6 +138,10 @@ export default function PoliciesPage() {
             <p className="text-lg leading-8 text-[#6b625c]">
               Please review these policies before booking so your appointment
               can feel clear, respectful, and easy from start to finish.
+            </p>
+
+            <p className="mt-6 text-sm text-[#6b625c]">
+              Last updated: {siteConfig.lastUpdated.policies}
             </p>
           </div>
         </div>
@@ -281,12 +286,13 @@ export default function PoliciesPage() {
           </div>
 
           <a
-            href={siteConfig.bookingUrl}
+            href={getBookingUrl("policies_final_cta")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
           >
-            Book an Appointment
+            <span>Book an Appointment</span>
+            <ExternalLinkIcon />
           </a>
         </div>
       </section>

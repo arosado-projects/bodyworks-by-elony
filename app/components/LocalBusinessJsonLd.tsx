@@ -1,4 +1,4 @@
-import { siteConfig } from "../lib/site";
+import { getBookingUrl, siteConfig } from "../lib/site";
 
 const services = [
   "Therapeutic Massage",
@@ -75,7 +75,7 @@ export default function LocalBusinessJsonLd() {
     },
     potentialAction: {
       "@type": "ReserveAction",
-      target: siteConfig.bookingUrl,
+      target: getBookingUrl("local_business_schema"),
       name: "Book an appointment",
     },
   };

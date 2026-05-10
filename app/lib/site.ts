@@ -1,7 +1,21 @@
+export function getBookingUrl(source: string) {
+  const url = new URL(siteConfig.bookingUrl);
+
+  url.searchParams.set("utm_source", "bodyworksbyelony.com");
+  url.searchParams.set("utm_medium", "website");
+  url.searchParams.set("utm_campaign", "booking");
+  url.searchParams.set("utm_content", source);
+
+  return url.toString();
+};
+
 export const siteConfig = {
   name: "Bodyworks By Elony",
   siteUrl: "https://bodyworksbyelony.com",
   bookingUrl: "https://bodyworksbyelony.as.me",
+  lastUpdated: {
+    policies: "May 2026",
+  },
   credentials: {
     tdlrLicense: "MT137486",
     mldTechnique: "Klose/Vodder Technique",
@@ -65,8 +79,9 @@ export const siteConfig = {
     ],
   },
   social: {
-    facebook: "https://www.facebook.com/BodyworksByElony",
+    facebook: "https://www.facebook.com/Bodyworks-by-Elony-1434684686764834/",
     googleReview: "https://g.page/r/CVPzCKpoxoH_EAI/review",
-    instagram: "https://instagram.com/bodyworksbyelony",
-  },
+    googleReviewsRead: "https://reviews.birdeye.com/bodyworks-by-elony-170067043840482",
+    instagram: "https://instagram.com/bodyworksbyelony?ref=badge",
+    },
 };

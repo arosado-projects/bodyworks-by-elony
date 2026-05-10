@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { siteConfig } from "../lib/site";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
 
 export const metadata: Metadata = {
   title: "Massage Services | Bodyworks By Elony",
@@ -187,12 +188,13 @@ export default function ServicesPage() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href={siteConfig.bookingUrl}
+                href={getBookingUrl("services_choosing_cta")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
-                Book an Appointment
+                <span>Book an Appointment</span>
+                <ExternalLinkIcon />
               </a>
 
               <a

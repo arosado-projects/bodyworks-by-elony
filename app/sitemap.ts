@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "./lib/site";
+import { getBookingUrl, siteConfig } from "./lib/site";
 
 const routes = [
   {

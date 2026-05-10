@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { siteConfig } from "../lib/site";
+import { getBookingUrl, siteConfig } from "../lib/site";
 
 const footerLinks = [
   {

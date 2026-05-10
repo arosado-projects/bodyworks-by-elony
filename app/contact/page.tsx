@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { siteConfig } from "../lib/site";
+import { getBookingUrl, siteConfig } from "../lib/site";
+import ExternalLinkIcon from "../components/ExternalLinkIcon";
 
 export const metadata: Metadata = {
   title: "Contact | Bodyworks By Elony",
@@ -216,12 +217,13 @@ export default function ContactPage() {
           </div>
 
           <a
-            href={siteConfig.bookingUrl}
+            href={getBookingUrl("contact_final_cta")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
           >
-            Book an Appointment
+            <span>Book an Appointment</span>
+            <ExternalLinkIcon />
           </a>
         </div>
       </section>

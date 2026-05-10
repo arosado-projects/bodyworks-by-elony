@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
-import { siteConfig } from "../lib/site";
+import ExternalLinkIcon from "./ExternalLinkIcon";
+import { getBookingUrl, siteConfig } from "../lib/site";
 
 const navItems = [
   {
@@ -34,9 +36,20 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/"
-          className="text-lg font-medium tracking-wide text-[#292524] transition hover:text-[#8f3f50]"
+          className="flex items-center gap-3 text-lg font-medium tracking-wide text-[#292524] transition hover:text-[#8f3f50]"
         >
-          {siteConfig.name}
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8]">
+            <Image
+              src="/images/bbe-logo-rose.png"
+              alt=""
+              width={32}
+              height={42}
+              className="h-9 w-auto"
+              priority
+            />
+          </span>
+
+          <span>{siteConfig.name}</span>
         </Link>
 
         <nav
@@ -54,12 +67,13 @@ export default function Header() {
           ))}
 
           <a
-            href={siteConfig.bookingUrl}
+            href={getBookingUrl("header_book")}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-[#8f3f50] px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
           >
-            Book
+            <span>Book</span>
+            <ExternalLinkIcon />
           </a>
         </nav>
       </div>
