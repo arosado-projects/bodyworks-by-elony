@@ -75,6 +75,8 @@ export default function HomePage() {
     <main>
 <section className="relative overflow-hidden bg-bwe-page">
   <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
+    
+    {/* --- LEFT COLUMN: Text & Buttons --- */}
     <div>
       <p className="mb-4 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
         {siteConfig.name}
@@ -111,6 +113,36 @@ export default function HomePage() {
         </a>
       </div>
     </div>
+
+    {/* --- RIGHT COLUMN: Hours Card (Hidden on mobile, block on lg screens) --- */}
+    <div className="hidden lg:block rounded-[2rem] bg-bwe-soft p-6 shadow-sm">
+      <div className="rounded-[1.5rem] bg-bwe-surface p-8">
+        <p className="mb-4 text-sm uppercase tracking-[0.18em] text-bwe-accent-dark">
+          Service Hours
+        </p>
+
+        <h2 className="mb-6 text-2xl font-light leading-snug text-bwe-text">
+          Weekly availability.
+        </h2>
+
+        <dl className="grid gap-3 text-sm">
+          {siteConfig.businessHours.display.map((item) => (
+            <div
+              key={item.day}
+              className="flex items-start justify-between gap-4 border-b border-bwe-border pb-2 last:border-0 last:pb-0"
+            >
+              <dt className="font-medium text-bwe-text">{item.day}</dt>
+              <dd className="text-right text-bwe-muted">{item.hours}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <p className="mt-4 text-[11px] leading-5 text-bwe-muted">
+          {siteConfig.businessHours.note}
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
 
