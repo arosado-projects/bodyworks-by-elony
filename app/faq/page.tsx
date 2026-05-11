@@ -116,7 +116,7 @@ const policyFaqs = [
   },
   {
     question: "Where is Bodyworks By Elony located?",
-    answer: `Bodyworks By Elony is located in ${siteConfig.location.city}, ${siteConfig.location.zip}, near ${siteConfig.location.landmark}, serving Cedar Park, Leander, Liberty Hill, and surrounding Northwest Austin-area communities.`,
+    answer: `Bodyworks By Elony is located in ${siteConfig.location.city}, ${siteConfig.location.zip}, near ${siteConfig.location.landmark}, serving ${siteConfig.location.serviceArea}.`,
   },
 ];
 

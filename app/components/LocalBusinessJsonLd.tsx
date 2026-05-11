@@ -35,11 +35,15 @@ export default function LocalBusinessJsonLd() {
       },
       {
         "@type": "City",
-        name: "Austin",
+        name: "Leander",
       },
       {
-        "@type": "AdministrativeArea",
-        name: "Greater Austin area",
+        "@type": "Place",
+        name: "Northwest Austin",
+      },
+      {
+        "@type": "City",
+        name: "Liberty Hill",
       },
     ],
     openingHours: siteConfig.businessHours.schemaOpeningHours,

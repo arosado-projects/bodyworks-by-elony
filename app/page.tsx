@@ -5,7 +5,7 @@ import ExternalLinkIcon from "./components/ExternalLinkIcon";
 export const metadata: Metadata = {
   title: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
   description:
-    "Calm, personalized massage and bodywork in northwest Cedar Park, TX, near Whitestone & Lakeline, Leander, and Liberty Hill.",
+    "Calm, personalized massage and bodywork in northwest Cedar Park, TX, near Whitestone & Lakeline, Leander, northwest Austin, and Liberty Hill.",
 };
 
 const featuredServices = [
@@ -125,8 +125,8 @@ export default function HomePage() {
 
               <p className="mb-6 leading-7 text-bwe-muted">
                 Located near Whitestone & Lakeline, Bodyworks By Elony is
-                convenient to Cedar Park, Leander, Liberty Hill, and nearby
-                northwest Austin-area communities.
+                convenient to Cedar Park, Leander, northwest Austin, and
+                Liberty Hill.
               </p>
 
               <div className="rounded-2xl border border-bwe-border bg-bwe-page p-5">

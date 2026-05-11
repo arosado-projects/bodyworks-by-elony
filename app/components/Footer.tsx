@@ -105,8 +105,8 @@ export default function Footer() {
           </h2>
 
           <p className="max-w-xl text-sm leading-7 text-bwe-muted">
-            Personalized massage and bodywork sessions serving northwest Cedar
-            Park, Leander, Liberty Hill, and nearby communities.
+            Personalized massage and bodywork sessions serving Cedar Park,
+            Leander, northwest Austin, and Liberty Hill.
           </p>
 
           <p className="mt-4 text-sm text-bwe-muted">

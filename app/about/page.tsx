@@ -169,7 +169,7 @@ export default function AboutPage() {
             <p className="leading-8 text-bwe-muted">
               Bodyworks By Elony offers massage and bodywork in a quiet,
               welcoming treatment room near Whitestone & Lakeline, convenient
-              to Cedar Park, Leander, and Liberty Hill.
+              to Cedar Park, Leander, northwest Austin, and Liberty Hill.
             </p>
           </div>
 
@@ -259,7 +259,7 @@ export default function AboutPage() {
             </p>
 
             <h2 className="mb-4 text-3xl font-light leading-tight text-bwe-text">
-              Serving northwest Cedar Park, Leander, and Liberty Hill.
+              Serving Cedar Park, Leander, northwest Austin, and Liberty Hill.
             </h2>
 
             <p className="leading-8 text-bwe-muted">

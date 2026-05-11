@@ -192,7 +192,8 @@ export default function BookingPage() {
             <p className="leading-8 text-bwe-muted">
               Bodyworks By Elony is located in {siteConfig.location.city},{" "}
               {siteConfig.location.zip}, near {siteConfig.location.landmark},
-              convenient to northwest Cedar Park, Leander, and Liberty Hill.
+              convenient to Cedar Park, Leander, northwest Austin, and Liberty
+              Hill.
             </p>
           </div>
 

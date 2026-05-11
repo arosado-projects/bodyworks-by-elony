@@ -33,8 +33,8 @@ export const siteConfig = {
     city: "Cedar Park, TX",
     zip: "78613",
     landmark: "Whitestone & Lakeline",
-    serviceArea: "Cedar Park, Leander, Liberty Hill, and surrounding Northwest Austin-area communities",
-    shortServiceArea: "Cedar Park, Leander, and Liberty Hill",
+    serviceArea: "Cedar Park, Leander, northwest Austin, and Liberty Hill",
+    shortServiceArea: "Cedar Park, Leander, northwest Austin, and Liberty Hill",
   },
   businessHours: {
     note: "*End time indicates when the session ends.",
