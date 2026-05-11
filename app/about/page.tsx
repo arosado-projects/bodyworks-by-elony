@@ -16,7 +16,7 @@ const credentials = [
   {
     title: "Practicing Since 2013",
     description:
-      "Elony has been practicing massage therapy since 2013, bringing years of hands-on experience to her client-centered work.",
+      "Elony has been practicing massage therapy since 2013, bringing years of hands-on experience to her one-on-one work.",
   },
   {
     title: "Manual Lymphatic Drainage",
@@ -30,9 +30,9 @@ const credentials = [
 ];
 
 const clientFit = [
-  "Working adults seeking relief from everyday tension and stress",
-  "Clients who prefer calm, attentive, personalized massage",
-  "Prenatal clients looking for supportive, carefully positioned bodywork",
+  "People dealing with everyday tension, stress, or long hours at work",
+  "Clients who want calm, attentive massage without pressure or judgment",
+  "Prenatal clients looking for certified, carefully positioned bodywork",
   "Clients seeking focused manual lymphatic drainage when appropriate",
   "Families asking about gentle pediatric massage with parent or guardian involvement",
 ];
@@ -40,43 +40,61 @@ const clientFit = [
 export default function AboutPage() {
   return (
     <main>
-      <section className="bg-[#faf7f2]">
+      <section className="bg-bwe-page">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-28">
-          <div className="rounded-[2rem] bg-[#f7e8e8] p-6 shadow-sm">
-            <figure className="overflow-hidden rounded-[1.5rem] bg-[#fffdfc]">
+          <div className="rounded-[2rem] bg-bwe-soft p-6 shadow-sm">
+            <figure className="overflow-hidden rounded-[1.5rem] bg-bwe-surface">
               <img
                 src="/images/elony-about.jpg"
                 alt="Elony, licensed massage therapist and owner of Bodyworks By Elony"
                 className="aspect-[4/5] w-full object-cover object-top"
               />
 
-              <figcaption className="px-5 py-4 text-sm text-[#6b625c]">
+              <figcaption className="px-5 py-4 text-sm text-bwe-muted">
                 Photo by Stephanie Copner
               </figcaption>
             </figure>
           </div>
 
           <div>
-            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               About Elony
             </p>
 
-            <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
-              Licensed massage therapist and owner of Bodyworks By Elony.
+            <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-bwe-text sm:text-5xl">
+              Hey, I’m Elony.
             </h1>
 
-            <p className="mb-6 text-lg leading-8 text-[#6b625c]">
-              Elony offers calm, personalized massage and bodywork for clients
-              in Cedar Park and the greater Austin area. Her work is grounded in
-              clear communication, thoughtful intake, and sessions adapted to
-              each client’s comfort, pressure preferences, and goals.
+            <p className="mb-6 text-lg leading-8 text-bwe-muted">
+              I’m a licensed massage therapist, the owner of Bodyworks By Elony,
+              and I’ve been practicing massage since 2013. My goal is simple: help
+              you feel comfortable, respected, and cared for from the moment you
+              walk in.
             </p>
 
-            <p className="leading-8 text-[#6b625c]">
-              Born and raised in El Paso, Texas, Elony now calls the Austin area
-              home with her family. Her interest in massage grew from a lasting
-              curiosity about how the body works and how supportive bodywork can
-              help people feel more comfortable, relaxed, and at ease.
+            <p className="mb-6 leading-8 text-bwe-muted">
+              I was born and raised in El Paso, Texas, home of the best Mexican food
+              you can find, and now live and work in the northwest Cedar Park area
+              with my family. Before massage, movement was my first language. I
+              started dancing when I was two, grew up as a competition kid, and began
+              teaching dance at 14 after a mentor saw something in me that I did not
+              fully see in myself yet.
+            </p>
+
+            <p className="mb-6 leading-8 text-bwe-muted">
+              That background shaped the way I work today. Years of dance, teaching,
+              fitness, and my own experiences with injury made me want to understand
+              the body more deeply. Massage therapy became a natural next step, and I
+              went on to graduate from Southern California Health Institute as a
+              Certified Massage Therapist.
+            </p>
+
+            <p className="leading-8 text-bwe-muted">
+              My work is practical, personal, and never cookie-cutter, because every
+              body brings a different story to the table. Some clients come in with
+              pain or strain from everyday life. Some need quiet. Some need focused
+              therapeutic work. Some just need a safe place to breathe for an hour.
+              Wherever you are starting from, you are welcome here.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -84,7 +102,7 @@ export default function AboutPage() {
                 href={getBookingUrl("about_hero")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
                 <span>Book an Appointment</span>
                 <ExternalLinkIcon />
@@ -92,7 +110,7 @@ export default function AboutPage() {
 
               <a
                 href="/services"
-                className="rounded-full border border-[#eadfda] bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+                className="rounded-full border border-bwe-border bg-bwe-surface px-6 py-3 text-sm font-medium text-bwe-text transition hover:border-bwe-accent"
               >
                 View Services
               </a>
@@ -101,61 +119,61 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#fffdfc]">
+      <section className="bg-bwe-surface">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Her Approach
             </p>
 
-            <h2 className="text-3xl font-light leading-tight text-[#292524]">
-              Massage that feels grounded, respectful, and specific to you.
+            <h2 className="text-3xl font-light leading-tight text-bwe-text">
+              Your massage should feel like it belongs to you.
             </h2>
           </div>
 
-          <div className="space-y-6 text-[#6b625c]">
+          <div className="space-y-6 text-bwe-muted">
             <p className="leading-8">
-              Elony’s sessions are designed to feel collaborative. Whether you
-              are booking therapeutic massage, prenatal massage, manual
-              lymphatic drainage, or pediatric massage, the work begins with a
-              conversation about what you need that day.
+              Sessions are meant to feel collaborative, not scripted. Whether
+              you book therapeutic massage, prenatal massage, manual lymphatic
+              drainage, or pediatric massage, we start by talking through what
+              is going on and what would help you feel comfortable.
             </p>
 
             <p className="leading-8">
-              Pressure, pacing, positioning, and focus areas can be adjusted
-              throughout the appointment. The goal is not a one-size-fits-all
-              massage, but a session that supports your comfort, your schedule,
-              and your body.
+              Pressure, pacing, positioning, and focus areas can change during
+              the appointment. You never have to just deal with it, and you are
+              always allowed to speak up.
             </p>
 
             <p className="leading-8">
               Many clients come to Bodyworks By Elony from Cedar Park and nearby
-              communities looking for a calm, reliable place to reset from work,
-              family life, stress, and everyday tension.
+              communities looking for a calm, reliable place for real-life
+              stress, sore spots, pregnancy support, lymphatic work, and
+              everyday tension.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#faf7f2]">
+      <section className="bg-bwe-page">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               The Space
             </p>
 
-            <h2 className="mb-4 text-3xl font-light leading-tight text-[#292524]">
+            <h2 className="mb-4 text-3xl font-light leading-tight text-bwe-text">
               A calm, private treatment room in northwest Cedar Park.
             </h2>
 
-            <p className="leading-8 text-[#6b625c]">
+            <p className="leading-8 text-bwe-muted">
               Bodyworks By Elony offers massage and bodywork in a quiet,
               welcoming treatment room near Whitestone & Lakeline, convenient
               to Cedar Park, Leander, and Liberty Hill.
             </p>
           </div>
 
-          <div className="rounded-[2rem] border border-[#eadfda] bg-[#f7e8e8] p-6 shadow-sm">
+          <div className="rounded-[2rem] border border-bwe-border bg-bwe-soft p-6 shadow-sm">
             <img
               src="/images/studio-room.png"
               alt="Warm massage treatment room at Bodyworks By Elony in Cedar Park, Texas"
@@ -165,15 +183,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#faf7f2]">
+      <section className="bg-bwe-page">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 max-w-2xl">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Training & Credentials
             </p>
 
-            <h2 className="text-3xl font-light text-[#292524]">
-              Professional training with specialized massage certifications.
+            <h2 className="text-3xl font-light text-bwe-text">
+              Trained, licensed, and always learning.
             </h2>
           </div>
 
@@ -181,50 +199,50 @@ export default function AboutPage() {
             {credentials.map((item) => (
               <article
                 key={item.title}
-                className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+                className="rounded-3xl border border-bwe-border bg-bwe-surface p-6"
               >
-                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                <h3 className="mb-3 text-xl font-medium text-bwe-text">
                   {item.title}
                 </h3>
 
-                <p className="leading-7 text-[#6b625c]">
+                <p className="leading-7 text-bwe-muted">
                   {item.description}
                 </p>
               </article>
             ))}
           </div>
 
-          <div className="mt-6 rounded-3xl border border-[#eadfda] bg-[#f7e8e8] p-6 md:p-8">
-            <h3 className="mb-3 text-xl font-medium text-[#292524]">
+          <div className="mt-6 rounded-3xl border border-bwe-border bg-bwe-soft p-6 md:p-8">
+            <h3 className="mb-3 text-xl font-medium text-bwe-text">
               Massage education
             </h3>
 
-            <p className="leading-8 text-[#6b625c]">
+            <p className="leading-8 text-bwe-muted">
               Elony is a graduate of the Southern California Health Institute,
               where she trained as a Certified Massage Therapist before building
-              her practice around therapeutic, client-centered bodywork.
+              her practice around therapeutic, customized bodywork.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#fffdfc]">
+      <section className="bg-bwe-surface">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Client Fit
             </p>
 
-            <h2 className="text-3xl font-light leading-tight text-[#292524]">
-              A good fit for clients who want attentive, personalized massage.
+            <h2 className="text-3xl font-light leading-tight text-bwe-text">
+              A good fit if you want massage without pressure or judgment.
             </h2>
           </div>
 
-          <div className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6 md:p-8">
-            <ul className="space-y-4 text-[#6b625c]">
+          <div className="rounded-3xl border border-bwe-border bg-bwe-page p-6 md:p-8">
+            <ul className="space-y-4 text-bwe-muted">
               {clientFit.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d98c9b]" />
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-bwe-accent" />
                   <span className="leading-7">{item}</span>
                 </li>
               ))}
@@ -233,60 +251,60 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7e8e8]">
+      <section className="bg-bwe-soft">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Location & Contact
             </p>
 
-            <h2 className="mb-4 text-3xl font-light leading-tight text-[#292524]">
-              Serving Cedar Park and the greater Austin area.
+            <h2 className="mb-4 text-3xl font-light leading-tight text-bwe-text">
+              Serving northwest Cedar Park, Leander, and Liberty Hill.
             </h2>
 
-            <p className="leading-8 text-[#6b625c]">
+            <p className="leading-8 text-bwe-muted">
               Bodyworks By Elony is located in {siteConfig.location.city},{" "}
               {siteConfig.location.zip}, near {siteConfig.location.landmark}.
-              Online booking is available through Acuity.
+              Online booking is available through the booking page.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+          <div className="rounded-3xl border border-bwe-border bg-bwe-surface p-6 md:p-8">
             <div className="grid gap-5">
               <div>
-                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
                   Email
                 </h3>
 
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                  className="text-bwe-text underline decoration-bwe-accent underline-offset-4 hover:decoration-bwe-accent-dark"
                 >
                   {siteConfig.contact.email}
                 </a>
               </div>
 
               <div>
-                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
                   Call
                 </h3>
 
                 <a
                   href={siteConfig.contact.phoneHref}
-                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                  className="text-bwe-text underline decoration-bwe-accent underline-offset-4 hover:decoration-bwe-accent-dark"
                 >
                   {siteConfig.contact.phone}
                 </a>
               </div>
 
               <div>
-                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
                   Text
                 </h3>
 
                 <a
                   href={siteConfig.contact.textHref}
-                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                  className="text-bwe-text underline decoration-bwe-accent underline-offset-4 hover:decoration-bwe-accent-dark"
                 >
                   {siteConfig.contact.text}
                 </a>
@@ -297,7 +315,7 @@ export default function AboutPage() {
                   href={getBookingUrl("about_contact_card")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
                 >
                   <span>Book an Appointment</span>
                   <ExternalLinkIcon />

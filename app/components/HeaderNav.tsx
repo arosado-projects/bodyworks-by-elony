@@ -33,9 +33,9 @@ const navItems = [
 ];
 
 const activeLinkClassName =
-  "font-medium text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-8 transition hover:text-[#8f3f50]";
+  "font-medium text-bwe-accent-dark underline decoration-bwe-accent underline-offset-8 transition hover:text-bwe-accent-dark";
 
-const inactiveLinkClassName = "text-[#6b625c] transition hover:text-[#8f3f50]";
+const inactiveLinkClassName = "text-bwe-muted transition hover:text-bwe-accent-dark";
 
 export default function HeaderNav() {
   const pathname = usePathname();
@@ -43,7 +43,7 @@ export default function HeaderNav() {
   return (
     <nav
       aria-label="Main navigation"
-      className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[#6b625c]"
+      className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-bwe-muted"
     >
       {navItems.map((item) => {
         const isActive = pathname === item.href;
@@ -64,7 +64,7 @@ export default function HeaderNav() {
         href={getBookingUrl("header_book")}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
       >
         <span>Book</span>
         <ExternalLinkIcon />

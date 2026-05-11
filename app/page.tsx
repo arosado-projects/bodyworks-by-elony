@@ -12,22 +12,22 @@ const featuredServices = [
   {
     title: "Therapeutic Massage",
     description:
-      "Customized massage that may include relaxation-focused work, deeper pressure, trigger point work, or other techniques based on your goals and comfort.",
+      "A customized massage built around what your body needs that day, whether that means quiet relaxation, deeper pressure, focused work, or a mix of techniques.",
   },
   {
     title: "Prenatal Massage",
     description:
-      "Supportive massage for pregnancy, offered with comfort, positioning, and care in mind.",
+      "Certified prenatal massage with supportive side-lying positioning, steady pacing, and room to adjust for comfort.",
   },
   {
     title: "Manual Lymphatic Drainage",
     description:
-      "Gentle, specialized massage using light, intentional techniques. Elony is trained in the Klose/Vodder Technique.",
+      "Gentle, focused lymphatic work using light, intentional techniques. Elony is trained in the Klose/Vodder Technique.",
   },
   {
     title: "Pediatric Massage",
     description:
-      "Gentle, age-appropriate massage may be available for children with parent or guardian involvement.",
+      "Gentle, age-appropriate massage may be available for children, with parent or guardian involvement every step of the way.",
   },
 ];
 
@@ -72,21 +72,24 @@ const testimonials = [
 export default function HomePage() {
   return (
     <main>
-      <section className="bg-[#faf7f2]">
+      <section className="bg-bwe-page">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
           <div>
-            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               {siteConfig.name}
             </p>
 
-            <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-[#292524] sm:text-5xl lg:text-6xl">
+            <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-bwe-text sm:text-5xl lg:text-6xl">
               Calm, personalized massage and bodywork in Cedar Park, Texas.
             </h1>
 
-            <p className="mb-8 max-w-2xl text-lg leading-8 text-[#6b625c]">
-              Bodyworks By Elony offers thoughtful, client-centered massage
-              sessions designed to support relaxation, comfort, recovery, and a
-              deeper sense of ease in your body.
+            <p className="mb-8 max-w-2xl text-lg leading-8 text-bwe-muted">
+              Welcome to a safe, welcoming space for all people, body types,
+              abilities, and gender expressions. At Bodyworks By Elony, there
+              are no membership fees, gratuity is always included, and you
+              receive your full scheduled session time. Located in northwest
+              Cedar Park near Whitestone & Lakeline, Elony offers customized
+              massage and bodywork in a calm, private setting.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -94,7 +97,7 @@ export default function HomePage() {
                 href={getBookingUrl("home_hero")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
                 <span>Book an Appointment</span>
                 <ExternalLinkIcon />
@@ -102,36 +105,36 @@ export default function HomePage() {
 
               <a
                 href="/services"
-                className="rounded-full border border-[#eadfda] bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:border-[#d98c9b]"
+                className="rounded-full border border-bwe-border bg-bwe-surface px-6 py-3 text-sm font-medium text-bwe-text transition hover:border-bwe-accent"
               >
                 View Services
               </a>
             </div>
           </div>
 
-          <div className="rounded-[2rem] bg-[#f7e8e8] p-6 shadow-sm">
-            <div className="rounded-[1.5rem] bg-[#fffdfc] p-8">
-              <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#8f3f50]">
+          <div className="rounded-[2rem] bg-bwe-soft p-6 shadow-sm">
+            <div className="rounded-[1.5rem] bg-bwe-surface p-8">
+              <p className="mb-4 text-sm uppercase tracking-[0.18em] text-bwe-accent-dark">
                 Northwest Cedar Park
               </p>
 
-              <h2 className="mb-4 text-2xl font-light leading-snug text-[#292524]">
-                A grounded space for massage, recovery, and supportive
-                bodywork.
+              <h2 className="mb-4 text-2xl font-light leading-snug text-bwe-text">
+                A quiet, private room where your massage can actually feel like
+                yours.
               </h2>
 
-              <p className="mb-6 leading-7 text-[#6b625c]">
+              <p className="mb-6 leading-7 text-bwe-muted">
                 Located near Whitestone & Lakeline, Bodyworks By Elony is
                 convenient to Cedar Park, Leander, Liberty Hill, and nearby
-                Northwest Austin-area communities.
+                northwest Austin-area communities.
               </p>
 
-              <div className="rounded-2xl border border-[#eadfda] bg-[#faf7f2] p-5">
-                <p className="mb-2 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+              <div className="rounded-2xl border border-bwe-border bg-bwe-page p-5">
+                <p className="mb-2 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
                   Specialized Training
                 </p>
 
-                <p className="leading-7 text-[#6b625c]">
+                <p className="leading-7 text-bwe-muted">
                   Manual Lymphatic Drainage:{" "}
                   {siteConfig.credentials.mldTechnique} ·{" "}
                   {siteConfig.credentials.mldCertification}
@@ -142,15 +145,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#fffdfc]">
+      <section className="bg-bwe-surface">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 max-w-2xl">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Services
             </p>
 
-            <h2 className="text-3xl font-light text-[#292524] sm:text-4xl">
-              Massage and bodywork for relaxation, comfort, and recovery.
+            <h2 className="text-3xl font-light text-bwe-text sm:text-4xl">
+              Customized massage for real life, real stress, and real bodies.
             </h2>
           </div>
 
@@ -158,13 +161,13 @@ export default function HomePage() {
             {featuredServices.map((service) => (
               <article
                 key={service.title}
-                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6"
+                className="rounded-3xl border border-bwe-border bg-bwe-page p-6"
               >
-                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                <h3 className="mb-3 text-xl font-medium text-bwe-text">
                   {service.title}
                 </h3>
 
-                <p className="leading-7 text-[#6b625c]">
+                <p className="leading-7 text-bwe-muted">
                   {service.description}
                 </p>
               </article>
@@ -174,7 +177,7 @@ export default function HomePage() {
           <div className="mt-10">
             <a
               href="/services"
-              className="text-sm font-medium text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+              className="text-sm font-medium text-bwe-accent-dark underline decoration-bwe-accent underline-offset-4 hover:decoration-bwe-accent-dark"
             >
               Explore all services
             </a>
@@ -182,52 +185,53 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#f7e8e8]">
+      <section className="bg-bwe-soft">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-3">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               What to Expect
             </p>
 
-            <h2 className="text-3xl font-light text-[#292524]">
-              Clear, comfortable, and client-centered.
+            <h2 className="text-3xl font-light text-bwe-text">
+              No guessing, no pressure, no one-size-fits-all massage.
             </h2>
           </div>
 
-          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6">
-            <h3 className="mb-3 text-lg font-medium text-[#292524]">
+          <div className="rounded-3xl border border-bwe-border bg-bwe-surface p-6">
+            <h3 className="mb-3 text-lg font-medium text-bwe-text">
               Thoughtful intake
             </h3>
 
-            <p className="leading-7 text-[#6b625c]">
-              Sessions begin with a conversation about your goals, preferences,
-              comfort level, and areas that may need extra attention.
+            <p className="leading-7 text-bwe-muted">
+              Each session starts with a quick check-in about what is going on,
+              what areas need attention, and what kind of pressure feels right
+              for you that day.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6">
-            <h3 className="mb-3 text-lg font-medium text-[#292524]">
+          <div className="rounded-3xl border border-bwe-border bg-bwe-surface p-6">
+            <h3 className="mb-3 text-lg font-medium text-bwe-text">
               Personalized sessions
             </h3>
 
-            <p className="leading-7 text-[#6b625c]">
-              Pressure, pacing, positioning, and focus areas can be adjusted so
-              the session stays aligned with what you need that day.
+            <p className="leading-7 text-bwe-muted">
+              Pressure, positioning, focus areas, and pace can all be adjusted.
+              Your massage should feel like it belongs to you.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#faf7f2]">
+      <section className="bg-bwe-page">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div>
-              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
                 Training & Care
               </p>
 
-              <h2 className="text-3xl font-light leading-tight text-[#292524]">
-                Licensed massage therapy with specialized training.
+              <h2 className="text-3xl font-light leading-tight text-bwe-text">
+                Trained, licensed, and always learning.
               </h2>
             </div>
 
@@ -235,18 +239,18 @@ export default function HomePage() {
               {trustItems.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+                  className="rounded-3xl border border-bwe-border bg-bwe-surface p-6"
                 >
-                  <h3 className="mb-3 text-lg font-medium text-[#292524]">
+                  <h3 className="mb-3 text-lg font-medium text-bwe-text">
                     {item.title}
                   </h3>
 
-                  <p className="leading-7 text-[#6b625c]">
+                  <p className="leading-7 text-bwe-muted">
                     {item.description}
                   </p>
 
                   {item.note ? (
-                    <p className="mt-4 border-t border-[#eadfda] pt-4 text-xs leading-5 text-[#6b625c]">
+                    <p className="mt-4 border-t border-bwe-border pt-4 text-xs leading-5 text-bwe-muted">
                       {item.note}
                     </p>
                   ) : null}
@@ -257,15 +261,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#fffdfc]">
+      <section className="bg-bwe-surface">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 max-w-2xl">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Kind Words from Clients
             </p>
 
-            <h2 className="text-3xl font-light text-[#292524] sm:text-4xl">
-              Thoughtful care that clients remember.
+            <h2 className="text-3xl font-light text-bwe-text sm:text-4xl">
+              Kind words from people who have been on the table.
             </h2>
           </div>
 
@@ -273,18 +277,18 @@ export default function HomePage() {
             {testimonials.map((testimonial) => (
               <figure
                 key={testimonial.name}
-                className="rounded-3xl border border-[#eadfda] bg-[#faf7f2] p-6"
+                className="rounded-3xl border border-bwe-border bg-bwe-page p-6"
               >
-                <blockquote className="leading-8 text-[#292524]">
+                <blockquote className="leading-8 text-bwe-text">
                   “{testimonial.quote}”
                 </blockquote>
 
-                <figcaption className="mt-6 border-t border-[#eadfda] pt-4">
-                  <p className="font-medium text-[#292524]">
+                <figcaption className="mt-6 border-t border-bwe-border pt-4">
+                  <p className="font-medium text-bwe-text">
                     {testimonial.name}
                   </p>
 
-                  <p className="mt-1 text-sm text-[#6b625c]">
+                  <p className="mt-1 text-sm text-bwe-muted">
                     {testimonial.context}
                   </p>
                 </figcaption>
@@ -297,7 +301,7 @@ export default function HomePage() {
               href={siteConfig.social.googleReviewsRead}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+              className="text-sm font-medium text-bwe-accent-dark underline decoration-bwe-accent underline-offset-4 hover:decoration-bwe-accent-dark"
             >
               Read more reviews on Google
             </a>
@@ -305,15 +309,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#292524] text-white">
+      <section className="bg-bwe-accent-deep text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#f7e8e8]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-soft">
               Ready to Schedule?
             </p>
 
             <h2 className="text-3xl font-light">
-              Book a massage appointment with Bodyworks By Elony.
+              Call, text, or book online when you’re ready.
             </h2>
           </div>
 
@@ -321,7 +325,7 @@ export default function HomePage() {
             href={getBookingUrl("home_final_cta")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-surface px-6 py-3 text-sm font-medium text-bwe-text transition hover:bg-bwe-soft"
           >
             <span>Book an Appointment</span>
             <ExternalLinkIcon />

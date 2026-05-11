@@ -12,7 +12,7 @@ const massageFaqs = [
   {
     question: "Why do first-time appointments require prepayment?",
     answer:
-      "When you schedule, that time is dedicated specifically to your care. First-time appointments require prepayment through our secure booking platform to confirm your session and protect your reserved time. This helps us maintain a consistent schedule so we can continue providing focused, one-on-one attention to every client.",
+      "Your appointment time is held just for you. First-time appointments require prepayment through the secure booking platform so your session is confirmed and the schedule stays fair for everyone.",
   },
   {
     question: "What happens if I need to change a prepaid appointment?",
@@ -20,24 +20,29 @@ const massageFaqs = [
       "If you need to reschedule a prepaid appointment, please give the required cancellation notice so the payment can be applied to a future appointment. Appointments changed or canceled inside the cancellation window may be charged according to the cancellation policy. If you prepaid and need help with a scheduling issue, contact Bodyworks By Elony before your appointment time.",
   },
   {
+    question: "What happens at my first appointment?",
+    answer:
+      "You will have a quick check-in with Elony before the massage starts so you can talk through what is going on, what areas need attention, and what pressure feels right. During the session, you can talk, rest, ask questions, or zone out. It is your time on the table.",
+  },
+  {
     question: "Will I be covered during the massage?",
     answer:
-      "Yes. You will be properly draped throughout the session to help keep you comfortable. Only the area being worked on is uncovered. If you prefer that a certain area remain covered, let Elony know and the work can be adjusted.",
+      "Yes. You will be properly draped the whole time. Only the area being worked on is uncovered, and breast and genital areas are never massaged. If you want an area to stay covered or skipped, just say so.",
   },
   {
     question: "What areas of my body will be massaged?",
     answer:
-      "During intake, you and Elony will discuss the areas you would like addressed. A typical full-body massage may include the back, arms, legs, feet, hands, head, neck, and shoulders. Breast and genital areas are never massaged. Glute work may be included only when appropriate and based on client comfort and session goals.",
+      "At the start, you and Elony will talk about what areas need attention and what areas you want skipped. A typical full-body massage may include the back, arms, legs, feet, hands, head, neck, and shoulders. Glute work may be included only when appropriate and based on your comfort and goals.",
   },
   {
     question: "What should I do during the massage?",
     answer:
-      "This is your session. Some clients prefer to talk, while others prefer quiet. You are welcome to relax, breathe, doze off, or let Elony know if anything needs to be adjusted. If she moves or positions an arm or leg, simply try to relax and let her do the work.",
+      "There is a quick check-in before the hands-on work starts. During the massage, you can talk, rest, ask questions, zone out, or say if something needs to change. You do not have to perform, help, or be perfectly still. Just let Elony know what you need.",
   },
   {
     question: "What will the massage feel like?",
     answer:
-      "That depends on the type of work being done and your pressure preferences. Some clients prefer gentle, relaxation-focused work, while others want deeper therapeutic pressure. Elony will check in as needed, and you can ask for more or less pressure at any time.",
+      "It depends on your body, the service, and the pressure that feels right to you. Some people want gentle work, and some want deeper therapeutic pressure. Elony will check in, and you can ask for more pressure, less pressure, a different position, or a different focus area at any time.",
   },
   {
     question: "How long will my session last?",
@@ -55,12 +60,12 @@ const servicesFaqs = [
   {
     question: "What type of massage should I book?",
     answer:
-      "If you are unsure, therapeutic massage is usually the most flexible starting point. It can be adapted for relaxation, deeper pressure, focused areas of tension, or general recovery support. Prenatal massage and manual lymphatic drainage are more specialized services.",
+      "If you are unsure, therapeutic massage is usually the most flexible starting point. It can be adapted for quiet relaxation, deeper pressure, focused areas of tension, or whatever is most useful that day. Prenatal massage and manual lymphatic drainage are more specialized services.",
   },
   {
     question: "Do you offer prenatal massage?",
     answer:
-      "Yes. Prenatal massage is available as a supportive pregnancy massage session with comfort, positioning, and care in mind.",
+      "Yes. Prenatal massage is available in Cedar Park with certified prenatal massage training, supportive side-lying positioning, and plenty of room to adjust for comfort.",
   },
   {
     question: "Do you offer manual lymphatic drainage?",
@@ -74,7 +79,7 @@ const servicesFaqs = [
   {
     question: "Do you offer pediatric massage?",
     answer:
-      "Yes. Gentle, age-appropriate massage may be available for children with parent or guardian involvement.",
+      "Yes. Gentle, age-appropriate massage may be available for children with parent or guardian involvement. Comfort, consent, and clear communication matter here too.",
   },
   {
     question: "Do you offer cupping?",
@@ -107,7 +112,7 @@ const policyFaqs = [
   {
     question: "Do you accept insurance or provide superbills?",
     answer:
-      "Bodyworks By Elony does not accept insurance, provide medical billing or insurance coding, or guarantee reimbursement. Clients should retain automated payment receipts and appointment confirmations for their own records. For packages, those two documents together serve as the client’s official record. Requests for manual account reconciliation or a formal financial summary may be subject to a $50 Summary Preparation Fee.",
+      "Bodyworks By Elony does not accept insurance, provide medical billing or insurance coding, or guarantee reimbursement. Clients should retain automated payment receipts and appointment confirmations for their own records. For packages, those two documents together serve as the client’s official record. Requests for manual account reconciliation or preparation of a formal financial summary or statement are subject to a $50 Summary Preparation Fee.",
   },
   {
     question: "Where is Bodyworks By Elony located?",
@@ -143,18 +148,18 @@ function FaqList({
       {items.map((item) => (
         <details
           key={item.question}
-          className="group rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 transition-colors [&[open]]:border-[#d98c9b] [&[open]]:bg-[#faf7f2]"
+          className="group rounded-3xl border border-bwe-border bg-bwe-surface p-6 transition-colors [&[open]]:border-bwe-accent [&[open]]:bg-bwe-page"
         >
-          <summary className="cursor-pointer list-none text-lg font-medium text-[#292524]">
+          <summary className="cursor-pointer list-none text-lg font-medium text-bwe-text">
             <span className="flex items-start justify-between gap-4">
               <span>{item.question}</span>
-              <span className="mt-1 text-[#8f3f50] transition group-open:rotate-45">
+              <span className="mt-1 text-bwe-accent-dark transition group-open:rotate-45">
                 +
               </span>
             </span>
           </summary>
 
-          <p className="mt-4 leading-8 text-[#6b625c]">{item.answer}</p>
+          <p className="mt-4 leading-8 text-bwe-muted">{item.answer}</p>
         </details>
       ))}
     </div>
@@ -169,34 +174,34 @@ export default function FaqPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <section className="bg-[#faf7f2]">
+      <section className="bg-bwe-page">
         <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
           <div className="max-w-3xl">
-            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               FAQ
             </p>
 
-            <h1 className="mb-6 text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+            <h1 className="mb-6 text-4xl font-light leading-tight text-bwe-text sm:text-5xl">
               Frequently asked questions.
             </h1>
 
-            <p className="text-lg leading-8 text-[#6b625c]">
-              Practical answers about massage appointments, comfort, draping,
-              payment, packages, manual lymphatic drainage, prenatal massage,
-              and pediatric massage at Bodyworks By Elony.
+            <p className="text-lg leading-8 text-bwe-muted">
+              Straightforward answers about massage appointments, comfort,
+              draping, pressure, payment, packages, manual lymphatic drainage,
+              prenatal massage, and pediatric massage at Bodyworks By Elony.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#fffdfc]">
+      <section className="bg-bwe-surface">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Massage Appointments
             </p>
 
-            <h2 className="text-3xl font-light leading-tight text-[#292524]">
+            <h2 className="text-3xl font-light leading-tight text-bwe-text">
               What to expect before and during your session.
             </h2>
           </div>
@@ -205,15 +210,15 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="bg-[#faf7f2]">
+      <section className="bg-bwe-page">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Services
             </p>
 
-            <h2 className="text-3xl font-light leading-tight text-[#292524]">
-              Choosing the right massage service.
+            <h2 className="text-3xl font-light leading-tight text-bwe-text">
+              Choosing the massage that fits this season of life.
             </h2>
           </div>
 
@@ -221,15 +226,15 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="bg-[#fffdfc]">
+      <section className="bg-bwe-surface">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Payment & Policies
             </p>
 
-            <h2 className="text-3xl font-light leading-tight text-[#292524]">
-              Helpful details before booking.
+            <h2 className="text-3xl font-light leading-tight text-bwe-text">
+              The practical stuff before you book.
             </h2>
           </div>
 
@@ -237,60 +242,59 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7e8e8]">
+      <section className="bg-bwe-soft">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Still Have Questions?
             </p>
 
-            <h2 className="mb-4 text-3xl font-light leading-tight text-[#292524]">
+            <h2 className="mb-4 text-3xl font-light leading-tight text-bwe-text">
               Contact Bodyworks By Elony before booking.
             </h2>
 
-            <p className="leading-8 text-[#6b625c]">
-              For questions about which service to choose, manual lymphatic
-              drainage, prenatal massage, pediatric massage, or appointment
-              details, reach out before scheduling.
+            <p className="leading-8 text-bwe-muted">
+              If you are not sure what to book or want to ask something first,
+              call, text, or email before scheduling.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
+          <div className="rounded-3xl border border-bwe-border bg-bwe-surface p-6 md:p-8">
             <div className="grid gap-5">
               <div>
-                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
                   Email
                 </h3>
 
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                  className="text-bwe-text underline decoration-bwe-accent underline-offset-4 hover:decoration-bwe-accent-dark"
                 >
                   {siteConfig.contact.email}
                 </a>
               </div>
 
               <div>
-                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
                   Call
                 </h3>
 
                 <a
                   href={siteConfig.contact.phoneHref}
-                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                  className="text-bwe-text underline decoration-bwe-accent underline-offset-4 hover:decoration-bwe-accent-dark"
                 >
                   {siteConfig.contact.phone}
                 </a>
               </div>
 
               <div>
-                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+                <h3 className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
                   Text
                 </h3>
 
                 <a
                   href={siteConfig.contact.textHref}
-                  className="text-[#292524] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                  className="text-bwe-text underline decoration-bwe-accent underline-offset-4 hover:decoration-bwe-accent-dark"
                 >
                   {siteConfig.contact.text}
                 </a>
@@ -301,7 +305,7 @@ export default function FaqPage() {
                   href={getBookingUrl("faq_contact_card")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8f3f50] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
                 >
                   <span>Book an Appointment</span>
                   <ExternalLinkIcon />

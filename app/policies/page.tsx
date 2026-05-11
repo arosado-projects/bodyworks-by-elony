@@ -35,7 +35,7 @@ const paymentPolicies = [
   {
     title: "First-Time Appointments",
     description:
-      "First-time appointments require prepayment when booking through Acuity.",
+      "First-time appointments require prepayment when booking online.",
   },
   {
     title: "Payment",
@@ -113,13 +113,13 @@ function PolicyGrid({
       {items.map((item) => (
         <article
           key={item.title}
-          className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6"
+          className="rounded-3xl border border-bwe-border bg-bwe-surface p-6"
         >
-          <h3 className="mb-3 text-xl font-medium text-[#292524]">
+          <h3 className="mb-3 text-xl font-medium text-bwe-text">
             {item.title}
           </h3>
 
-          <p className="leading-7 text-[#6b625c]">{item.description}</p>
+          <p className="leading-7 text-bwe-muted">{item.description}</p>
         </article>
       ))}
     </div>
@@ -129,38 +129,38 @@ function PolicyGrid({
 export default function PoliciesPage() {
   return (
     <main>
-      <section className="bg-[#faf7f2]">
+      <section className="bg-bwe-page">
         <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
           <div className="max-w-3xl">
-            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Policies
             </p>
 
-            <h1 className="mb-6 text-4xl font-light leading-tight text-[#292524] sm:text-5xl">
+            <h1 className="mb-6 text-4xl font-light leading-tight text-bwe-text sm:text-5xl">
               Appointment policies and client information.
             </h1>
 
-            <p className="text-lg leading-8 text-[#6b625c]">
-              Please review these policies before booking so your appointment
-              can feel clear, respectful, and easy from start to finish.
+            <p className="text-lg leading-8 text-bwe-muted">
+              A few practical details so everyone is on the same page before
+              your appointment.
             </p>
 
-            <p className="mt-6 text-sm text-[#6b625c]">
+            <p className="mt-6 text-sm text-bwe-muted">
               Last updated: {siteConfig.lastUpdated.policies}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#fffdfc]">
+      <section className="bg-bwe-surface">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Appointments
             </p>
 
-            <h2 className="text-3xl font-light leading-tight text-[#292524]">
-              Confirmation, cancellation, and arrival policies.
+            <h2 className="text-3xl font-light leading-tight text-bwe-text">
+              Confirmation, cancellation, and arrival details.
             </h2>
           </div>
 
@@ -168,15 +168,15 @@ export default function PoliciesPage() {
         </div>
       </section>
 
-      <section className="bg-[#faf7f2]">
+      <section className="bg-bwe-page">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Payment & Packages
             </p>
 
-            <h2 className="text-3xl font-light leading-tight text-[#292524]">
-              Payment, prepayment, and package details.
+            <h2 className="text-3xl font-light leading-tight text-bwe-text">
+              Payment, prepayment, packages, and records.
             </h2>
           </div>
 
@@ -184,15 +184,15 @@ export default function PoliciesPage() {
         </div>
       </section>
 
-      <section className="bg-[#fffdfc]">
+      <section className="bg-bwe-surface">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Health & Safety
             </p>
 
-            <h2 className="text-3xl font-light leading-tight text-[#292524]">
-              Health information helps keep sessions appropriate and safe.
+            <h2 className="text-3xl font-light leading-tight text-bwe-text">
+              Health information helps keep the work appropriate.
             </h2>
           </div>
 
@@ -200,15 +200,15 @@ export default function PoliciesPage() {
         </div>
       </section>
 
-      <section className="bg-[#faf7f2]">
+      <section className="bg-bwe-page">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Session Boundaries
             </p>
 
-            <h2 className="text-3xl font-light leading-tight text-[#292524]">
-              Professional, respectful massage therapy.
+            <h2 className="text-3xl font-light leading-tight text-bwe-text">
+              Clear boundaries for professional massage therapy.
             </h2>
           </div>
 
@@ -216,20 +216,20 @@ export default function PoliciesPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7e8e8]">
+      <section className="bg-bwe-soft">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="rounded-3xl border border-[#eadfda] bg-[#fffdfc] p-6 md:p-8">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#8f3f50]">
+          <div className="rounded-3xl border border-bwe-border bg-bwe-surface p-6 md:p-8">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Privacy Policy & SMS Terms
             </p>
 
-            <h2 className="mb-6 text-3xl font-light text-[#292524]">
+            <h2 className="mb-6 text-3xl font-light text-bwe-text">
               How appointment information and text messaging are used.
             </h2>
 
-            <div className="grid gap-8 text-[#6b625c] lg:grid-cols-2">
+            <div className="grid gap-8 text-bwe-muted lg:grid-cols-2">
               <div>
-                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                <h3 className="mb-3 text-xl font-medium text-bwe-text">
                   Privacy
                 </h3>
 
@@ -249,7 +249,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <h3 className="mb-3 text-xl font-medium text-[#292524]">
+                <h3 className="mb-3 text-xl font-medium text-bwe-text">
                   SMS Terms
                 </h3>
 
@@ -266,7 +266,7 @@ export default function PoliciesPage() {
                   To opt out, text STOP. For help, reply HELP or contact{" "}
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
-                    className="text-[#8f3f50] underline decoration-[#d98c9b] underline-offset-4 hover:decoration-[#8f3f50]"
+                    className="text-bwe-accent-dark underline decoration-bwe-accent underline-offset-4 hover:decoration-bwe-accent-dark"
                   >
                     {siteConfig.contact.email}
                   </a>
@@ -278,15 +278,15 @@ export default function PoliciesPage() {
         </div>
       </section>
 
-      <section className="bg-[#292524] text-white">
+      <section className="bg-bwe-accent-deep text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#f7e8e8]">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-soft">
               Ready to Schedule?
             </p>
 
             <h2 className="text-3xl font-light">
-              Book your appointment online through Acuity.
+              Review the details, then book when you’re ready.
             </h2>
           </div>
 
@@ -294,7 +294,7 @@ export default function PoliciesPage() {
             href={getBookingUrl("policies_final_cta")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#fffdfc] px-6 py-3 text-sm font-medium text-[#292524] transition hover:bg-[#f7e8e8]"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-surface px-6 py-3 text-sm font-medium text-bwe-text transition hover:bg-bwe-soft"
           >
             <span>Book an Appointment</span>
             <ExternalLinkIcon />

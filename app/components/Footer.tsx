@@ -36,7 +36,7 @@ function FacebookIcon() {
   return (
     <span
       aria-hidden="true"
-      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8] text-xs font-bold text-[#8f3f50]"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-bwe-soft text-xs font-bold text-bwe-accent-dark"
     >
       f
     </span>
@@ -47,7 +47,7 @@ function GoogleIcon() {
   return (
     <span
       aria-hidden="true"
-      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8] text-xs font-bold text-[#8f3f50]"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-bwe-soft text-xs font-bold text-bwe-accent-dark"
     >
       G
     </span>
@@ -58,7 +58,7 @@ function InstagramIcon() {
   return (
     <span
       aria-hidden="true"
-      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f7e8e8] text-[#8f3f50]"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-bwe-soft text-bwe-accent-dark"
     >
       <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none">
         <rect
@@ -97,25 +97,25 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#eadfda] bg-[#faf7f2]">
+    <footer className="border-t border-bwe-border bg-bwe-page">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
         <div>
-          <h2 className="mb-4 text-lg font-medium text-[#292524]">
+          <h2 className="mb-4 text-lg font-medium text-bwe-text">
             {siteConfig.name}
           </h2>
 
-          <p className="max-w-xl text-sm leading-7 text-[#6b625c]">
+          <p className="max-w-xl text-sm leading-7 text-bwe-muted">
             Personalized massage and bodywork sessions serving northwest Cedar
             Park, Leander, Liberty Hill, and nearby communities.
           </p>
 
-          <p className="mt-4 text-sm text-[#6b625c]">
+          <p className="mt-4 text-sm text-bwe-muted">
             TDLR Massage Therapy License #{siteConfig.credentials.tdlrLicense}
           </p>
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+          <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
             Explore
           </h3>
 
@@ -124,7 +124,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[#6b625c] transition hover:text-[#8f3f50]"
+                className="text-bwe-muted transition hover:text-bwe-accent-dark"
               >
                 {link.label}
               </Link>
@@ -133,7 +133,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-[#8f3f50]">
+          <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
             Spread the Word
           </h3>
 
@@ -144,7 +144,7 @@ export default function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-[#6b625c] transition hover:text-[#8f3f50]"
+                className="flex items-center gap-3 text-bwe-muted transition hover:text-bwe-accent-dark"
               >
                 {link.icon}
                 <span>{link.label}</span>
@@ -154,8 +154,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-[#eadfda]">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-sm text-[#6b625c] sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-bwe-border">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-sm text-bwe-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}
           </p>
