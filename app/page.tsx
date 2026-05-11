@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getBookingUrl, siteConfig } from "./lib/site";
 import ExternalLinkIcon from "./components/ExternalLinkIcon";
 
@@ -72,78 +73,46 @@ const testimonials = [
 export default function HomePage() {
   return (
     <main>
-      <section className="bg-bwe-page">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
-          <div>
-            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
-              {siteConfig.name}
-            </p>
+<section className="relative overflow-hidden bg-bwe-page">
+  <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
+    <div>
+      <p className="mb-4 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
+        {siteConfig.name}
+      </p>
 
-            <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-bwe-text sm:text-5xl lg:text-6xl">
-              Calm, personalized massage and bodywork in Cedar Park, Texas.
-            </h1>
+      <h1 className="mb-6 max-w-3xl text-4xl font-light leading-tight text-bwe-text sm:text-5xl lg:text-6xl">
+        Your friendly neighborhood massage therapist in Cedar Park, Texas!
+      </h1>
 
-            <p className="mb-8 max-w-2xl text-lg leading-8 text-bwe-muted">
-              Welcome to a safe, welcoming space for all people, body types,
-              abilities, and gender expressions. At Bodyworks By Elony, there
-              are no membership fees, gratuity is always included, and you
-              receive your full scheduled session time. Located in northwest
-              Cedar Park near Whitestone & Lakeline, Elony offers customized
-              massage and bodywork in a calm, private setting.
-            </p>
+      <p className="mb-8 max-w-2xl text-lg leading-8 text-bwe-muted">
+        Your space for completely customized massage and bodywork. Bodyworks By
+        Elony is a safe space for all people, body types, abilities, and gender
+        expressions. There are no hidden membership fees, gratuity is always
+        included, and you receive your full scheduled session time. Call or book
+        online when you’re ready to schedule.
+      </p>
 
-            <div className="flex flex-wrap gap-4">
-              <a
-                href={getBookingUrl("home_hero")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
-              >
-                <span>Book an Appointment</span>
-                <ExternalLinkIcon />
-              </a>
+      <div className="flex flex-wrap gap-4">
+        <a
+          href={getBookingUrl("home_hero")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+        >
+          <span>Book an Appointment</span>
+          <ExternalLinkIcon />
+        </a>
 
-              <a
-                href="/services"
-                className="rounded-full border border-bwe-border bg-bwe-surface px-6 py-3 text-sm font-medium text-bwe-text transition hover:border-bwe-accent"
-              >
-                View Services
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] bg-bwe-soft p-6 shadow-sm">
-            <div className="rounded-[1.5rem] bg-bwe-surface p-8">
-              <p className="mb-4 text-sm uppercase tracking-[0.18em] text-bwe-accent-dark">
-                Northwest Cedar Park
-              </p>
-
-              <h2 className="mb-4 text-2xl font-light leading-snug text-bwe-text">
-                A quiet, private room where your massage can actually feel like
-                yours.
-              </h2>
-
-              <p className="mb-6 leading-7 text-bwe-muted">
-                Located near Whitestone & Lakeline, Bodyworks By Elony is
-                convenient to Cedar Park, Leander, northwest Austin, and
-                Liberty Hill.
-              </p>
-
-              <div className="rounded-2xl border border-bwe-border bg-bwe-page p-5">
-                <p className="mb-2 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
-                  Specialized Training
-                </p>
-
-                <p className="leading-7 text-bwe-muted">
-                  Manual Lymphatic Drainage:{" "}
-                  {siteConfig.credentials.mldTechnique} ·{" "}
-                  {siteConfig.credentials.mldCertification}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <a
+          href="/services"
+          className="rounded-full border border-bwe-border bg-bwe-surface px-6 py-3 text-sm font-medium text-bwe-text transition hover:border-bwe-accent"
+        >
+          View Services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="bg-bwe-surface">
         <div className="mx-auto max-w-6xl px-6 py-20">

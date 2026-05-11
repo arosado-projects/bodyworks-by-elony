@@ -135,19 +135,23 @@ const faqJsonLd = {
   })),
 };
 
+// 1. Updated FaqList to accept and use the groupId prop
 function FaqList({
   items,
+  groupId,
 }: {
   items: {
     question: string;
     answer: string;
   }[];
+  groupId: string;
 }) {
   return (
     <div className="grid gap-4">
       {items.map((item) => (
         <details
           key={item.question}
+          name={groupId} // THE MAGIC ATTRIBUTE: Links these details tags together
           className="group rounded-3xl border border-bwe-border bg-bwe-surface p-6 transition-colors [&[open]]:border-bwe-accent [&[open]]:bg-bwe-page"
         >
           <summary className="cursor-pointer list-none text-lg font-medium text-bwe-text">
@@ -206,7 +210,8 @@ export default function FaqPage() {
             </h2>
           </div>
 
-          <FaqList items={massageFaqs} />
+          {/* 2. Added the unique groupId for the Massage section */}
+          <FaqList items={massageFaqs} groupId="faq-massage" />
         </div>
       </section>
 
@@ -222,7 +227,8 @@ export default function FaqPage() {
             </h2>
           </div>
 
-          <FaqList items={servicesFaqs} />
+          {/* 3. Added the unique groupId for the Services section */}
+          <FaqList items={servicesFaqs} groupId="faq-services" />
         </div>
       </section>
 
@@ -238,7 +244,8 @@ export default function FaqPage() {
             </h2>
           </div>
 
-          <FaqList items={policyFaqs} />
+          {/* 4. Added the unique groupId for the Policies section */}
+          <FaqList items={policyFaqs} groupId="faq-policies" />
         </div>
       </section>
 

@@ -96,7 +96,7 @@ const professionalPolicies = [
   {
     title: "Professional Boundaries",
     description:
-      "Bodyworks By Elony provides professional massage therapy services only. Inappropriate behavior or requests will end the session immediately and may result in refusal of future appointments.",
+      "Bodyworks By Elony provides professional massage therapy services only. Inappropriate behavior or requests will end the session immediately and will result in refusal of future appointments.",
   },
 ];
 
