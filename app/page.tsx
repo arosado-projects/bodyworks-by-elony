@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getBookingUrl, siteConfig } from "./lib/site";
 import ExternalLinkIcon from "./components/ExternalLinkIcon";
+import Testimonials from "./components/Testimonials";
 
 export const metadata: Metadata = {
   title: "Bodyworks By Elony | Massage & Bodywork in Cedar Park, TX",
@@ -262,53 +263,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-bwe-surface">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="mb-10 max-w-2xl">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
-              Kind Words from Clients
-            </p>
-
-            <h2 className="text-3xl font-light text-bwe-text sm:text-4xl">
-              Kind words from people who have been on the table.
-            </h2>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <figure
-                key={testimonial.name}
-                className="rounded-3xl border border-bwe-border bg-bwe-page p-6"
-              >
-                <blockquote className="leading-8 text-bwe-text">
-                  “{testimonial.quote}”
-                </blockquote>
-
-                <figcaption className="mt-6 border-t border-bwe-border pt-4">
-                  <p className="font-medium text-bwe-text">
-                    {testimonial.name}
-                  </p>
-
-                  <p className="mt-1 text-sm text-bwe-muted">
-                    {testimonial.context}
-                  </p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-
-          <div className="mt-10">
-            <a
-              href={siteConfig.social.googleReviewsRead}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-bwe-accent-dark underline decoration-bwe-accent underline-offset-4 hover:decoration-bwe-accent-dark"
-            >
-              Read more reviews on Google
-            </a>
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
       <section className="bg-bwe-accent-deep text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
