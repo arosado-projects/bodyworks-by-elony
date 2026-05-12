@@ -216,7 +216,7 @@ export default function PoliciesPage() {
         </div>
       </section>
 
-      <section className="bg-bwe-soft">
+      <section id="privacy-policy" className="scroll-mt-24 bg-bwe-soft">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="rounded-3xl border border-bwe-border bg-bwe-surface p-6 md:p-8">
             <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
