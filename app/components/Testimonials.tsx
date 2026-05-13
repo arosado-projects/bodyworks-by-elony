@@ -85,7 +85,7 @@ const testimonials = [
     context: "Google review",
   },
   {
-    quote: "She really understands the body and muscle groups and knows how to make your body feel right again.",
+    quote: "...she was the first therapist to work on my psoas, which brought relief to other areas like my back and hips. I never even knew I had \"psoas\"!!!",
     name: "Andy G.",
     context: "Google review",
   },
