@@ -40,7 +40,7 @@ const testimonials = [
     context: "Google review",
   },
   {
-    quote: "Amazing service! [She] was super professional and absolutely worked my sore muscles right back into shape!",
+    quote: "Amazing service! Elony was super professional and absolutely worked my sore muscles right back into shape!",
     name: "Jascha R.",
     context: "Google review",
   },
