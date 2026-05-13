@@ -40,11 +40,6 @@ const testimonials = [
     context: "Google review",
   },
   {
-    quote: "Amazing service! Elony was super professional and absolutely worked my sore muscles right back into shape!",
-    name: "Jascha R.",
-    context: "Google review",
-  },
-  {
     quote: "Elony listened about my problem areas and went to straight to work on them.",
     name: "DC B.",
     context: "Google review",
@@ -140,7 +135,7 @@ const testimonials = [
     context: "Google review",
   },
   {
-    quote: "Her space felt like a sanctuary: peaceful, welcoming, and safe. She brings an incredible combination of skill, intuition, and compassion to her work.",
+    quote: "During the final trimester of my pregnancy...I was also navigating deep personal grief. My sessions with her became a powerful source of relief and healing.",
     name: "Brandi D.",
     context: "Google review",
   },
