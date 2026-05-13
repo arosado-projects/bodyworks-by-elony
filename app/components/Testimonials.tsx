@@ -10,11 +10,6 @@ const testimonials = [
     context: "Google review",
   },
   {
-    quote: "Bodywork’s by Elony is worth everything. She knows what she is doing and you feel rejuvenated.",
-    name: "My Favs",
-    context: "Google review",
-  },
-  {
     quote: "She has the ability to find knots and tension without difficulty. As an athlete and mother, she has been an integral part of my recovery & self-care.",
     name: "Maracujá P.",
     context: "Google review",
@@ -161,17 +156,12 @@ const testimonials = [
   },
   {
     quote: "She customizes each treatment to your needs and is holistic in her approach.",
-    name: "Robin",
+    name: "Robin Y.",
     context: "Google review",
   },
   {
     quote: "I feel like Elony truly worked into my neck/upper body muscle issues... As a 9-5 desk/bench worker this was such a relief",
     name: "Holli D.",
-    context: "Google review",
-  },
-  {
-    quote: "I walked out of my massage today feeling like a new human. My pain had subsided and I felt totally relaxed.",
-    name: "Doris G.",
     context: "Google review",
   },
   {
