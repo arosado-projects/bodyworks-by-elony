@@ -57,7 +57,7 @@ export default function Footer() {
             {siteConfig.name}
           </h2>
           <p className="max-w-xl text-sm leading-7 text-bwe-muted">
-            Personalized massage and bodywork sessions serving {siteConfig.location.shortServiceArea}, and nearby communities.
+            Personalized massage and bodywork sessions serving {siteConfig.location.shortServiceArea} communities.
           </p>
           <p className="mt-4 text-sm text-bwe-muted">
             TDLR Massage Therapy License #{siteConfig.credentials.tdlrLicense}
