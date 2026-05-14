@@ -169,10 +169,9 @@ export default function PricingPage() {
             </h3>
 
             <p className="leading-7 text-bwe-muted">
-              Four-packs are available for therapeutic massage sessions only. Packages
-              expire three months after first use, are shareable, and all package sales are
-              final. Expired packages may be reactivated for $10 per hour of remaining
-              session time the client wants to use.
+              Four-packs are available for therapeutic massage sessions only. Packages are 
+              fully shareable. Expired packages may be reactivated for $10 per hour of remaining
+              session time the client wants to use. All package sales are final.
             </p>
           </div>
         </div>
