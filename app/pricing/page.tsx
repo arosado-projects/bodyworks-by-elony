@@ -67,7 +67,7 @@ const addOns = [
     price: "$50",
     time: "+30 minutes",
     description:
-      "Bought a 1 hour 4-pack, but want to book a 90 mimute session? Add extra hands-on time for additional focus during a therapeutic massage session.",
+      "Bought a 1-hour package, but want to book a 90-minute session? Add extra hands-on time for additional focus during a therapeutic massage session.",
   },
 ];
 
