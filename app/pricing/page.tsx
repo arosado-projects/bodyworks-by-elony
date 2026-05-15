@@ -247,31 +247,32 @@ export default function PricingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
-            {addOns.map((addOn) => (
-              <article
-                key={addOn.name}
-                className="rounded-3xl border border-bwe-border bg-bwe-page p-6"
-              >
-                <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
-                  <h3 className="text-xl font-medium text-bwe-text">
-                    {addOn.name}
-                  </h3>
+<div className="grid gap-5 md:grid-cols-2">
+  {addOns.map((addOn) => (
+    <article
+      key={addOn.name}
+      className="rounded-3xl border border-bwe-border bg-bwe-page p-6"
+    >
+      <div className="mb-5 grid grid-cols-[minmax(0,1fr)_auto] gap-4 border-b border-bwe-border pb-5">
+        <h3 className="text-xl font-medium leading-snug text-bwe-text">
+          {addOn.name}
+        </h3>
 
-                  <div className="text-right">
-                    <p className="text-lg font-medium text-bwe-text">
-                      {addOn.price}
-                    </p>
-                    <p className="text-sm text-bwe-accent-dark">{addOn.time}</p>
-                  </div>
-                </div>
+        <div className="shrink-0 text-right">
+          <p className="whitespace-nowrap text-lg font-medium text-bwe-text">
+            {addOn.price}
+          </p>
 
-                <p className="leading-7 text-bwe-muted">
-                  {addOn.description}
-                </p>
-              </article>
-            ))}
-          </div>
+          <p className="mt-1 whitespace-nowrap text-sm text-bwe-accent-dark">
+            {addOn.time}
+          </p>
+        </div>
+      </div>
+
+      <p className="leading-7 text-bwe-muted">{addOn.description}</p>
+    </article>
+  ))}
+</div>
         </div>
       </section>
 
