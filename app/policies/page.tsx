@@ -292,8 +292,6 @@ export default function PoliciesPage() {
 
           <a
             href={getBookingUrl("policies_final_cta")}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-surface px-6 py-3 text-sm font-medium text-bwe-text transition hover:bg-bwe-soft"
           >
             <span>Book an Appointment</span>
