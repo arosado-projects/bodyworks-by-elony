@@ -62,8 +62,6 @@ export default function HeaderNav() {
 
       <a
         href={getBookingUrl("header_book")}
-        target="_blank"
-        rel="noopener noreferrer"
         className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
       >
         <span>Book</span>
