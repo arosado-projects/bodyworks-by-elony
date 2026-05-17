@@ -19,17 +19,17 @@ const featuredServices = [
   {
     title: "Prenatal Massage",
     description:
-      "Certified prenatal massage with supportive side-lying positioning, steady pacing, and room to adjust for comfort.",
+      "Specialized training in safe, supportive side-lying techniques.",
   },
   {
     title: "Manual Lymphatic Drainage",
     description:
-      "Gentle, focused lymphatic work using light, intentional techniques. Elony is trained in the Klose/Vodder Technique.",
+      "Focused lymphatic work using light, intentional techniques. Elony is trained in the Klose/Vodder Technique.",
   },
   {
     title: "Pediatric Massage",
     description:
-      "Gentle, age-appropriate massage may be available for children, with parent or guardian involvement every step of the way.",
+      "Gentle, age-appropriate massage for children, with parent or guardian involvement every step of the way.",
   },
 ];
 
@@ -47,27 +47,6 @@ const trustItems = [
     description:
       "Certified prenatal massage using supportive side-lying techniques.",
     note: "For high-risk pregnancies, physician clearance may be requested before prenatal massage.",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Her space felt like a sanctuary: peaceful, welcoming, and safe.",
-    name: "Brandi D.",
-    context: "Prenatal massage client",
-  },
-  {
-    quote:
-      "Elony is incredibly professional, friendly, and intuitive.",
-    name: "James B.",
-    context: "Google review",
-  },
-  {
-    quote:
-      "She listened to what I requested and addressed what my body needed.",
-    name: "Daniella W.",
-    context: "Google review",
   },
 ];
 
@@ -89,7 +68,7 @@ export default function HomePage() {
 
       <div className="mb-8 max-w-2xl">
   <p className="text-lg leading-8 text-bwe-muted">
-    Personalized massage and bodywork tailored to your needs. Bodyworks By
+    Massage and bodywork tailored specifically to your needs. Bodyworks By
     Elony is a safe, inclusive environment for all people, body types,
     abilities, and gender expressions. There are no hidden membership fees, gratuity is always included, and your scheduled session time is fully dedicated to your hands-on treatment.
   </p>
