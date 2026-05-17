@@ -78,8 +78,8 @@ export default function ServicesPage() {
             <p className="text-lg leading-8 text-bwe-muted">
               Bodyworks By Elony offers customized Cedar Park massage for real
               life, real stress, and real bodies. Whether you are booking
-              therapeutic, prenatal, manual lymphatic drainage, each
-              appointment starts with a real conversation.
+              therapeutic massage, prenatal massage, or manual lymphatic
+              drainage, each appointment starts with a real conversation.
             </p>
           </div>
         </div>
@@ -91,7 +91,9 @@ export default function ServicesPage() {
             {services.map((service) => (
               <article
                 key={service.title}
-                className="grid gap-8 rounded-3xl border border-bwe-border bg-bwe-page p-6 md:grid-cols-[1fr_0.8fr] md:p-8"
+                className={`grid gap-8 rounded-3xl border border-bwe-border bg-bwe-page p-6 md:p-8 ${
+                  service.goodFor ? "md:grid-cols-[1fr_0.8fr]" : ""
+                }`}
               >
                 <div>
                   <p className="mb-3 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
@@ -107,20 +109,22 @@ export default function ServicesPage() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-bwe-border bg-bwe-surface p-5">
-                  <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
-                    Many clients seek this for
-                  </h3>
+                {service.goodFor ? (
+                  <div className="rounded-2xl border border-bwe-border bg-bwe-surface p-5">
+                    <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-bwe-accent-dark">
+                      Many clients seek this for
+                    </h3>
 
-                  <ul className="space-y-3 text-bwe-muted">
-                    {service.goodFor.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-bwe-accent" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                    <ul className="space-y-3 text-bwe-muted">
+                      {service.goodFor.map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-bwe-accent" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
               </article>
             ))}
           </div>
@@ -182,6 +186,8 @@ export default function ServicesPage() {
             <div className="flex flex-wrap gap-4">
               <a
                 href={getBookingUrl("services_choosing_cta")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
                 <span>Book an Appointment</span>
