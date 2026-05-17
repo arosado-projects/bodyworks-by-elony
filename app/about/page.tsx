@@ -224,31 +224,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-bwe-surface">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
-              Client Fit
-            </p>
-
-            <h2 className="text-3xl font-light leading-tight text-bwe-text">
-              A good fit if you want massage without pressure or judgment.
-            </h2>
-          </div>
-
-          <div className="rounded-3xl border border-bwe-border bg-bwe-page p-6 md:p-8">
-            <ul className="space-y-4 text-bwe-muted">
-              {clientFit.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-bwe-accent" />
-                  <span className="leading-7">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-bwe-soft">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
