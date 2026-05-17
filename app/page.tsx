@@ -87,9 +87,25 @@ export default function HomePage() {
         Your friendly neighborhood massage therapist in Cedar Park, Texas!
       </h1>
 
-      <p className="mb-8 max-w-2xl text-lg leading-8 text-bwe-muted">
-        Personalized massage and bodywork tailored to your needs. Bodyworks By Elony is a safe, inclusive environment for all people, body types, abilities, and gender expressions. There are no hidden membership fees, gratuity is always included, and you receive your full scheduled session time. Call or book online when you’re ready to schedule.
-      </p>
+      <div className="mb-8 max-w-2xl">
+  <p className="text-lg leading-8 text-bwe-muted">
+    Personalized massage and bodywork tailored to your needs. Bodyworks By
+    Elony is a safe, inclusive environment for all people, body types,
+    abilities, and gender expressions. There are no hidden membership fees,
+    gratuity is always included, and you receive your full scheduled session
+    time.
+  </p>
+
+  <div className="my-7">
+    <p className="text-2xl font-light italic leading-snug text-bwe-text">
+      Pain is not a lifestyle.
+    </p>
+  </div>
+
+  <p className="text-lg leading-8 text-bwe-muted">
+    Call or book online when you’re ready to schedule.
+  </p>
+</div>
 
       <div className="flex flex-wrap gap-4">
         <a
