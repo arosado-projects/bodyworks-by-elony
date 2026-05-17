@@ -49,7 +49,7 @@ const services = [
     title: "Massage Enhancements",
     eyebrow: "Optional session support",
     description:
-      "Enhancements may be included when they make sense for your session. Options may include aromatherapy, cupping, gua sha, warm towels, table warmer, Hypervolt, or other supportive techniques.",
+      "Enhancements may be included when they make sense for your session. Options include aromatherapy, cupping, gua sha, warm towels, table warmer, Hypervolt, or other supportive techniques. These enhancements are free of charge.",
     goodFor: [
       "Added comfort",
       "Session customization",
