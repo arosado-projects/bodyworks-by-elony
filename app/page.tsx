@@ -101,7 +101,7 @@ export default function HomePage() {
   </div>
 
   <p className="text-lg leading-8 text-bwe-muted">
-    Call or book online when you’re ready to schedule.
+    Call, text, or book online when you’re ready to schedule.
   </p>
 </div>
 
