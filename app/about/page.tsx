@@ -90,7 +90,7 @@ export default function AboutPage() {
             </p>
 
             <p className="leading-8 text-bwe-muted">
-              My work is practical, personal, and never cookie-cutter, because every
+              My work is practical, personal, and never cookie-cutter, because each
               body brings a different story to the table. Some clients come in with
               pain or strain from everyday life. Some need quiet. Some need focused
               therapeutic work. Some just need a safe place to breathe for an hour.
