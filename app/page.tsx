@@ -91,9 +91,7 @@ export default function HomePage() {
   <p className="text-lg leading-8 text-bwe-muted">
     Personalized massage and bodywork tailored to your needs. Bodyworks By
     Elony is a safe, inclusive environment for all people, body types,
-    abilities, and gender expressions. There are no hidden membership fees,
-    gratuity is always included, and you receive your full scheduled session
-    time.
+    abilities, and gender expressions. There are no hidden membership fees, gratuity is always included, and your scheduled session time is fully dedicated to your hands-on treatment.
   </p>
 
   <div className="my-7">
