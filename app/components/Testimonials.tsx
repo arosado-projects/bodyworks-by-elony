@@ -221,7 +221,11 @@ export default function Testimonials() {
   );
 
   useEffect(() => {
-    setSelectedTestimonials(pickRandomTestimonials(testimonials, 3));
+    const randomizeTestimonials = window.setTimeout(() => {
+      setSelectedTestimonials(pickRandomTestimonials(testimonials, 3));
+    }, 0);
+
+    return () => window.clearTimeout(randomizeTestimonials);
   }, []);
 
   return (

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getBookingUrl, siteConfig } from "../lib/site";
+import BookingLink from "../components/BookingLink";
 import ExternalLinkIcon from "../components/ExternalLinkIcon";
 
 export const metadata: Metadata = {
@@ -27,14 +28,6 @@ const credentials = [
     description:
       "Elony is also certified in prenatal massage and cupping, with sessions adapted to each client’s comfort and goals.",
   },
-];
-
-const clientFit = [
-  "People dealing with everyday tension, stress, or long hours at work",
-  "Clients who want calm, attentive massage without pressure or judgment",
-  "Prenatal clients looking for certified, carefully positioned bodywork",
-  "Clients seeking focused manual lymphatic drainage when appropriate",
-  "Families asking about gentle pediatric massage with parent or guardian involvement",
 ];
 
 export default function AboutPage() {
@@ -98,13 +91,14 @@ export default function AboutPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href={getBookingUrl("about_hero")}
+              <BookingLink
+                href={getBookingUrl()}
+                location="about_hero"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
                 <span>Book an Appointment</span>
                 <ExternalLinkIcon />
-              </a>
+              </BookingLink>
 
               <a
                 href="/services"
@@ -284,13 +278,14 @@ export default function AboutPage() {
               </div>
 
               <div className="pt-2">
-                <a
-                  href={getBookingUrl("about_contact_card")}
+                <BookingLink
+                  href={getBookingUrl()}
+                  location="about_contact_card"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
                 >
                   <span>Book an Appointment</span>
                   <ExternalLinkIcon />
-                </a>
+                </BookingLink>
               </div>
             </div>
           </div>

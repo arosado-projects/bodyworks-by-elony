@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getBookingUrl, siteConfig } from "../lib/site";
+import BookingLink from "../components/BookingLink";
 import ExternalLinkIcon from "../components/ExternalLinkIcon";
 
 export const metadata: Metadata = {
@@ -308,13 +309,14 @@ export default function FaqPage() {
               </div>
 
               <div className="pt-2">
-                <a
-                  href={getBookingUrl("faq_contact_card")}
+                <BookingLink
+                  href={getBookingUrl()}
+                  location="faq_contact_card"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
                 >
                   <span>Book an Appointment</span>
                   <ExternalLinkIcon />
-                </a>
+                </BookingLink>
               </div>
             </div>
           </div>

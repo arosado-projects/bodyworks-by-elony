@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getBookingUrl, siteConfig } from "./lib/site";
+import BookingLink from "./components/BookingLink";
 import ExternalLinkIcon from "./components/ExternalLinkIcon";
 import Testimonials from "./components/Testimonials";
 
@@ -85,13 +85,14 @@ export default function HomePage() {
 </div>
 
       <div className="flex flex-wrap gap-4">
-        <a
-          href={getBookingUrl("home_hero")}
+        <BookingLink
+          href={getBookingUrl()}
+          location="homepage_hero"
           className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
         >
           <span>Book an Appointment</span>
           <ExternalLinkIcon />
-        </a>
+        </BookingLink>
 
         <a
           href="/services"
@@ -264,13 +265,14 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <a
-            href={getBookingUrl("home_final_cta")}
+          <BookingLink
+            href={getBookingUrl()}
+            location="homepage_final_cta"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-surface px-6 py-3 text-sm font-medium text-bwe-text transition hover:bg-bwe-soft"
           >
             <span>Book an Appointment</span>
             <ExternalLinkIcon />
-          </a>
+          </BookingLink>
         </div>
       </section>
     </main>

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getBookingUrl, siteConfig } from "./lib/site";
+import { getBookingUrl } from "./lib/site";
+import BookingLink from "./components/BookingLink";
 import ExternalLinkIcon from "./components/ExternalLinkIcon";
 
 export default function NotFound() {
@@ -27,13 +28,14 @@ export default function NotFound() {
             View Services
           </Link>
 
-          <a
-            href={getBookingUrl("404_page")}
+          <BookingLink
+            href={getBookingUrl()}
+            location="not_found"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
           >
             <span>Book an Appointment</span>
             <ExternalLinkIcon />
-          </a>
+          </BookingLink>
         </div>
       </section>
     </main>

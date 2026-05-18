@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LocalBusinessJsonLd from "./components/LocalBusinessJsonLd";
-import { getBookingUrl, siteConfig } from "./lib/site";
+import { siteConfig } from "./lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),

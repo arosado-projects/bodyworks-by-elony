@@ -79,7 +79,7 @@ export default function LocalBusinessJsonLd() {
     },
     potentialAction: {
       "@type": "ReserveAction",
-      target: getBookingUrl("local_business_schema"),
+      target: getBookingUrl(),
       name: "Book an appointment",
     },
   };

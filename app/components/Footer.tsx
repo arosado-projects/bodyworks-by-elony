@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { siteConfig } from "../lib/site";
+import BookingLink from "./BookingLink";
 
 const footerLinks = [
   { label: "Services", href: "/services" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Booking", href: "/booking" },
+  { label: "Booking", href: "/booking", bookingLocation: "footer" },
   { label: "About Elony", href: "/about" },
   { label: "FAQ", href: "/faq" },
   { label: "Policies", href: "/policies" },
@@ -88,15 +89,26 @@ export default function Footer() {
             Explore
           </h3>
           <nav aria-label="Footer navigation" className="grid gap-3 text-sm">
-            {footerLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-bwe-muted transition hover:text-bwe-accent-dark"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {footerLinks.map((link) =>
+              link.bookingLocation ? (
+                <BookingLink
+                  key={link.href}
+                  href={link.href}
+                  location={link.bookingLocation}
+                  className="text-bwe-muted transition hover:text-bwe-accent-dark"
+                >
+                  {link.label}
+                </BookingLink>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-bwe-muted transition hover:text-bwe-accent-dark"
+                >
+                  {link.label}
+                </Link>
+              ),
+            )}
           </nav>
         </div>
 

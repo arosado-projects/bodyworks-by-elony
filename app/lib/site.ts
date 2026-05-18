@@ -1,13 +1,6 @@
-export function getBookingUrl(source: string) {
-  const url = new URL(siteConfig.bookingUrl);
-
-  url.searchParams.set("utm_source", "bodyworksbyelony.com");
-  url.searchParams.set("utm_medium", "website");
-  url.searchParams.set("utm_campaign", "booking");
-  url.searchParams.set("utm_content", source);
-
-  return url.toString();
-};
+export function getBookingUrl() {
+  return siteConfig.bookingUrl;
+}
 
 export const siteConfig = {
   name: "Bodyworks By Elony",

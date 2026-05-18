@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getBookingUrl, siteConfig } from "../lib/site";
+import BookingLink from "../components/BookingLink";
 import ExternalLinkIcon from "../components/ExternalLinkIcon";
 
 export const metadata: Metadata = {
@@ -55,13 +56,14 @@ export default function BookingPage() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                href={getBookingUrl("booking_hero")}
+              <BookingLink
+                href={getBookingUrl()}
+                location="booking_page"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
                 <span>Continue to Online Booking</span>
                 <ExternalLinkIcon />
-              </a>
+              </BookingLink>
 
               <a
                 href="/services"
@@ -243,13 +245,14 @@ export default function BookingPage() {
             </h2>
           </div>
 
-          <a
-            href={getBookingUrl("booking_final_cta")}
+          <BookingLink
+            href={getBookingUrl()}
+            location="booking_page_final_cta"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-surface px-6 py-3 text-sm font-medium text-bwe-text transition hover:bg-bwe-soft"
           >
             <span>Continue to Online Booking</span>
             <ExternalLinkIcon />
-          </a>
+          </BookingLink>
         </div>
       </section>
     </main>

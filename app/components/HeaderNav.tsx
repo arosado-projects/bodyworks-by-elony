@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getBookingUrl } from "../lib/site";
+import BookingLink from "./BookingLink";
 import ExternalLinkIcon from "./ExternalLinkIcon";
 
 const navItems = [
@@ -60,13 +61,14 @@ export default function HeaderNav() {
         );
       })}
 
-      <a
-        href={getBookingUrl("header_book")}
+      <BookingLink
+        href={getBookingUrl()}
+        location="header_nav"
         className="inline-flex items-center justify-center gap-2 rounded-full bg-bwe-accent-dark px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
       >
         <span>Book</span>
         <ExternalLinkIcon />
-      </a>
+      </BookingLink>
     </nav>
   );
 }
