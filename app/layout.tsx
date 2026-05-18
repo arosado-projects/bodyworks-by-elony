@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -54,6 +55,9 @@ export default function RootLayout({
           <Footer />
         </div>
       </body>
+      
+      {/* Google Analytics - Pulled from Environment Variable */}
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
     </html>
   );
 }
