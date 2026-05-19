@@ -170,7 +170,7 @@ export default function PricingPage() {
             </h3>
 
             <p className="leading-7 text-bwe-muted">
-              Consistent bodywork shouldn't be complicated. Our four-session therapeutic massage packages are perfect for regular care, fully shareable with friends and family, and valid for three months after first use. If life gets in the way and your package expires, you can reactivate it for a small fee. (Package sales are final).
+              Consistent bodywork shouldn't be complicated. Our four-session therapeutic massage packages are perfect for regular care, fully shareable with friends and family, and valid for three months after first use. If life gets in the way and your package expires, you can reactivate it for a small fee. (Package sales are final)
             </p>
           </div>
         </div>
