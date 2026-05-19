@@ -170,9 +170,7 @@ export default function PricingPage() {
             </h3>
 
             <p className="leading-7 text-bwe-muted">
-              Four-packs are available for therapeutic massage sessions only. Packages are 
-              fully shareable. Expired packages may be reactivated for $10 per hour of remaining
-              session time the client wants to use. All package sales are final.
+              Consistent bodywork shouldn't be complicated. Our four-session therapeutic massage packages are perfect for regular care, fully shareable with friends and family, and valid for three months. If life gets in the way and your package expires, you can reactivate it for a small fee. (Package sales are final).
             </p>
           </div>
         </div>
