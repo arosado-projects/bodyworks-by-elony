@@ -113,7 +113,8 @@ function RespectfulCareCard() {
           <p className="leading-7 text-bwe-muted">
             Bodyworks By Elony is a professional massage therapy environment.
             Inappropriate comments, requests, or behavior are not tolerated.
-            Sessions will be ended at Elony&apos;s discretion.
+            Any session that crosses a professional or ethical boundary will be ended
+            immediately.
           </p>
 
           <p className="mt-4 leading-7 text-bwe-muted">
