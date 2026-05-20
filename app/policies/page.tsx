@@ -95,11 +95,6 @@ const professionalPolicies = [
     description:
       "You may ask for more or less pressure, request adjustments, or ask to stop work on any area at any time.",
   },
-  {
-    title: "Professional Boundaries",
-    description:
-      "Bodyworks By Elony provides professional massage therapy services only. Inappropriate behavior or requests will end the session immediately and will result in refusal of future appointments.",
-  },
 ];
 
 function RespectfulCareCard() {
