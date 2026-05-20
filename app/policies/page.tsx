@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getBookingUrl, siteConfig } from "../lib/site";
 import BookingLink from "../components/BookingLink";
 import ExternalLinkIcon from "../components/ExternalLinkIcon";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Policies | Bodyworks By Elony",
@@ -100,6 +101,43 @@ const professionalPolicies = [
       "Bodyworks By Elony provides professional massage therapy services only. Inappropriate behavior or requests will end the session immediately and will result in refusal of future appointments.",
   },
 ];
+
+function RespectfulCareCard() {
+  return (
+    <aside className="rounded-3xl border border-bwe-border bg-bwe-soft p-6">
+      <div className="grid gap-6 sm:grid-cols-[1fr_auto] sm:items-center">
+        <div>
+          <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
+            Respectful Care Environment
+          </p>
+
+          <h3 className="mb-3 text-xl font-medium text-bwe-text">
+            Professional care in a respectful space.
+          </h3>
+
+          <p className="leading-7 text-bwe-muted">
+            Bodyworks By Elony is a professional massage therapy environment.
+            Inappropriate comments, requests, or behavior are not tolerated.
+            Sessions may be ended at Elony&apos;s discretion.
+          </p>
+
+          <p className="mt-4 leading-7 text-bwe-muted">
+            Thank you for helping keep this space safe, respectful, and focused
+            on care.
+          </p>
+        </div>
+
+        <Image
+          src="/images/respect-massage-transparent.png"
+          alt="Respect massage, zero tolerance professional boundaries badge"
+          width={160}
+          height={160}
+          className="mx-auto h-32 w-32 object-contain opacity-90 sm:h-36 sm:w-36"
+        />
+      </div>
+    </aside>
+  );
+}
 
 function PolicyGrid({
   items,
@@ -213,7 +251,10 @@ export default function PoliciesPage() {
             </h2>
           </div>
 
-          <PolicyGrid items={professionalPolicies} />
+          <div className="space-y-5">
+            <PolicyGrid items={professionalPolicies} />
+            <RespectfulCareCard />
+          </div>
         </div>
       </section>
 
