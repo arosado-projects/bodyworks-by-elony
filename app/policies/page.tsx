@@ -29,7 +29,7 @@ const appointmentPolicies = [
   {
     title: "Late Arrivals",
     description:
-      "Appointment times are scheduled as reserved and cannot be extended to accommodate late arrivals. Please arrive on time so you can receive your full session.",
+      "Appointment times are scheduled as reserved and cannot be extended to accommodate late arrivals. Please arrive 10 minutes early to receive your full session.",
   },
 ];
 
