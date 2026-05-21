@@ -13,12 +13,12 @@ const bookingSteps = [
   {
     title: "Choose your service",
     description:
-      "Pick the appointment type that sounds closest to what you need. If you are not sure, therapeutic massage is usually the most flexible place to start.",
+      "Pick the appointment type that sounds suitable. Select the length of your appointment if applicable.",
   },
   {
     title: "Pick a time",
     description:
-      "View current availability and choose a time that works for your schedule.",
+      "View current availability and choose a date and time that works for your schedule.",
   },
   {
     title: "Complete intake details",
