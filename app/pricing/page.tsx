@@ -98,7 +98,6 @@ export default function PricingPage() {
             <p className="text-lg leading-8 text-bwe-muted">
               Bodyworks By Elony offers personalized massage sessions with clear
               pricing, no membership fees, and gratuity already included.
-              First-time appointments require prepayment when booking.
             </p>
           </div>
         </div>
@@ -310,7 +309,7 @@ export default function PricingPage() {
             <p className="leading-7 text-bwe-muted">
               Major credit cards are accepted and preferred. Cash may be
               accepted for returning clients, but exact payment is required
-              because change is not available. First-time appointments require
+              as change is not available. First-time appointments require
               prepayment when booking.
             </p>
           </article>
