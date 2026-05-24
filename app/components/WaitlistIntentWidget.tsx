@@ -1,9 +1,49 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { CalendarDays, Clock, Plus, Trash2, MessageCircle, CheckCircle2, Calendar } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+function Icon({ children, className = "" }) {
+  return <span className={className} aria-hidden="true">{children}</span>;
+}
+
+function CalendarDays({ className = "" }) {
+  return <Icon className={className}>📅</Icon>;
+}
+
+function MessageCircle({ className = "" }) {
+  return <Icon className={className}>💬</Icon>;
+}
+
+function Clock({ className = "" }) {
+  return <Icon className={className}>⏱️</Icon>;
+}
+
+function Plus({ className = "" }) {
+  return <Icon className={className}>+</Icon>;
+}
+
+function Trash2({ className = "" }) {
+  return <Icon className={className}>×</Icon>;
+}
+
+function CheckCircle2({ className = "" }) {
+  return <Icon className={className}>✓</Icon>;
+}
+
+function Card({ children, className = "" }) {
+  return <div className={className}>{children}</div>;
+}
+
+function CardContent({ children, className = "" }) {
+  return <div className={className}>{children}</div>;
+}
+
+function Button({ children, className = "", type = "button", variant, ...buttonProps }) {
+  return (
+    <button type={type} className={className} {...buttonProps}>
+      {children}
+    </button>
+  );
+}
 
 const DAYS = ["Monday", "Tuesday", "Thursday", "Friday", "First Saturday"];
 
