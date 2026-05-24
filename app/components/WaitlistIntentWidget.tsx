@@ -1,43 +1,56 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-function Icon({ children, className = "" }) {
+type SimpleIconProps = {
+  className?: string;
+};
+
+type SimpleWrapperProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+type SimpleButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: string;
+};
+
+function Icon({ children, className = "" }: SimpleWrapperProps) {
   return <span className={className} aria-hidden="true">{children}</span>;
 }
 
-function CalendarDays({ className = "" }) {
+function CalendarDays({ className = "" }: SimpleIconProps) {
   return <Icon className={className}>📅</Icon>;
 }
 
-function MessageCircle({ className = "" }) {
+function MessageCircle({ className = "" }: SimpleIconProps) {
   return <Icon className={className}>💬</Icon>;
 }
 
-function Clock({ className = "" }) {
+function Clock({ className = "" }: SimpleIconProps) {
   return <Icon className={className}>⏱️</Icon>;
 }
 
-function Plus({ className = "" }) {
+function Plus({ className = "" }: SimpleIconProps) {
   return <Icon className={className}>+</Icon>;
 }
 
-function Trash2({ className = "" }) {
+function Trash2({ className = "" }: SimpleIconProps) {
   return <Icon className={className}>×</Icon>;
 }
 
-function CheckCircle2({ className = "" }) {
+function CheckCircle2({ className = "" }: SimpleIconProps) {
   return <Icon className={className}>✓</Icon>;
 }
 
-function Card({ children, className = "" }) {
+function Card({ children, className = "" }: SimpleWrapperProps) {
   return <div className={className}>{children}</div>;
 }
 
-function CardContent({ children, className = "" }) {
+function CardContent({ children, className = "" }: SimpleWrapperProps) {
   return <div className={className}>{children}</div>;
 }
 
-function Button({ children, className = "", type = "button", variant, ...buttonProps }) {
+function Button({ children, className = "", type = "button", variant: _variant, ...buttonProps }: SimpleButtonProps) {
   return (
     <button type={type} className={className} {...buttonProps}>
       {children}
