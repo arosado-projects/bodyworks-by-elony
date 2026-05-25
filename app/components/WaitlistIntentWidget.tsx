@@ -258,6 +258,14 @@ export default function WaitlistIntentWidget() {
           ? "Your waitlist preferences were updated."
           : "You're on the waitlist! We'll text you if a matching opening becomes available."
       );
+      if (intentMode === "specific") {
+        setSpecificDate("");
+        setSpecificTime("");
+        setForm((prev: FormState) => ({
+          ...prev,
+          notes: ""
+        }));
+      }
     } catch (err) {
       console.error("Waitlist signup failed:", err);
 
@@ -449,9 +457,9 @@ export default function WaitlistIntentWidget() {
                     className="mt-1 w-full rounded-xl border border-[#ead7e7] bg-white px-3 py-3 outline-none transition-all focus:border-[#cc97c3] focus:ring-2 focus:ring-[#cc97c3]"
                   >
                     <option value={0}>Exact time only</option>
-                    <option value={15}>+/- 15 minutes</option>
                     <option value={30}>+/- 30 minutes</option>
                     <option value={60}>+/- 1 hour</option>
+                    <option value={120}>+/- 2 hours</option>
                   </select>
                 </label>
               </div>
