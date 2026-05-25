@@ -21,10 +21,12 @@ type WaitlistPayload = {
     time?: string;
     specificFlexMinutes?: number;
   };
-  hasFutureAppointment: boolean;
   notes?: string;
   joinedAt?: string;
 };
+
+const ALLOWED_DURATIONS = [30, 60, 90, 120];
+const ALLOWED_SPECIFIC_FLEX_MINUTES = [0, 30, 60, 120];
 
 function normalizePhoneToE164US(value: string): string {
   const digits = String(value || "").replace(/\D/g, "");
@@ -40,6 +42,22 @@ function normalizePhoneToE164US(value: string): string {
   return "";
 }
 
+function isHalfHourTime(value: string): boolean {
+  return /^([01]\d|2[0-3]):(00|30)$/.test(String(value || "").trim());
+}
+
+function timeToMinutes(value: string): number {
+  const [hour, minute] = value.split(":").map((part) => parseInt(part, 10));
+  return hour * 60 + minute;
+}
+
+function isSpecificTimeInAllowedRange(value: string): boolean {
+  if (!isHalfHourTime(value)) return false;
+
+  const minutes = timeToMinutes(value);
+  return minutes >= 8 * 60 && minutes <= 20 * 60;
+}
+
 function sanitizePayload(input: any): WaitlistPayload {
   const intentMode = input.intentMode === "specific" ? "specific" : "flexible";
   const phone = normalizePhoneToE164US(input.phone);
@@ -47,7 +65,7 @@ function sanitizePayload(input: any): WaitlistPayload {
   const durations = Array.isArray(input.preferences?.durations)
     ? input.preferences.durations
         .map((d: unknown) => parseInt(String(d), 10))
-        .filter((d: number) => [30, 60, 90, 120].includes(d))
+        .filter((d: number) => ALLOWED_DURATIONS.includes(d))
     : [];
 
   if (!input.firstName || !input.lastName || !input.email || !phone) {
@@ -76,6 +94,10 @@ function sanitizePayload(input: any): WaitlistPayload {
         throw new Error("Each availability window needs a day, start, and end time.");
       }
 
+      if (!isHalfHourTime(window.start) || !isHalfHourTime(window.end)) {
+        throw new Error("Availability times must be in 30-minute increments.");
+      }
+
       if (window.start >= window.end) {
         throw new Error("Availability start time must be before end time.");
       }
@@ -91,7 +113,6 @@ function sanitizePayload(input: any): WaitlistPayload {
         durations,
         windows
       },
-      hasFutureAppointment: Boolean(input.hasFutureAppointment),
       notes: String(input.notes || "").trim().slice(0, 500),
       joinedAt: new Date().toISOString()
     };
@@ -99,9 +120,25 @@ function sanitizePayload(input: any): WaitlistPayload {
 
   const date = String(input.preferences?.date || "");
   const time = String(input.preferences?.time || "");
+  const specificFlexMinutes = parseInt(
+    String(input.preferences?.specificFlexMinutes || 30),
+    10
+  );
 
   if (!date || !time) {
     throw new Error("Choose a specific date and time.");
+  }
+
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    throw new Error("Specific date must be YYYY-MM-DD.");
+  }
+
+  if (!isSpecificTimeInAllowedRange(time)) {
+    throw new Error("Specific time must be between 8:00 AM and 8:00 PM in 30-minute increments.");
+  }
+
+  if (!ALLOWED_SPECIFIC_FLEX_MINUTES.includes(specificFlexMinutes)) {
+    throw new Error("Specific flexibility must be exact, +/-30 minutes, +/-1 hour, or +/-2 hours.");
   }
 
   return {
@@ -114,9 +151,8 @@ function sanitizePayload(input: any): WaitlistPayload {
       durations,
       date,
       time,
-      specificFlexMinutes: parseInt(String(input.preferences?.specificFlexMinutes || 30), 10)
+      specificFlexMinutes
     },
-    hasFutureAppointment: Boolean(input.hasFutureAppointment),
     notes: String(input.notes || "").trim().slice(0, 500),
     joinedAt: new Date().toISOString()
   };
@@ -124,7 +160,9 @@ function sanitizePayload(input: any): WaitlistPayload {
 
 function signPayload(payload: WaitlistPayload, secret: string) {
   const timestamp = new Date().toISOString();
-  const payloadB64 = Buffer.from(JSON.stringify(payload), "utf8").toString("base64url");
+  const payloadB64 = Buffer.from(JSON.stringify(payload), "utf8").toString(
+    "base64url"
+  );
 
   const signature = crypto
     .createHmac("sha256", secret)
@@ -178,7 +216,6 @@ export async function POST(request: NextRequest) {
       success: true,
       created: result?.created ?? null
     });
-
   } catch (err: any) {
     return NextResponse.json(
       {
