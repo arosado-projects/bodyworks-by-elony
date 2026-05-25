@@ -21,7 +21,6 @@ type FormState = {
   lastName: string;
   phone: string;
   email: string;
-  hasFutureAppointment: "yes" | "no";
   notes: string;
 };
 
@@ -49,16 +48,68 @@ type WaitlistPayload = {
         durations: number[];
       };
   notes: string;
-  hasFutureAppointment: boolean;
+};
+
+type TimeOption = {
+  value: string;
+  label: string;
 };
 
 const DAYS = ["Monday", "Tuesday", "Thursday", "Friday", "First Saturday"];
 
 const SESSION_LENGTHS: number[] = [30, 60, 90, 120];
 
+const buildTimeOptions = ({
+  startHour,
+  endHour,
+  includeEndHalfHour
+}: {
+  startHour: number;
+  endHour: number;
+  includeEndHalfHour: boolean;
+}): TimeOption[] => {
+  const options: TimeOption[] = [];
+
+  for (let hour24 = startHour; hour24 <= endHour; hour24 += 1) {
+    for (const minute of ["00", "30"]) {
+      if (
+        hour24 === endHour &&
+        minute === "30" &&
+        includeEndHalfHour === false
+      ) {
+        continue;
+      }
+
+      const value = `${String(hour24).padStart(2, "0")}:${minute}`;
+      const hour12 = hour24 % 12 || 12;
+      const suffix = hour24 >= 12 ? "PM" : "AM";
+      const label = `${hour12}:${minute} ${suffix}`;
+
+      options.push({ value, label });
+    }
+  }
+
+  return options;
+};
+
+const FLEXIBLE_TIME_OPTIONS = buildTimeOptions({
+  startHour: 0,
+  endHour: 23,
+  includeEndHalfHour: true
+});
+
+const SPECIFIC_TIME_OPTIONS = buildTimeOptions({
+  startHour: 8,
+  endHour: 20,
+  includeEndHalfHour: false
+});
+
 const createId = () => {
-  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
-    return crypto.randomUUID();
+  if (
+    typeof globalThis.crypto !== "undefined" &&
+    "randomUUID" in globalThis.crypto
+  ) {
+    return globalThis.crypto.randomUUID();
   }
 
   return `window_${Date.now()}_${Math.random().toString(36).slice(2)}`;
@@ -87,7 +138,6 @@ export default function WaitlistIntentWidget() {
     lastName: "",
     phone: "",
     email: "",
-    hasFutureAppointment: "no",
     notes: ""
   });
 
@@ -128,9 +178,7 @@ export default function WaitlistIntentWidget() {
 
   const summary = useMemo(() => {
     const durationSummary = durations.length
-      ? durations
-          .map((duration: number) => `${duration} min`)
-          .join(" or ")
+      ? durations.map((duration: number) => `${duration} min`).join(" or ")
       : "no session length selected";
 
     if (intentMode === "specific") {
@@ -169,7 +217,16 @@ export default function WaitlistIntentWidget() {
     specificFlexMinutes
   ]);
 
+  const resetSubmitNotice = () => {
+    if (submitStatus === "success" || submitStatus === "error") {
+      setSubmitStatus("idle");
+      setSubmitMessage("");
+    }
+  };
+
   const toggleDuration = (duration: number) => {
+    resetSubmitNotice();
+
     setDurations((prev: number[]) => {
       if (prev.includes(duration)) {
         return prev.filter((item: number) => item !== duration);
@@ -180,6 +237,8 @@ export default function WaitlistIntentWidget() {
   };
 
   const addWindow = () => {
+    resetSubmitNotice();
+
     setWindows((prev: AvailabilityWindow[]) => [
       ...prev,
       {
@@ -192,6 +251,8 @@ export default function WaitlistIntentWidget() {
   };
 
   const updateWindow = (id: string, patch: Partial<AvailabilityWindow>) => {
+    resetSubmitNotice();
+
     setWindows((prev: AvailabilityWindow[]) =>
       prev.map((window: AvailabilityWindow) =>
         window.id === id ? { ...window, ...patch } : window
@@ -200,9 +261,16 @@ export default function WaitlistIntentWidget() {
   };
 
   const removeWindow = (id: string) => {
+    resetSubmitNotice();
+
     setWindows((prev: AvailabilityWindow[]) =>
       prev.filter((window: AvailabilityWindow) => window.id !== id)
     );
+  };
+
+  const updateForm = (patch: Partial<FormState>) => {
+    resetSubmitNotice();
+    setForm((prev: FormState) => ({ ...prev, ...patch }));
   };
 
   const handleSubmit = async () => {
@@ -233,8 +301,7 @@ export default function WaitlistIntentWidget() {
               specificFlexMinutes,
               durations
             },
-      notes: form.notes.trim(),
-      hasFutureAppointment: form.hasFutureAppointment === "yes"
+      notes: form.notes.trim()
     };
 
     try {
@@ -253,11 +320,15 @@ export default function WaitlistIntentWidget() {
       }
 
       setSubmitStatus("success");
+
       setSubmitMessage(
-        result.created === false
-          ? "Your waitlist preferences were updated."
-          : "You're on the waitlist! We'll text you if a matching opening becomes available."
+        intentMode === "specific"
+          ? "This specific waitlist request was saved. You can add another date/time if you would like."
+          : result.created === false
+            ? "Your flexible waitlist preferences were updated."
+            : "You're on the waitlist! We'll text you if a matching opening becomes available."
       );
+
       if (intentMode === "specific") {
         setSpecificDate("");
         setSpecificTime("");
@@ -318,7 +389,10 @@ export default function WaitlistIntentWidget() {
         <div className="mb-6 flex rounded-2xl bg-[#f6eaf4] p-1 shadow-inner">
           <button
             type="button"
-            onClick={() => setIntentMode("flexible")}
+            onClick={() => {
+              resetSubmitNotice();
+              setIntentMode("flexible");
+            }}
             className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition-all ${
               intentMode === "flexible"
                 ? "bg-[#fffdfc] text-[#7b3f75] shadow-sm"
@@ -330,7 +404,10 @@ export default function WaitlistIntentWidget() {
 
           <button
             type="button"
-            onClick={() => setIntentMode("specific")}
+            onClick={() => {
+              resetSubmitNotice();
+              setIntentMode("specific");
+            }}
             className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition-all ${
               intentMode === "specific"
                 ? "bg-[#fffdfc] text-[#7b3f75] shadow-sm"
@@ -378,22 +455,20 @@ export default function WaitlistIntentWidget() {
                       ))}
                     </select>
 
-                    <input
-                      type="time"
+                    <TimeSelect
                       value={window.start}
-                      onChange={(e) =>
-                        updateWindow(window.id, { start: e.target.value })
+                      options={FLEXIBLE_TIME_OPTIONS}
+                      onChange={(value: string) =>
+                        updateWindow(window.id, { start: value })
                       }
-                      className="rounded-xl border border-[#ead7e7] bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-[#cc97c3]"
                     />
 
-                    <input
-                      type="time"
+                    <TimeSelect
                       value={window.end}
-                      onChange={(e) =>
-                        updateWindow(window.id, { end: e.target.value })
+                      options={FLEXIBLE_TIME_OPTIONS}
+                      onChange={(value: string) =>
+                        updateWindow(window.id, { end: value })
                       }
-                      className="rounded-xl border border-[#ead7e7] bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-[#cc97c3]"
                     />
 
                     <ButtonLike
@@ -432,28 +507,32 @@ export default function WaitlistIntentWidget() {
                   <input
                     type="date"
                     value={specificDate}
-                    onChange={(e) => setSpecificDate(e.target.value)}
+                    onChange={(e) => {
+                      resetSubmitNotice();
+                      setSpecificDate(e.target.value);
+                    }}
                     className="mt-1 w-full rounded-xl border border-[#ead7e7] px-3 py-3 outline-none transition-all focus:border-[#cc97c3] focus:ring-2 focus:ring-[#cc97c3]"
                   />
                 </label>
 
-                <label className="text-sm font-medium text-[#292524]">
-                  Preferred Time
-                  <input
-                    type="time"
-                    value={specificTime}
-                    onChange={(e) => setSpecificTime(e.target.value)}
-                    className="mt-1 w-full rounded-xl border border-[#ead7e7] px-3 py-3 outline-none transition-all focus:border-[#cc97c3] focus:ring-2 focus:ring-[#cc97c3]"
-                  />
-                </label>
+                <TimeSelect
+                  label="Preferred Time"
+                  value={specificTime}
+                  options={SPECIFIC_TIME_OPTIONS}
+                  onChange={(value: string) => {
+                    resetSubmitNotice();
+                    setSpecificTime(value);
+                  }}
+                />
 
                 <label className="text-sm font-medium text-[#292524]">
                   Flexibility
                   <select
                     value={specificFlexMinutes}
-                    onChange={(e) =>
-                      setSpecificFlexMinutes(parseInt(e.target.value, 10))
-                    }
+                    onChange={(e) => {
+                      resetSubmitNotice();
+                      setSpecificFlexMinutes(parseInt(e.target.value, 10));
+                    }}
                     className="mt-1 w-full rounded-xl border border-[#ead7e7] bg-white px-3 py-3 outline-none transition-all focus:border-[#cc97c3] focus:ring-2 focus:ring-[#cc97c3]"
                   >
                     <option value={0}>Exact time only</option>
@@ -516,17 +595,13 @@ export default function WaitlistIntentWidget() {
               <Input
                 label="First name"
                 value={form.firstName}
-                onChange={(value: string) =>
-                  setForm({ ...form, firstName: value })
-                }
+                onChange={(value: string) => updateForm({ firstName: value })}
               />
 
               <Input
                 label="Last name"
                 value={form.lastName}
-                onChange={(value: string) =>
-                  setForm({ ...form, lastName: value })
-                }
+                onChange={(value: string) => updateForm({ lastName: value })}
               />
 
               <Input
@@ -534,7 +609,7 @@ export default function WaitlistIntentWidget() {
                 type="tel"
                 value={form.phone}
                 onChange={(value: string) =>
-                  setForm({ ...form, phone: formatPhoneNumber(value) })
+                  updateForm({ phone: formatPhoneNumber(value) })
                 }
                 placeholder="(512) 555-0199"
               />
@@ -543,44 +618,15 @@ export default function WaitlistIntentWidget() {
                 label="Email"
                 type="email"
                 value={form.email}
-                onChange={(value: string) =>
-                  setForm({ ...form, email: value })
-                }
+                onChange={(value: string) => updateForm({ email: value })}
               />
-            </div>
-
-            <div className="mt-4 rounded-2xl bg-[#f6eaf4] p-4">
-              <p className="mb-2 text-sm font-medium text-[#292524]">
-                Do you already have a future appointment?
-              </p>
-
-              <div className="flex gap-3">
-                {(["no", "yes"] as const).map(
-                  (value: FormState["hasFutureAppointment"]) => (
-                    <button
-                      key={value}
-                      type="button"
-                      onClick={() =>
-                        setForm({ ...form, hasFutureAppointment: value })
-                      }
-                      className={`rounded-xl border px-4 py-2 text-sm capitalize ${
-                        form.hasFutureAppointment === value
-                          ? "border-[#7b3f75] bg-white text-[#7b3f75]"
-                          : "border-[#ead7e7] bg-[#fffdfc] text-[#6b625c]"
-                      }`}
-                    >
-                      {value}
-                    </button>
-                  )
-                )}
-              </div>
             </div>
 
             <label className="mt-4 block text-sm font-medium text-[#292524]">
               Anything else Elony should know?
               <textarea
                 value={form.notes}
-                onChange={(e) => setForm({ ...form, notes: e.target.value })}
+                onChange={(e) => updateForm({ notes: e.target.value })}
                 placeholder="Example: I prefer evenings, but Friday midday can work with notice."
                 className="mt-1 min-h-24 w-full rounded-2xl border border-[#ead7e7] px-3 py-2 outline-none focus:ring-2 focus:ring-[#cc97c3]"
               />
@@ -711,6 +757,39 @@ function Input({
         placeholder={placeholder}
         className="mt-1 w-full rounded-xl border border-[#ead7e7] px-3 py-2 outline-none transition-all focus:border-[#cc97c3] focus:ring-2 focus:ring-[#cc97c3]"
       />
+    </label>
+  );
+}
+
+type TimeSelectProps = {
+  label?: string;
+  value: string;
+  options: TimeOption[];
+  onChange: (value: string) => void;
+};
+
+function TimeSelect({ label, value, options, onChange }: TimeSelectProps) {
+  const select = (
+    <select
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="mt-1 w-full rounded-xl border border-[#ead7e7] bg-white px-3 py-3 outline-none transition-all focus:border-[#cc97c3] focus:ring-2 focus:ring-[#cc97c3]"
+    >
+      <option value="">Select time</option>
+      {options.map((option: TimeOption) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </select>
+  );
+
+  if (!label) return select;
+
+  return (
+    <label className="text-sm font-medium text-[#292524]">
+      {label}
+      {select}
     </label>
   );
 }
