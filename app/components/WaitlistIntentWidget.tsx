@@ -358,7 +358,7 @@ export default function WaitlistIntentWidget() {
           </div>
 
           <h1 className="text-3xl font-semibold tracking-tight">
-            Join the Cancellation Waitlist
+            Join the Waitlist
           </h1>
 
           <p className="mx-auto mt-2 max-w-2xl text-sm text-[#6b625c]">
