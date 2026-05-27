@@ -362,8 +362,8 @@ export default function WaitlistIntentWidget() {
           </h1>
 
           <p className="leading-7 text-bwe-muted">
-            Tell us when you would like to be notified. If a matching appointment
-            opens, we&apos;ll text you a private booking link.
+            Tell us when you would like to be notified. If a matching time
+            opens, we&apos;ll text you a booking link.
           </p>
         </div>
 
@@ -427,7 +427,7 @@ export default function WaitlistIntentWidget() {
                     When are you available?
                   </h2>
 
-                  <p className="text-sm text-[#6b625c]">
+                  <p className="leading-7 text-bwe-muted">
                     Add one or more day/time windows.
                   </p>
                 </div>
@@ -495,7 +495,7 @@ export default function WaitlistIntentWidget() {
                     Which exact slot do you need?
                   </h2>
 
-                  <p className="text-sm text-[#6b625c]">
+                  <p className="leading-7 text-bwe-muted">
                     Choose a preferred date/time and how flexible you can be.
                   </p>
                 </div>
@@ -550,7 +550,7 @@ export default function WaitlistIntentWidget() {
               Acceptable session lengths
             </h2>
 
-            <p className="mb-4 text-sm text-[#6b625c]">
+            <p className="mb-4 leading-7 text-bwe-muted">
               Choose every length you would be willing to book if it opens.
             </p>
 
