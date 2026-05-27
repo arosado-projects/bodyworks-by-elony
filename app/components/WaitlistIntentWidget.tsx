@@ -623,7 +623,7 @@ export default function WaitlistIntentWidget() {
             </div>
 
             <label className="mt-4 block text-sm font-medium text-[#292524]">
-              Anything else Elony should know?
+              Anything else we should know?
               <textarea
                 value={form.notes}
                 onChange={(e) => updateForm({ notes: e.target.value })}
