@@ -361,7 +361,7 @@ export default function WaitlistIntentWidget() {
             Join the Waitlist
           </h1>
 
-          <p class="leading-7 text-bwe-muted">
+          <p className="leading-7 text-bwe-muted">
             Tell us when you would like to be notified. If a matching appointment
             opens, we&apos;ll text you a private booking link.
           </p>
@@ -378,7 +378,7 @@ export default function WaitlistIntentWidget() {
                 This does not book an appointment yet.
               </p>
 
-              <p class="leading-7 text-bwe-muted">
+              <p className="leading-7 text-bwe-muted">
                 You&apos;ll only receive a text if an opening matches your
                 selections.
               </p>
