@@ -15,10 +15,6 @@ const routes = [
     priority: 0.85,
   },
   {
-    path: "/booking",
-    priority: 0.8,
-  },
-  {
     path: "/about",
     priority: 0.75,
   },

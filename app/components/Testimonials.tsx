@@ -237,7 +237,7 @@ export default function Testimonials() {
           </p>
 
           <h2 className="text-3xl font-light text-bwe-text sm:text-4xl">
-            Kind words from people who have been on the table.
+            Reviews from people who I've worked with.
           </h2>
         </div>
 

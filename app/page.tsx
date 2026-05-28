@@ -46,7 +46,7 @@ const trustItems = [
     title: "Certified Prenatal Massage",
     description:
       "Certified prenatal massage using supportive side-lying techniques.",
-    note: "For high-risk pregnancies, physician clearance may be requested before prenatal massage.",
+    note: "For high-risk pregnancies, physician clearance will be requested before prenatal massage.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function HomePage() {
   <p className="text-lg leading-8 text-bwe-muted">
     Massage and bodywork tailored specifically to your needs. Bodyworks By
     Elony is a safe, inclusive environment for all people, body types,
-    abilities, and gender expressions. There are no hidden membership fees, gratuity is always included, and your scheduled session time is fully dedicated to your hands-on treatment.
+    abilities, and gender expressions. There are no hidden membership fees, gratuity is always included, and you get your full scheduled session time.
   </p>
 
   <div className="my-7">
@@ -143,7 +143,7 @@ export default function HomePage() {
             </p>
 
             <h2 className="text-3xl font-light text-bwe-text sm:text-4xl">
-              Customized massage for real life, real stress, and real bodies.
+              Customized massage for what your body needs.
             </h2>
           </div>
 
@@ -183,7 +183,7 @@ export default function HomePage() {
             </p>
 
             <h2 className="text-3xl font-light text-bwe-text">
-              No guessing, no pressure, no one-size-fits-all massage.
+              A highly customized experience, tailored to your needs.
             </h2>
           </div>
 

@@ -73,12 +73,36 @@ const addOns = [
 ];
 
 const enhancements = [
-  "Aromatherapy",
-  "Gua Sha",
-  "Orbital Buffing",
-  "Hypervolt",
-  "Table Warmer",
-  "Hot Towels",
+  {
+    name: "Aromatherapy",
+    description:
+      "Essential oils or soothing scents selected to support relaxation and comfort.",
+  },
+  {
+    name: "Gua Sha",
+    description:
+      "A smooth handheld tool used with gentle strokes to ease tight, tender areas.",
+  },
+  {
+    name: "Orbital Buffing",
+    description:
+      "A small oscillating tool used for focused work on stubborn knots and tension.",
+  },
+  {
+    name: "Hypervolt",
+    description:
+      "A percussive massage device that delivers rhythmic pressure to tired muscles.",
+  },
+  {
+    name: "Table Warmer",
+    description:
+      "A warming layer that helps the massage table stay cozy from start to finish.",
+  },
+  {
+    name: "Hot Towels",
+    description:
+      "Warm towels used to soften, soothe, and add a little extra comfort during session.",
+  },
 ];
 
 export default function PricingPage() {
@@ -169,7 +193,7 @@ export default function PricingPage() {
             </h3>
 
             <p className="leading-7 text-bwe-muted">
-              Consistent bodywork shouldn't be complicated. Our four-session therapeutic massage packages are perfect for regular care, fully shareable with friends and family, and valid for three months after first use. If life gets in the way and your package expires, you can reactivate it for a small fee. (Package sales are final)
+              Our four-session therapeutic massage packages are perfect for regular care, fully shareable with friends and family, and valid for three months after first use. If life gets in the way and your package expires, you can reactivate it for a small fee. (Package sales are final)
             </p>
           </div>
         </div>
@@ -289,10 +313,16 @@ export default function PricingPage() {
           <div className="grid gap-3 sm:grid-cols-2">
             {enhancements.map((enhancement) => (
               <div
-                key={enhancement}
-                className="rounded-2xl border border-bwe-border bg-bwe-surface px-5 py-4 text-bwe-muted"
+                key={enhancement.name}
+                className="rounded-2xl border border-bwe-border bg-bwe-surface px-5 py-4"
               >
-                {enhancement}
+                <h3 className="text-base font-medium text-bwe-text">
+                  {enhancement.name}
+                </h3>
+
+                <p className="mt-1 text-sm leading-6 text-bwe-muted">
+                  {enhancement.description}
+                </p>
               </div>
             ))}
           </div>
@@ -320,8 +350,7 @@ export default function PricingPage() {
             </h2>
 
             <p className="leading-7 text-bwe-muted">
-              Please plan to arrive 10 minutes early to allow time for intake
-              and undressing to your comfort level, so you can receive your full
+              Please plan to arrive 10 minutes early to allow time for intake, so you can receive your full
               session time.
             </p>
           </article>

@@ -16,10 +16,10 @@ const services = [
     description:
       "A therapeutic massage session is built around what is going on with your body that day. It may include quiet relaxation, deeper pressure, trigger point work, stretching, or focused bodywork, depending on your goals and comfort.",
     goodFor: [
-      "General tension",
-      "Real-life stress",
+      "General tension and stress",
+      "Chronic pain",
+      "Relaxation",
       "Focused bodywork",
-      "Clients who want a customized massage session",
     ],
   },
   {
@@ -28,21 +28,23 @@ const services = [
     description:
       "Certified prenatal massage is offered with supportive side-lying positioning, careful pacing, and room to adjust for comfort. The session stays centered on what your body can comfortably receive that day.",
     goodFor: [
-      "Pregnancy comfort",
-      "Gentle supportive work",
+      "Relief from pregnancy discomfort",
+      "Safe side-lying positioning",
+      "Customized pressure",
       "Relaxation",
-      "Clients seeking careful positioning and a slower pace",
     ],
   },
   {
     title: "Manual Lymphatic Drainage",
     eyebrow: `${siteConfig.credentials.mldTechnique} · ${siteConfig.credentials.mldCertification}`,
     description:
-      "Manual lymphatic drainage in Cedar Park is a gentle, focused technique using light, intentional movements. Elony is trained in the Klose/Vodder Technique and is a Certified Manual Lymphatic Drainage Therapist. Clients often seek MLD for post-op support when medically cleared, general swelling, and facial puffiness or swelling related to allergies. Focused MLD may also be incorporated into a standard massage session, such as using part of a 60-minute appointment for lymphatic work.",
+      "Manual lymphatic drainage is a gentle, focused technique that uses light, intentional stretching movements to stimulate lymph flow. Elony is trained in the Klose/Vodder Technique and is a Certified Manual Lymphatic Drainage Therapist. Clients often seek MLD for post-op support when medically cleared, general swelling, and facial puffiness or swelling related to allergies. Focused MLD may also be incorporated into a standard massage session, such as using part of a 60-minute appointment for lymphatic work.",
     goodFor: [
-      "Post-op support with medical clearance",
-      "General swelling",
-      "Facial puffiness or allergy-related swelling",
+      "Expedite post-surgery recovery",
+      "Improve auto-immune conditions",
+      "Improve pregnancy edema",
+      "Reducing sinus congestion",
+      "Accelerate recovery of swollen tissue from injury/sprain",
       "Focused MLD within a longer massage session",
     ],
   },
@@ -50,7 +52,7 @@ const services = [
     title: "Massage Enhancements",
     eyebrow: "Optional session support",
     description:
-      "Enhancements may be included when they make sense for your session. Options include aromatherapy, cupping, gua sha, warm towels, table warmer, Hypervolt, or other supportive techniques. These enhancements are free of charge.",
+      "Enhancements may be included when they make sense for your session. Options include aromatherapy, cupping, gua sha, warm towels, table warmer, Hypervolt, or other supportive techniques. For example, gua sha uses a smooth handheld tool and Hypervolt is a percussive massage device. These enhancements are free of charge.",
   },
 ];
 

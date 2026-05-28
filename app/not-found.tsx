@@ -17,7 +17,7 @@ export default function NotFound() {
 
         <p className="mx-auto mb-8 max-w-2xl text-lg leading-8 text-bwe-muted">
           The page may have moved, or the link may have been typed incorrectly.
-          Let’s get you back to the services or booking page.
+          Let’s get you back to the services or home page.
         </p>
 
         <div className="flex flex-col justify-center gap-4 sm:flex-row">

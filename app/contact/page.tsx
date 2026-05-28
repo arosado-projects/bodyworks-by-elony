@@ -31,7 +31,7 @@ const contactMethods = [
 ];
 
 const visitNotes = [
-  "Scheduling is handled online through the booking page.",
+  "Scheduling is handled online through the booking system.",
   "Please plan to arrive 10 minutes early to allow time for intake and undressing to your comfort level.",
   "First-time appointments require prepayment when booking.",
   "Cupping and manual lymphatic drainage are subject to medical review.",
@@ -66,13 +66,6 @@ export default function ContactPage() {
                 Email Elony
               </a>
 
-              <BookingLink
-                href="/booking"
-                location="contact_hero_booking_details"
-                className="rounded-full border border-bwe-border bg-bwe-surface px-6 py-3 text-sm font-medium text-bwe-text transition hover:border-bwe-accent"
-              >
-                Booking Details
-              </BookingLink>
             </div>
           </div>
 
@@ -190,14 +183,6 @@ export default function ContactPage() {
             </ul>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <BookingLink
-                href="/booking"
-                location="contact_visit_notes_booking_details"
-                className="rounded-full border border-bwe-border bg-bwe-page px-6 py-3 text-sm font-medium text-bwe-text transition hover:border-bwe-accent"
-              >
-                Booking Details
-              </BookingLink>
-
               <a
                 href="/policies"
                 className="rounded-full border border-bwe-border bg-bwe-page px-6 py-3 text-sm font-medium text-bwe-text transition hover:border-bwe-accent"

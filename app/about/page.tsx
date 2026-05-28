@@ -111,42 +111,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-bwe-surface">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
-              Her Approach
-            </p>
-
-            <h2 className="text-3xl font-light leading-tight text-bwe-text">
-              Your massage should feel like it belongs to you.
-            </h2>
-          </div>
-
-          <div className="space-y-6 text-bwe-muted">
-            <p className="leading-8">
-              Sessions are meant to feel collaborative, not scripted. Whether
-              you book therapeutic massage, prenatal massage, manual lymphatic
-              drainage, or pediatric massage, we start by talking through what
-              is going on and what would help you feel comfortable.
-            </p>
-
-            <p className="leading-8">
-              Pressure, pacing, positioning, and focus areas can change during
-              the appointment. You never have to just deal with it, and you are
-              always allowed to speak up.
-            </p>
-
-            <p className="leading-8">
-              Many clients come to Bodyworks By Elony from Cedar Park and nearby
-              communities looking for a calm, reliable place for real-life
-              stress, sore spots, pregnancy support, lymphatic work, and
-              everyday tension.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-bwe-page">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
@@ -203,18 +167,6 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
-
-          <div className="mt-6 rounded-3xl border border-bwe-border bg-bwe-soft p-6 md:p-8">
-            <h3 className="mb-3 text-xl font-medium text-bwe-text">
-              Massage education
-            </h3>
-
-            <p className="leading-8 text-bwe-muted">
-              Elony is a graduate of the Southern California Health Institute,
-              where she trained as a Certified Massage Therapist before building
-              her practice around therapeutic, customized bodywork.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -232,7 +184,7 @@ export default function AboutPage() {
             <p className="leading-8 text-bwe-muted">
               Bodyworks By Elony is located in {siteConfig.location.city},{" "}
               {siteConfig.location.zip}, near {siteConfig.location.landmark}.
-              Online booking is available through the booking page.
+              Online booking is available anytime.
             </p>
           </div>
 
