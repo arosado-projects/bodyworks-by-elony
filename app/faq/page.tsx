@@ -13,7 +13,7 @@ const massageFaqs = [
   {
     question: "Why do first-time appointments require prepayment?",
     answer:
-      "Your appointment time is held just for you. First-time appointments require prepayment through the secure booking platform so your session is confirmed and the schedule stays fair for everyone.",
+      "Your appointment time is held just for you. First-time appointments require prepayment through the secure booking platform so your session is confirmed and the schedule stays fair for everyone. Sessions canceled with the required notice may be rescheduled according to the cancellation policy.",
   },
   {
     question: "What happens if I need to change a prepaid appointment?",
@@ -23,7 +23,12 @@ const massageFaqs = [
   {
     question: "What happens at my first appointment?",
     answer:
-      "You will have a quick check-in with Elony before the massage starts so you can talk through what is going on, what areas need attention, and what pressure feels right. During the session, you can talk, rest, ask questions, or zone out. It is your time on the table.",
+      "You will have a quick check-in with Elony before the massage starts so you can talk through what is going on, what areas need attention, what areas should be avoided, and what pressure feels right. During the session, you can talk, rest, ask questions, zone out, or let Elony know if something needs to change. It is your time on the table.",
+  },
+  {
+    question: "Do I have to undress completely?",
+    answer:
+      "No. You may undress to your comfort level. Some clients fully undress, some leave undergarments on, and some prefer to stay more covered. Elony will leave the room while you undress and re-dress.",
   },
   {
     question: "Will I be covered during the massage?",
@@ -36,14 +41,19 @@ const massageFaqs = [
       "At the start, you and Elony will talk about what areas need attention and what areas you want skipped. A typical full-body massage may include the back, arms, legs, feet, hands, head, neck, and shoulders. Glute work may be included only when appropriate and based on your comfort and goals.",
   },
   {
-    question: "What should I do during the massage?",
-    answer:
-      "There is a quick check-in before the hands-on work starts. During the massage, you can talk, rest, ask questions, zone out, or say if something needs to change. You do not have to perform, help, or be perfectly still. Just let Elony know what you need.",
-  },
-  {
     question: "What will the massage feel like?",
     answer:
       "It depends on your body, the service, and the pressure that feels right to you. Some people want gentle work, and some want deeper therapeutic pressure. Elony will check in, and you can ask for more pressure, less pressure, a different position, or a different focus area at any time.",
+  },
+  {
+    question: "What if I have sensitivities, boundaries, trauma history, or areas I prefer not to have worked on?",
+    answer:
+      "You are welcome to share whatever feels useful before or during your session. Elony will respect your boundaries, avoid areas you do not want worked on, adjust pressure or positioning, and help create a calm, professional care environment. You do not need to explain more than you want to.",
+  },
+  {
+    question: "How will I feel after the massage?",
+    answer:
+      "Many clients feel relaxed, looser, sleepy, or more aware of areas that were holding tension. With deeper work, some temporary soreness can happen. Drinking water, moving gently, and giving your body time to settle may help you feel your best after your session.",
   },
   {
     question: "How long will my session last?",
@@ -66,7 +76,7 @@ const servicesFaqs = [
   {
     question: "Do you offer prenatal massage?",
     answer:
-      "Yes. Prenatal massage is available in Cedar Park with certified prenatal massage training, supportive side-lying positioning, and plenty of room to adjust for comfort.",
+      "Yes. Prenatal massage is available in Cedar Park with certified prenatal massage training, supportive side-lying positioning, and plenty of room to adjust for comfort. High-risk prenatal clients may be seen when physician clearance is provided.",
   },
   {
     question: "Do you offer manual lymphatic drainage?",
@@ -86,6 +96,16 @@ const servicesFaqs = [
     question: "Do you offer cupping?",
     answer:
       "Yes. Elony is certified in cupping. Cupping may be incorporated into a massage session when appropriate and is subject to medical review.",
+  },
+  {
+    question: "What are the circular marks after cupping?",
+    answer:
+      "Cupping can leave temporary circular marks where the cups were placed. These marks are common and usually fade over time. The amount of marking varies by person, placement, suction level, and session goals.",
+  },
+  {
+    question: "Can I book a cupping-only session?",
+    answer:
+      "Cupping is offered as part of a massage session rather than as a standalone service. If you are interested in cupping, mention it during booking or intake so Elony can decide whether it is appropriate that day.",
   },
 ];
 
