@@ -32,7 +32,7 @@ const contactMethods = [
 
 const visitNotes = [
   "Scheduling is handled online through the booking system.",
-  "Please plan to arrive 10 minutes early to allow time for intake and undressing to your comfort level.",
+  "Please plan to arrive 10 minutes early to allow time for intake.",
   "First-time appointments require prepayment when booking.",
   "Cupping and manual lymphatic drainage are subject to medical review.",
 ];
