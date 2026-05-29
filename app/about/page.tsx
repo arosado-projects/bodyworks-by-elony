@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { getBookingUrl, siteConfig } from "../lib/site";
 import BookingLink from "../components/BookingLink";
@@ -107,6 +108,54 @@ export default function AboutPage() {
                 View Services
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-bwe-page">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div className="order-2 lg:order-1">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
+              Body-Aware Care
+            </p>
+
+            <h2 className="mb-5 text-3xl font-light leading-tight text-bwe-text">
+              Grounded in respect for how unique every body can be.
+            </h2>
+
+            <div className="space-y-5 leading-8 text-bwe-muted">
+              <p>
+                Elony’s approach is shaped by a lifelong relationship with
+                movement, body awareness, and hands-on care. She understands
+                that every body has its own history, comfort level, and way of
+                responding to touch.
+              </p>
+
+              <p>
+                Her sessions are not about forcing the body into a template.
+                They are designed to meet each client with steadiness, clear
+                communication, and respect for individual goals, boundaries, and
+                comfort.
+              </p>
+            </div>
+          </div>
+
+          <div className="order-1 rounded-[2rem] border border-bwe-border bg-bwe-soft p-4 shadow-sm lg:order-2">
+            <figure className="overflow-hidden rounded-[1.5rem] bg-bwe-surface">
+              <Image
+                src="/images/elony-contortion.jpg"
+                alt="Elony smiling while demonstrating a flexibility pose"
+                width={1896}
+                height={2048}
+                sizes="(min-width: 1024px) 520px, 100vw"
+                className="aspect-[4/5] w-full object-cover object-center"
+              />
+
+              <figcaption className="px-5 py-4 text-sm leading-6 text-bwe-muted">
+                A personal glimpse of Elony’s lifelong connection with movement,
+                body awareness, and embodied care.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
