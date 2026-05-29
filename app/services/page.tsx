@@ -26,7 +26,7 @@ const services = [
     title: "Prenatal Massage",
     eyebrow: "Supportive pregnancy massage",
     description:
-      "Certified prenatal massage is offered with supportive side-lying positioning, careful pacing, and room to adjust for comfort. The session stays centered on what your body can comfortably receive that day.",
+      "Certified prenatal massage is offered with supportive side-lying positioning and room to adjust for comfort. The session stays centered on what your body can comfortably receive that day.",
     goodFor: [
       "Relief from pregnancy discomfort",
       "Safe side-lying positioning",
@@ -79,8 +79,8 @@ export default function ServicesPage() {
             </h1>
 
             <p className="text-lg leading-8 text-bwe-muted">
-              Bodyworks By Elony offers customized Cedar Park massage for real
-              life, real stress, and real bodies. Whether you are booking
+              Bodyworks By Elony offers customized massage in Cedar Park for
+              stress relief, recovery, and everyday tension. Whether you are booking
               therapeutic massage, prenatal massage, or manual lymphatic
               drainage, each appointment starts with a real conversation.
             </p>
