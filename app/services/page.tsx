@@ -52,7 +52,7 @@ const services = [
     title: "Massage Enhancements",
     eyebrow: "Optional session support",
     description:
-      "Enhancements may be included when they make sense for your session. Options include aromatherapy, cupping, gua sha, warm towels, table warmer, Hypervolt, or other supportive techniques. For example, gua sha uses a smooth handheld tool and Hypervolt is a percussive massage device. These enhancements are free of charge.",
+      "Enhancements may be included when they make sense for your session. Options include aromatherapy, cupping, gua sha, warm towels, table warmer, Hypervolt, or other supportive techniques. These enhancements are free of charge.",
   },
 ];
 
@@ -79,8 +79,8 @@ export default function ServicesPage() {
             </h1>
 
             <p className="text-lg leading-8 text-bwe-muted">
-              Bodyworks By Elony offers customized massage in Cedar Park for
-              stress relief, recovery, and everyday tension. Whether you are booking
+              Bodyworks By Elony offers customized Cedar Park massage for real
+              life, real stress, and real bodies. Whether you are booking
               therapeutic massage, prenatal massage, or manual lymphatic
               drainage, each appointment starts with a real conversation.
             </p>
