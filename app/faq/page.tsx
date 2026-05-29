@@ -69,6 +69,11 @@ const massageFaqs = [
 
 const servicesFaqs = [
   {
+    question: "What are the benefits of massage therapy?",
+    answer:
+      "Massage therapy may help reduce stress, ease muscle tension, support relaxation, improve circulation, and make it easier to move and breathe more comfortably in your body. Many people also find it helpful for recovery, soreness, and staying in tune with what their body needs. The exact benefits depend on the style of massage and your goals for the session.",
+  },
+  {
     question: "What type of massage should I book?",
     answer:
       "If you are unsure, therapeutic massage is usually the most flexible starting point. It can be adapted for quiet relaxation, deeper pressure, focused areas of tension, or whatever is most useful that day. Prenatal massage and manual lymphatic drainage are more specialized services.",
@@ -96,6 +101,21 @@ const servicesFaqs = [
     question: "Do you offer cupping?",
     answer:
       "Yes. Elony is certified in cupping. Cupping may be incorporated into a massage session when appropriate and is subject to medical review.",
+  },
+  {
+    question: "What is cupping therapy, what can it help with, and what are the benefits?",
+    answer:
+      "Cupping therapy uses suction from cups placed on the skin to gently lift tissue and encourage blood flow in the area. Clients often seek it for tight muscles, stubborn tension, limited mobility, recovery work, and areas that feel especially stuck or sore. Benefits may include less muscle tightness, improved circulation, a deeper sense of release, and support for movement when it is appropriate for your body and goals.",
+  },
+  {
+    question: "Does cupping hurt?",
+    answer:
+      "Cupping should not be sharp or unbearable, but it can feel strong, intense, or unusual at first. Some people describe it as a pulling or deep-tissue feeling. Elony will adjust the cups and suction so the work stays within your comfort level, and you can always speak up if you want it lighter or want to stop.",
+  },
+  {
+    question: "Can I avoid bruising with cupping?",
+    answer:
+      "Sometimes, but not always. Bruising or circular marks can happen even when cupping is done gently, because the marks are part of how suction affects the tissue. Using lighter suction, shorter application times, and careful placement may reduce the chance or intensity of marks, but there is no guarantee that cupping will leave no visible trace.",
   },
   {
     question: "What are the circular marks after cupping?",
