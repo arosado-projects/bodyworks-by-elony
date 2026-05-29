@@ -30,45 +30,42 @@ export const siteConfig = {
     shortServiceArea: "Cedar Park, Leander, northwest Austin, and Liberty Hill",
   },
   businessHours: {
-    note: "*End time indicates when the session ends.",
+    note: "*End time indicates when the session ends. One Saturday a month is available from 8:30 AM-12:30 PM.",
     display: [
-        {
+      {
         day: "Monday",
-        hours: "11:30 AM-2:00 PM / 5:00-7:30 PM*",
-        },
-        {
+        hours: "Closed",
+      },
+      {
         day: "Tuesday",
-        hours: "11:30 AM-2:00 PM / 5:00-7:30 PM*",
-        },
-        {
+        hours: "1:00 PM-7:30 PM*",
+      },
+      {
         day: "Wednesday",
         hours: "Closed",
-        },
-        {
+      },
+      {
         day: "Thursday",
         hours: "11:30 AM-2:00 PM / 5:00-7:30 PM*",
-        },
-        {
+      },
+      {
         day: "Friday",
         hours: "11:30 AM-4:00 PM*",
-        },
-        {
+      },
+      {
         day: "Saturday",
-        hours: "First Saturday of the month, 8:30 AM-12:30 PM*",
-        },
-        {
+        hours: "One Saturday a month, 8:30 AM-12:30 PM*",
+      },
+      {
         day: "Sunday",
         hours: "Closed",
-        },
+      },
     ],
     schemaOpeningHours: [
-        "Mo 11:30-14:00",
-        "Mo 17:00-19:30",
-        "Tu 11:30-14:00",
-        "Tu 17:00-19:30",
-        "Th 11:30-14:00",
-        "Th 17:00-19:30",
-        "Fr 11:30-16:00",
+      "Tu 13:00-19:30",
+      "Th 11:30-14:00",
+      "Th 17:00-19:30",
+      "Fr 11:30-16:00",
     ],
   },
   social: {
