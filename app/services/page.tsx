@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { getBookingUrl, siteConfig } from "../lib/site";
 import BookingLink from "../components/BookingLink";
@@ -68,7 +69,7 @@ export default function ServicesPage() {
   return (
     <main>
       <section className="bg-bwe-page">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:py-28">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm uppercase tracking-[0.2em] text-bwe-accent-dark">
               Services
@@ -84,6 +85,25 @@ export default function ServicesPage() {
               therapeutic massage, prenatal massage, or manual lymphatic
               drainage, each appointment starts with a real conversation.
             </p>
+          </div>
+
+          <div className="rounded-[2rem] border border-bwe-border bg-bwe-soft p-4 shadow-sm">
+            <figure className="overflow-hidden rounded-[1.5rem] bg-bwe-surface">
+              <Image
+                src="/images/elony-massage.jpg"
+                alt="Elony providing a massage session in a calm treatment room"
+                width={1195}
+                height={896}
+                preload
+                sizes="(min-width: 1024px) 520px, 100vw"
+                className="aspect-[1195/896] w-full object-cover object-center"
+              />
+
+              <figcaption className="px-5 py-4 text-sm leading-6 text-bwe-muted">
+                Personalized sessions built around comfort, communication, and
+                your body’s needs that day.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
