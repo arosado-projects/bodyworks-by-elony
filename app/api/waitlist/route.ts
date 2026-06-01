@@ -23,10 +23,14 @@ type WaitlistPayload = {
   };
   notes?: string;
   joinedAt?: string;
+  expiresAt: string;
+  expiresPolicy: "flexible_28_days" | "specific_plus_24h";
 };
 
 const ALLOWED_DURATIONS = [30, 60, 90, 120];
 const ALLOWED_SPECIFIC_FLEX_MINUTES = [0, 30, 60, 120];
+const FLEXIBLE_WAITLIST_DAYS = 28;
+const WAITLIST_TIME_ZONE = "America/Chicago";
 
 function normalizePhoneToE164US(value: string): string {
   const digits = String(value || "").replace(/\D/g, "");
@@ -56,6 +60,81 @@ function isSpecificTimeInAllowedRange(value: string): boolean {
 
   const minutes = timeToMinutes(value);
   return minutes >= 8 * 60 && minutes <= 20 * 60;
+}
+
+function addDays(date: Date, days: number): Date {
+  const copy = new Date(date);
+  copy.setUTCDate(copy.getUTCDate() + days);
+  return copy;
+}
+
+function getTimeZoneOffsetMs(date: Date, timeZone: string): number {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).formatToParts(date);
+
+  const values: Record<string, string> = {};
+
+  for (const part of parts) {
+    if (part.type !== "literal") {
+      values[part.type] = part.value;
+    }
+  }
+
+  const year = parseInt(values.year, 10);
+  const month = parseInt(values.month, 10);
+  const day = parseInt(values.day, 10);
+  const hour = values.hour === "24" ? 0 : parseInt(values.hour, 10);
+  const minute = parseInt(values.minute, 10);
+  const second = parseInt(values.second, 10);
+
+  const utcFromParts = Date.UTC(year, month - 1, day, hour, minute, second);
+
+  return utcFromParts - date.getTime();
+}
+
+function localDateTimeToUtc(
+  date: string,
+  time: string,
+  timeZone = WAITLIST_TIME_ZONE
+): Date {
+  const [year, month, day] = date.split("-").map((part) => parseInt(part, 10));
+  const [hour, minute] = time.split(":").map((part) => parseInt(part, 10));
+
+  const guessedUtc = new Date(Date.UTC(year, month - 1, day, hour, minute, 0));
+  const offsetMs = getTimeZoneOffsetMs(guessedUtc, timeZone);
+  const correctedUtc = new Date(guessedUtc.getTime() - offsetMs);
+
+  const secondOffsetMs = getTimeZoneOffsetMs(correctedUtc, timeZone);
+
+  if (secondOffsetMs !== offsetMs) {
+    return new Date(guessedUtc.getTime() - secondOffsetMs);
+  }
+
+  return correctedUtc;
+}
+
+function getFlexibleExpiresAt(): string {
+  return addDays(new Date(), FLEXIBLE_WAITLIST_DAYS).toISOString();
+}
+
+function getSpecificExpiresAt(date: string, time: string): string {
+  return addDays(localDateTimeToUtc(date, time), 1).toISOString();
+}
+
+function parseSpecificFlexMinutes(value: unknown): number {
+  if (value === undefined || value === null || value === "") {
+    return 30;
+  }
+
+  return parseInt(String(value), 10);
 }
 
 function sanitizePayload(input: any): WaitlistPayload {
@@ -114,15 +193,16 @@ function sanitizePayload(input: any): WaitlistPayload {
         windows
       },
       notes: String(input.notes || "").trim().slice(0, 500),
-      joinedAt: new Date().toISOString()
+      joinedAt: new Date().toISOString(),
+      expiresAt: getFlexibleExpiresAt(),
+      expiresPolicy: "flexible_28_days"
     };
   }
 
   const date = String(input.preferences?.date || "");
   const time = String(input.preferences?.time || "");
-  const specificFlexMinutes = parseInt(
-    String(input.preferences?.specificFlexMinutes || 30),
-    10
+  const specificFlexMinutes = parseSpecificFlexMinutes(
+    input.preferences?.specificFlexMinutes
   );
 
   if (!date || !time) {
@@ -154,7 +234,9 @@ function sanitizePayload(input: any): WaitlistPayload {
       specificFlexMinutes
     },
     notes: String(input.notes || "").trim().slice(0, 500),
-    joinedAt: new Date().toISOString()
+    joinedAt: new Date().toISOString(),
+    expiresAt: getSpecificExpiresAt(date, time),
+    expiresPolicy: "specific_plus_24h"
   };
 }
 
