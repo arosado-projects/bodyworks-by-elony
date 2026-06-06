@@ -55,7 +55,7 @@ type TimeOption = {
   label: string;
 };
 
-const DAYS = ["Monday", "Tuesday", "Thursday", "Friday", "First Saturday"];
+const DAYS = ["Monday", "Tuesday", "Thursday", "Friday", "Saturday"];
 
 const SESSION_LENGTHS: number[] = [30, 60, 90, 120];
 
