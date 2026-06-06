@@ -55,7 +55,14 @@ type TimeOption = {
   label: string;
 };
 
-const DAYS = ["Monday", "Tuesday", "Thursday", "Friday", "Saturday"];
+const DAYS = [
+  { label: "Monday", value: "Monday" },
+  { label: "Tuesday", value: "Tuesday" },
+  { label: "Wednesday (occasional)", value: "Wednesday" },
+  { label: "Thursday", value: "Thursday" },
+  { label: "Friday", value: "Friday" },
+  { label: "Saturday", value: "Saturday" }
+];
 
 const SESSION_LENGTHS: number[] = [30, 60, 90, 120];
 
@@ -450,8 +457,10 @@ export default function WaitlistIntentWidget() {
                       }
                       className="rounded-xl border border-[#ead7e7] bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-[#cc97c3]"
                     >
-                      {DAYS.map((day: string) => (
-                        <option key={day}>{day}</option>
+                      {DAYS.map((day) => (
+                        <option key={day.value} value={day.value}>
+                          {day.label}
+                        </option>
                       ))}
                     </select>
 
