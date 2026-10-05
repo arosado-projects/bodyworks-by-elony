@@ -42,7 +42,7 @@ export const siteConfig = {
       },
       {
         day: "Wednesday",
-        hours: "Closed",
+        hours: "11:30 AM-2:00 PM / 5:00-7:30 PM*",
       },
       {
         day: "Thursday",
@@ -63,6 +63,8 @@ export const siteConfig = {
     ],
     schemaOpeningHours: [
       "Tu 13:00-19:30",
+      "We 11:30-14:00",
+      "We 17:00-19:30",
       "Th 11:30-14:00",
       "Th 17:00-19:30",
       "Fr 11:30-16:00",
